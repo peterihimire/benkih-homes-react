@@ -17,13 +17,14 @@ const Navbar = () => {
             >
               <img src={MenuIcon} alt="menu icon" className="menu-icon" />
             </button>
-            <Link to="/" className="logo">
-              <strong>
-                benkih<span>-homes</span>{" "}
-              </strong>
-            </Link>
+            <div>
+              <Link to="/" className="logo">
+                <strong>
+                  benkih<span>-homes</span>
+                </strong>
+              </Link>
+            </div>
           </div>
-
           <NavLinks />
         </div>
       </div>
