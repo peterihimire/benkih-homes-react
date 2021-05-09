@@ -70,7 +70,7 @@
   padding: 0px;
 }
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 7px;
 }
 ::-webkit-scrollbar-track {
@@ -83,17 +83,16 @@
 }
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(6, 31, 53, 0.7);
-} */
+}
 
 body {
   font-family: var(--font);
-  /* background: var(--main-white); */
-  background: yellow;
-  /* overflow-x: hidden; */
+  background: var(--main-white);
+  overflow-x: hidden;
   color: var(--main-black);
-  /* height: auto; */
-  /* min-height: 100vh; */
-  /* width: 100%; */
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
   font-size: 1.6rem;
 }
 
