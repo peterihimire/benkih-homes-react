@@ -43,12 +43,12 @@
 }
 :root {
   font-size: 62.5%;
-  --primary-color: #ff5c00;
-  --vasiti-black: #25201d;
+  --primary-color: #024eff;
+  --grey-blue: #314862;
   --main-grey: #e5e5e5;
   --dark-green: #049a01;
   --light-green: #f0ffee;
-  --dark-grey: #494949;
+  --dark-grey: #484848;
   --main-white: #fff;
   --main-black: #222;
   --dark-blue: #0d019a;
