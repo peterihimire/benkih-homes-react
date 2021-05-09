@@ -1,13 +1,188 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* LATO FONT */
+@font-face {
+  font-family: "lato";
+  src: local("lato"), url("./fonts/lato/Lato-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "lato-bold";
+  src: local("lato"), url("./fonts/lato/Lato-Bold.ttf") format("truetype");
+}
+/* INTER FONT */
+/* @font-face {
+  font-family: "inter";
+  src: local("inter"), url("./fonts/inter/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "inter-bold";
+  src: local("inter"), url("./fonts/inter/Inter-Bold.ttf") format("truetype");
+} */
+/* TRUENO */
+@font-face {
+  font-family: "trueno";
+  src: local("trueno"), url("./fonts/trueno/TruenoRg.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "trueno-bold";
+  src: local("trueno"), url("./fonts/trueno/TruenoBd.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "trueno-extra-bold";
+  src: local("trueno"), url("./fonts/trueno/TruenoExBd.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "trueno-lite";
+  src: local("trueno"), url("./fonts/trueno/TruenoLt.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+:root {
+  --primary-color: #ff5c00;
+  --vasiti-black: #25201d;
+  --main-grey: #e5e5e5;
+  --dark-green: #049a01;
+  --light-green: #f0ffee;
+  --dark-grey: #494949;
+  --main-white: #fff;
+  --main-black: #222;
+  --dark-blue: #0d019a;
+  --light-blue: #eef8ff;
+  --main-spacing: 0.2rem;
+  --line-height: 1.4;
+  --medium-font: 5.5rem;
+  --main-shadow: 1px 4px 4px rgba(0, 0, 0, 0.04);
+
+  --font: "lato", sans-serif;
+  --font-bold: "lato-bold", sans-serif;
+
+  --sec-font: "trueno", sans-serif;
+  --sec-font-bold: "trueno-bold", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--vasiti-black);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 31, 53, 0.7);
+}
+
+body {
+  font-family: var(--font);
+  background: var(--mainWhite);
+  overflow-x: hidden;
+  color: var(--mainBlack);
+  height: auto;
+  min-height: 100vh;
+  width: 100%;
+  /* font-size: 1.6rem; */
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--sec-font-bold);
+  letter-spacing: -2px;
+}
+
+.pad0 {
+  padding: 0 !important;
+}
+.hidden {
+  display: none;
+}
+.rel {
+  position: relative;
+}
+.abs {
+  position: absolute;
+}
+.text-justify {
+  text-align: justify;
+}
+.full-width {
+  width: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.hidden-xs {
+  display: block;
+}
+.visible-xs {
+  display: none;
+}
+.flex-div {
+  display: flex;
+}
+.mag-0 {
+  margin: 0 !important;
+}
+.mag-bottom-0 {
+  margin-bottom: 0 !important;
+}
+.mag-top-0 {
+  margin-top: 0 !important;
+}
+.fg-1 {
+  flex-grow: 1;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.center-sm {
+  text-align: center;
+}
+.btn {
+  background-color: var(--primary-color) !important;
+  color: var(--main-white) !important;
+  text-transform: uppercase !important;
+  box-shadow: none !important;
+  width: 80px;
+  padding: 0 0 !important;
+  font-size: 0.8rem !important;
+  height: 32px !important;
+  line-height: 32px !important;
+}
+.btn-bigger {
+  height: 38px !important;
+  line-height: 38px !important;
+  padding: 0 0rem !important;
+  width: 160px;
+}
+@media only screen and (min-width: 1201px) {
+}
+@media (min-width: 993px) {
+  .container {
+    width: 80% !important;
+  }
+}
+@media (max-width: 992px) {
+  .btn-full-width {
+    width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .hidden-xs {
+    display: none !important;
+  }
+  .visible-xs {
+    display: block !important;
+  }
+  .btn-full-width {
+    width: 100%;
+  }
 }
