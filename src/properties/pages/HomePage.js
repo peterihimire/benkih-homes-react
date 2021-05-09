@@ -1,19 +1,15 @@
 import React from "react";
 import Footer from "../../shared/components/Footer";
+import Navbar from "../../shared/components/Navigation/Navbar";
+import Banner from "../../shared/components/Banner";
 
 const HomePage = () => {
   return (
     <div id="page-container" className="App">
       <div id="content-wrapper">
-        <nav>
-          <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Services</li>
-            <li>Contact</li>
-          </ul>
-        </nav>
-        <h1>Lets get to work Q</h1>
+        <Navbar />
+        <Banner />
+        <h1>This is the Home Page Q</h1>
         <p>This is the real application</p>
       </div>
 
