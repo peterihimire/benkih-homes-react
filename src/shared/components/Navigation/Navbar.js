@@ -17,10 +17,10 @@ const Navbar = () => {
             >
               <img src={MenuIcon} alt="menu icon" className="menu-icon" />
             </button>
-            <div>
-              <Link to="/" className="logo">
+            <div className="navbar-logo-div">
+              <Link to="/" className="navbar-logo">
                 <strong>
-                  benkih<span>-homes</span>
+                  bnk<span>-homes</span>
                 </strong>
               </Link>
             </div>

@@ -44,7 +44,7 @@ const NavLinks = () => {
           </NavLink>
         </li>
       </ul>
-      <ul className="navbar-links">
+      <ul className="navbar-links make-payment-link">
         <li className="navbar-item">
           <NavLink
             activeClassName="active"

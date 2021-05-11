@@ -1,12 +1,13 @@
 import React from "react";
+import "./Banner.css";
 
 const Banner = () => {
   return (
-    <header>
+    <div className="banner">
       <div>
         <h4>This is the Banner</h4>
       </div>
-    </header>
+    </div>
   );
 };
 

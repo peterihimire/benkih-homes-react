@@ -9,8 +9,12 @@ const HomePage = () => {
       <div id="content-wrapper">
         <Navbar />
         <Banner />
-        <h1>This is the Home Page Q</h1>
-        <p>This is the real application</p>
+        <div className="main-content">
+          <div className="main-content-container">
+            <h1>This is the HomePage Q</h1>
+            <p>This is the real application</p>
+          </div>
+        </div>
       </div>
 
       <Footer />

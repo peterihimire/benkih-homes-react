@@ -39,13 +39,20 @@
 #page-container {
   position: relative;
   min-height: 100vh;
-
-
 }
 #content-wrapper {
   padding-bottom: 116px;
-  /* background-color: blue; */
-
+  /* padding-right: 2rem;
+  padding-left: 2rem; */
+  /* padding-top: 54px; */
+  background-color: rgb(119, 177, 133);
+}
+.main-content {
+  padding: 0 2rem;
+}
+.main-content-container {
+  max-width: 117rem;
+  margin: 0 auto;
 }
 footer {
   position: absolute;
