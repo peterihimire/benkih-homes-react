@@ -4,4 +4,19 @@
   min-height: 600px;
   padding-top: 0;
   background-color: red;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.504),
+      rgba(0, 0, 0, 0.504)
+    ),
+    url("../../assets/home-img.jpg") center/cover no-repeat;
+}
+.banner-content {
+}
+/* LAPTOP */
+@media (min-width: 993px) {
+  .banner-container {
+    max-width: 117rem;
+    margin: 0 auto;
+  }
 }

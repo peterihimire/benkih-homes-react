@@ -4,8 +4,15 @@ import "./Banner.css";
 const Banner = () => {
   return (
     <div className="banner">
-      <div>
-        <h4>This is the Banner</h4>
+      <div className="banner-container">
+        <div className="banner-content">
+          <div className="banner-right">
+            <h4>This is the right banner</h4>
+          </div>
+          <div className="banner-left">
+            <h4>This is the left banner</h4>
+          </div>
+        </div>
       </div>
     </div>
   );
