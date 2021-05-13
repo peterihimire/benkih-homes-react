@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavLinks.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 const NavLinks = () => {
   return (
@@ -55,8 +55,8 @@ const NavLinks = () => {
           </NavLink>
         </li>
       </ul>
-      <ul className="navbar-links">
-        <li className="navbar-item">
+      <div className="navbar-links-buttons">
+        <div className="navbar-item-button">
           <NavLink
             activeClassName="active"
             className="navbar-single-link"
@@ -64,17 +64,13 @@ const NavLinks = () => {
           >
             sign in
           </NavLink>
-        </li>
-        <li className="navbar-item">
-          <NavLink
-            activeClassName="active"
-            className="navbar-single-link"
-            to="/signup"
-          >
-            get started
-          </NavLink>
-        </li>
-      </ul>
+        </div>
+        <div className="navbar-links-getstarted">
+          <button className="btn ">
+            <Link to="/signup">register</Link>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

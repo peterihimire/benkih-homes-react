@@ -6,17 +6,41 @@
   background-color: red;
   background: linear-gradient(
       to right,
-      rgba(0, 0, 0, 0.504),
-      rgba(0, 0, 0, 0.504)
+      rgba(0, 0, 0, 0.604),
+      rgba(0, 0, 0, 0.604)
     ),
     url("../../assets/home-img.jpg") center/cover no-repeat;
+  padding: 0 2rem;
+  color: var(--main-white);
 }
+/* FOR VERTICAL CENTERING OF CONTENT */
 .banner-content {
+  height: 80vh;
+  position: relative;
+}
+.banner-left {
+  width: 300px;
+  position: absolute;
+  top: 40%;
+}
+.banner-left h1 {
+  font-size: 3.5rem;
+}
+.banner-left p {
+  padding: 1rem 0 2rem 0;
 }
 /* LAPTOP */
 @media (min-width: 993px) {
   .banner-container {
     max-width: 117rem;
     margin: 0 auto;
+  }
+  .banner-left {
+    width: 500px;
+    position: absolute;
+    top: 40%;
+  }
+  .banner-left h1 {
+    font-size: 5rem;
   }
 }

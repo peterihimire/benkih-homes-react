@@ -20,7 +20,7 @@
   padding: 1rem 2rem;
   color: var(--mainBlack);
   transition: var(--mainTransition);
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
   text-align: left;
@@ -41,10 +41,25 @@
   .navbar-main-links {
     display: flex;
     align-items: center;
-    /* display: block; */
   }
   .make-payment-link {
     padding: 0 3rem;
+  }
+  .navbar-links-getstarted{
+    margin: 0 0 0 4rem;
+  }
+  .navbar-links-getstarted a {
+    font-size: 1.3rem;
+  }
+  .navbar-links-buttons{
+    display: flex;
+    align-items: center;
+    font-size: 1.3rem;
+  }
+  .navbar-item-button a{
+    color: var(--main-white);
+    text-decoration: none;
+    text-transform: uppercase;
   }
 }
 /* IPHONE */
@@ -52,7 +67,7 @@
 }
 /* TABLET */
 @media screen and (min-width: 768px) {
-  .make-payment-link{
+  .make-payment-link {
     /* padding: 0 0rem; */
   }
 }
