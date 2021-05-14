@@ -3,9 +3,9 @@
   top: 0;
   left: 0;
   width: 100%;
-  /* background-color:var(--main-white); */
+  background-color: var(--main-white);
   color: var(--main-white);
-  /* box-shadow: var(--main-shadow); */
+  box-shadow: var(--main-shadow);
   z-index: 999;
   padding: 0 2rem;
 }
@@ -44,9 +44,31 @@
 }
 /* TABLET */
 @media screen and (min-width: 768px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: none !important;
+    color: var(--main-white);
+    /* box-shadow: var(--main-shadow); */
+    z-index: 999;
+    padding: 0 2rem;
+  }
 }
 /* LAPTOP */
 @media (min-width: 993px) {
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: none !important;
+    color: var(--main-white);
+    /* box-shadow: var(--main-shadow); */
+    z-index: 999;
+    padding: 0 2rem;
+  }
   .navbar-container {
     max-width: 117rem;
     margin: 0 auto;
