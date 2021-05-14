@@ -21,13 +21,21 @@
 .banner-left {
   width: 300px;
   position: absolute;
-  top: 40%;
+  top: 30%;
 }
 .banner-left h1 {
   font-size: 3.5rem;
 }
 .banner-left p {
   padding: 1rem 0 2rem 0;
+}
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .banner-left {
+    width: 500px;
+    position: absolute;
+    top: 35%;
+  }
 }
 /* LAPTOP */
 @media (min-width: 993px) {
@@ -38,7 +46,7 @@
   .banner-left {
     width: 500px;
     position: absolute;
-    top: 40%;
+    top: 35%;
   }
   .banner-left h1 {
     font-size: 5rem;
