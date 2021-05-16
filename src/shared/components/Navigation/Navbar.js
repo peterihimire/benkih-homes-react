@@ -19,7 +19,7 @@ const Navbar = (props) => {
   return (
     <>
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
-      {/* <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
+      <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <div>
           <ul>
             <li>home</li>
@@ -28,7 +28,7 @@ const Navbar = (props) => {
             <li>contact</li>
           </ul>
         </div>
-      </SideDrawer> */}
+      </SideDrawer>
       <nav className="navbar">
         <div className="navbar-container">
           <div className="navbar-main">

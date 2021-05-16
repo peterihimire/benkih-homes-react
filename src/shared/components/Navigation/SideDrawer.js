@@ -3,9 +3,10 @@ import ReactDOM from "react-dom";
 import "./SideDrawer.css";
 
 const SideDrawer = (props) => {
+  console.log(props)
   const content = (
     <div>
-      <aside className="side-drawer" onClick={props.onClick}>
+      <aside className={props.show ? "side-drawer show-nav" : 'side-drawer'} onClick={props.onClick}>
         {props.children}
       </aside>
     </div>
