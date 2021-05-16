@@ -5,7 +5,7 @@
   width: 100%;
   background-color: var(--main-white);
   color: var(--main-white);
-  box-shadow: var(--main-shadow);
+  /* box-shadow: var(--main-shadow); */
   z-index: 3;
   padding: 0 2rem;
 }
@@ -49,10 +49,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: none !important;
+    background-color: var(--main-white);
     color: var(--main-white);
     /* box-shadow: var(--main-shadow); */
-    z-index: 999;
+    z-index: 3;
     padding: 0 2rem;
   }
 }
@@ -66,7 +66,7 @@
     background: none !important;
     color: var(--main-white);
     /* box-shadow: var(--main-shadow); */
-    z-index: 999;
+    z-index: 3;
     padding: 0 2rem;
   }
   .navbar-container {

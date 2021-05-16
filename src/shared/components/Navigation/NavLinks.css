@@ -6,7 +6,7 @@
 
 .navbar-btn-icon {
   font-size: 2rem;
-  color: var(--mainBlack);
+  color: var(--main-black);
 }
 .navbar-links {
   height: 0;
@@ -18,7 +18,7 @@
   display: block;
   text-decoration: none;
   padding: 1rem 2rem;
-  color: var(--mainBlack);
+  color: var(--main-black);
   transition: var(--mainTransition);
   font-size: 1.3rem;
   text-transform: uppercase;
@@ -36,7 +36,7 @@
     margin: 0 2rem;
     padding: 0.5rem 0;
 
-    color: var(--mainBlack);
+    color: var(--main-white);
   }
   .navbar-main-links {
     display: flex;

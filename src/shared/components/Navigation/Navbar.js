@@ -5,6 +5,7 @@ import NavLinks from "../../components/Navigation/NavLinks";
 import MenuIcon from "../../../assets/menu-icon.svg";
 import Backdrop from "../UIElements/Backdrop";
 import SideDrawer from "../../components/Navigation/SideDrawer";
+import NavLinksMob from "../Navigation/NavLinksMob";
 
 const Navbar = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
@@ -20,14 +21,7 @@ const Navbar = (props) => {
     <>
       {drawerIsOpen && <Backdrop onClick={closeDrawerHandler} />}
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
-        <div>
-          <ul>
-            <li>home</li>
-            <li>about us</li>
-            <li>payment</li>
-            <li>contact</li>
-          </ul>
-        </div>
+        <NavLinksMob />
       </SideDrawer>
       <nav className="navbar">
         <div className="navbar-container">
