@@ -1,0 +1,45 @@
+.side-navbar-main {
+  margin: 6rem 0 0 6rem;
+}
+.side-navbar-item {
+  padding: 0 0 4rem 0;
+  list-style: none;
+}
+.side-navbar-item a {
+  text-decoration: none;
+  color: var(--main-black);
+  font-size: 1.8rem;
+  text-transform: capitalize;
+}
+
+.btn-side-navbar {
+  height: 66px !important;
+  line-height: 66px !important;
+  padding: 0 0rem !important;
+  width: 160px;
+}
+
+.side-navbar-payment {
+  padding: 0 0 7rem 0;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .side-navbar-main {
+    margin: 8rem 0 0 10rem;
+  }
+
+  .side-navbar-item a {
+    text-decoration: none;
+    color: var(--main-black);
+    font-size: 2rem;
+    text-transform: capitalize;
+    font-weight: bold;
+  }
+  .btn-side-navbar {
+    height: 88px !important;
+    line-height: 88px !important;
+    padding: 0 0rem !important;
+    width: 180px;
+  }
+}

@@ -37,6 +37,15 @@ const NavLinksMob = () => {
           <NavLink
             activeClassName="active"
             className="navbar-single-link"
+            to="/about"
+          >
+            about
+          </NavLink>
+        </li>
+        <li className="side-navbar-item side-navbar-payment">
+          <NavLink
+            activeClassName="active"
+            className="navbar-single-link"
             to="/make-payment"
           >
             make a payment
@@ -52,7 +61,7 @@ const NavLinksMob = () => {
           </NavLink>
         </li>
       </ul>
-      <button className="btn">
+      <button className="btn btn-side-navbar">
         <Link to="sign-up">get started</Link>
       </button>
     </div>
