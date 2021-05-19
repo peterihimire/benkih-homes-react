@@ -1,0 +1,88 @@
+import imgProperty from "./src/assets/property-1.jpg";
+
+let SCAPE;
+
+SCAPE = [
+  {
+    id: 1,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+  {
+    id: 2,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+  {
+    id: 3,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+  {
+    id: 4,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+  {
+    id: 5,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+  {
+    id: 6,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+  {
+    id: 7,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+  {
+    id: 8,
+    name: "Book your Oyo Taxis",
+    amount: 50,
+    bathrooms: 2,
+    bedrooms: 4,
+    location: "Ikeja lagos",
+    description: "Find our taxis near you for affordable interstate transports",
+    image: imgProperty,
+  },
+];
+
+export default SCAPE;

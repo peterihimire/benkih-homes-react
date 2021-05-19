@@ -16,9 +16,11 @@
   height: 66px !important;
   line-height: 66px !important;
   padding: 0 0rem !important;
-  width: 160px;
+  width: 150px;
 }
-
+.btn-side-navbar a{
+  font-weight: bold;
+}
 .side-navbar-payment {
   padding: 0 0 7rem 0;
 }
@@ -41,5 +43,9 @@
     line-height: 88px !important;
     padding: 0 0rem !important;
     width: 180px;
+  }
+  .btn-side-navbar a{
+    font-weight: bold;
+    font-size: 1.5rem;
   }
 }
