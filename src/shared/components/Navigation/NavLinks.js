@@ -2,7 +2,9 @@ import React from "react";
 import "./NavLinks.css";
 import { NavLink, Link } from "react-router-dom";
 
-const NavLinks = () => {
+const NavLinks = (props) => {
+  const { scrollColor } = props;
+  console.log(props);
   return (
     <div className="navbar-main-links">
       <ul className="navbar-links">
@@ -10,7 +12,11 @@ const NavLinks = () => {
           <NavLink
             exact
             activeClassName="active"
-            className="navbar-single-link"
+            className={
+              scrollColor
+                ? "navbar-single-link navbar-single-color"
+                : "navbar-single-link"
+            }
             to="/"
           >
             home
@@ -19,7 +25,11 @@ const NavLinks = () => {
         <li className="navbar-item">
           <NavLink
             activeClassName="active"
-            className="navbar-single-link"
+            className={
+              scrollColor
+                ? "navbar-single-link navbar-single-color"
+                : "navbar-single-link"
+            }
             to="/how-works"
           >
             how it works
@@ -28,7 +38,11 @@ const NavLinks = () => {
         <li className="navbar-item">
           <NavLink
             activeClassName="active"
-            className="navbar-single-link"
+            className={
+              scrollColor
+                ? "navbar-single-link navbar-single-color"
+                : "navbar-single-link"
+            }
             to="/features"
           >
             features
@@ -37,7 +51,11 @@ const NavLinks = () => {
         <li className="navbar-item">
           <NavLink
             activeClassName="active"
-            className="navbar-single-link"
+            className={
+              scrollColor
+                ? "navbar-single-link navbar-single-color"
+                : "navbar-single-link"
+            }
             to="/about"
           >
             about
@@ -48,7 +66,11 @@ const NavLinks = () => {
         <li className="navbar-item">
           <NavLink
             activeClassName="active"
-            className="navbar-single-link"
+            className={
+              scrollColor
+                ? "navbar-single-link navbar-single-color"
+                : "navbar-single-link"
+            }
             to="/make-payment"
           >
             make a payment
@@ -59,7 +81,11 @@ const NavLinks = () => {
         <div className="navbar-item-button">
           <NavLink
             activeClassName="active"
-            className="navbar-single-link"
+            className={
+              scrollColor
+                ? "navbar-single-link navbar-single-color"
+                : "navbar-single-link"
+            }
             to="/signin"
           >
             sign in

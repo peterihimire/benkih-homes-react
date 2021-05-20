@@ -64,15 +64,18 @@
     left: 0;
     width: 100%;
     /* background: none !important; */
-    background-color: transparent ;
+    background-color: transparent;
     color: var(--main-white);
     /* box-shadow: var(--main-shadow); */
     z-index: 3;
     padding: 0 2rem;
   }
-  .navbar-color{
-    background-color: violet;
+  /* changes the navbar color upon a particular scroll position */
+  .navbar-color {
+    background-color: var(--main-white);
+    transition: all 1s ease;
   }
+
   .navbar-container {
     max-width: 117rem;
     margin: 0 auto;
@@ -85,6 +88,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 4rem 0rem;
+  }
+  /* reduce the padding upon a particular scroll position */
+  .navbar-padding {
+    padding: 2rem 0rem;
+    transition: all 1s ease;
   }
   .navbar-logo-div {
     margin: 0 0 0 0rem;

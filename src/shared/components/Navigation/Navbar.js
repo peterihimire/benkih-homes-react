@@ -10,14 +10,17 @@ import NavLinksMob from "../Navigation/NavLinksMob";
 const Navbar = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
   const [isColor, setIsColor] = useState(false);
+  // const [isPadding, setIsPadding] = useState(false);
 
   const navColorHandler = () => {
     let position = window.pageYOffset;
     console.log(position);
     if (position > 120) {
       setIsColor(true);
+      // setIsPadding(true);
     } else {
       setIsColor(false);
+      // setIsPadding(false);
     }
   };
 
@@ -41,9 +44,11 @@ const Navbar = (props) => {
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <NavLinksMob />
       </SideDrawer>
-      <nav className={isColor ? "navbar navbar-color " : "navbar"}>
+      <nav className={isColor ? "navbar navbar-color  " : "navbar"}>
         <div className="navbar-container">
-          <div className="navbar-main">
+          <div
+            className={isColor ? "navbar-main navbar-padding" : "navbar-main"}
+          >
             <div className="navbar-head">
               <button
                 className="navbar-btn"
@@ -60,7 +65,7 @@ const Navbar = (props) => {
                 </Link>
               </div>
             </div>
-            <NavLinks />
+            <NavLinks scrollColor={isColor} />
           </div>
         </div>
       </nav>
