@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import NavLinks from "../../components/Navigation/NavLinks";
@@ -9,6 +9,24 @@ import NavLinksMob from "../Navigation/NavLinksMob";
 
 const Navbar = (props) => {
   const [drawerIsOpen, setDrawerIsOpen] = useState(false);
+  const [isColor, setIsColor] = useState(false);
+
+  const navColorHandler = () => {
+    let position = window.pageYOffset;
+    console.log(position);
+    if (position > 120) {
+      setIsColor(true);
+    } else {
+      setIsColor(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("scroll", () => {
+      console.log(window.scrollY);
+      navColorHandler();
+    });
+  }, []);
 
   const openDrawerHandler = () => {
     setDrawerIsOpen(true);
@@ -23,7 +41,7 @@ const Navbar = (props) => {
       <SideDrawer show={drawerIsOpen} onClick={closeDrawerHandler}>
         <NavLinksMob />
       </SideDrawer>
-      <nav className="navbar">
+      <nav className={isColor ? "navbar navbar-color " : "navbar"}>
         <div className="navbar-container">
           <div className="navbar-main">
             <div className="navbar-head">
