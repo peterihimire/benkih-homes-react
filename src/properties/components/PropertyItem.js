@@ -8,6 +8,9 @@ const PropertyItem = (props) => {
   console.log(props);
   return (
     <Card>
+      <div className='property-item-img'>
+        <img src={properties.image} alt="home" />
+      </div>
       <h3>{properties.name}</h3>
     </Card>
   );
