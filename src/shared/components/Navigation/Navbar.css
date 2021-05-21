@@ -69,6 +69,7 @@
     /* box-shadow: var(--main-shadow); */
     z-index: 3;
     padding: 0 2rem;
+    transition: all 1s ease;
   }
   /* changes the navbar color upon a particular scroll position */
   .navbar-color {
@@ -88,6 +89,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 4rem 0rem;
+    transition: all 1s ease;
   }
   /* reduce the padding upon a particular scroll position */
   .navbar-padding {

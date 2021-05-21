@@ -1,4 +1,4 @@
-import imgProperty from "./src/assets/property-1.jpg";
+import imgProperty from "../src/assets/property-1.jpg";
 
 let SCAPE;
 

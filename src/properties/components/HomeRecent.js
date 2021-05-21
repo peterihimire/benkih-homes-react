@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomeRecent.css";
+import PropertySlide from '../components/PropertySlide';
 
 const HomeRecent = () => {
   return (
@@ -8,6 +9,7 @@ const HomeRecent = () => {
       <h4>recently added properties</h4>
       <div className="">
         <h5>find more properties</h5>
+        <PropertySlide />
       </div>
     </div>
   );
