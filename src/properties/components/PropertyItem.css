@@ -1,7 +1,20 @@
 .property-item-img {
   width: 100%;
-
 }
 .property-item-img img {
   width: 100%;
+}
+.price-bed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.location-shower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.flex-align{
+  display: flex;
+  align-items: center;
 }

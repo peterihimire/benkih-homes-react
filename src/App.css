@@ -41,7 +41,7 @@
   min-height: 100vh;
 }
 #content-wrapper {
-  padding-bottom: 116px;
+  padding-bottom: 316px;
   /* padding-right: 2rem;
   padding-left: 2rem; */
   /* padding-top: 54px; */
@@ -58,11 +58,9 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 116px; /*Footer height*/
+  height: 316px; /*Footer height*/
   display: flex;
   align-items: center;
   justify-content: center;
   /* padding: 5rem; */
-  background: var(--primary-color);
-  color: var(--main-white);
 }

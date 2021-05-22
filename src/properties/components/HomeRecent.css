@@ -3,3 +3,29 @@
   height: 200px;
   background-color: aqua;
 }
+.home-recent h4 {
+  color: var(--primary-color);
+  font-size: var(--small-font);
+}
+.recent-flex-start {
+  display: flex;
+  justify-content: flex-start;
+  text-transform: capitalize;
+}
+.recent-flex-start h4 {
+  font-size: var(--medium-font);
+  color: var(--dark-grey);
+}
+.more-flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  color: var(--primary-color);
+}
+.more-arrow {
+  display: flex;
+  align-items: center;
+}
+.more-arrow span {
+  padding: 0 0 0 1rem;
+}

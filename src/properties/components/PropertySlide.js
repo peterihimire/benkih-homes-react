@@ -8,7 +8,7 @@ import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 const PropertySlide = () => {
   console.log(properties);
   const [activeItemIndex, setActiveItemIndex] = React.useState(0);
-  const chevronWidth = 20;
+  const chevronWidth = 50;
   return (
     <div className="property-slide">
       <div className="property-slide-container">
@@ -67,7 +67,9 @@ const PropertySlide = () => {
               >
                 {properties.map((property) => {
                   return (
-                    <PropertyItem properties={property} key={property.id} />
+                    <div className="one-slide">
+                      <PropertyItem properties={property} key={property.id} />
+                    </div>
                   );
                 })}
               </ItemsCarousel>
@@ -92,7 +94,9 @@ const PropertySlide = () => {
               >
                 {properties.map((property) => {
                   return (
-                    <PropertyItem properties={property} key={property.id} />
+                    <div className="one-slide">
+                      <PropertyItem properties={property} key={property.id} />
+                    </div>
                   );
                 })}
               </ItemsCarousel>
