@@ -14,46 +14,45 @@ const HomeHow = () => {
           choice listed in your personal account, with the payment details.
         </p>
       </div>
-      <div>
-        <div className="home-how-content-logo">
-          <div className="home-how-content">
-            <div className="home-how-logo">
-              <FaList className="home-how-icon" />
-            </div>
-            <div className="home-how-text">
-              <h4>register</h4>
-              <p>
-                Register to join our platform to enjoy our wide network either
-                as a real estate agent or a person searching for property. Join
-                Our Network Now!
-              </p>
-            </div>
+
+      <div className="home-how-content-logo">
+        <div className="home-how-content">
+          <div className="home-how-logo">
+            <FaList className="home-how-icon" />
           </div>
-          <div className="home-how-content">
-            <div className="home-how-logo">
-              <FaBuilding className="home-how-icon" />
-            </div>
-            <div className="home-how-text">
-              <h4>create property</h4>
-              <p>
-                Register to join our platform to enjoy our wide network either
-                as a real estate agent or a person searching for property. Join
-                Our Network Now!
-              </p>
-            </div>
+          <div className="home-how-text">
+            <h5>register</h5>
+            <p>
+              Register to join our platform to enjoy our wide network either as
+              a real estate agent or a person searching for property. Join Our
+              Network Now!
+            </p>
           </div>
-          <div className="home-how-content">
-            <div className="home-how-logo">
-              <FaSearch className="home-how-icon" />
-            </div>
-            <div className="home-how-text">
-              <h4>search property</h4>
-              <p>
-                Register to join our platform to enjoy our wide network either
-                as a real estate agent or a person searching for property. Join
-                Our Network Now!
-              </p>
-            </div>
+        </div>
+        <div className="home-how-content">
+          <div className="home-how-logo">
+            <FaBuilding className="home-how-icon" />
+          </div>
+          <div className="home-how-text">
+            <h5>create property</h5>
+            <p>
+              Register to join our platform to enjoy our wide network either as
+              a real estate agent or a person searching for property. Join Our
+              Network Now!
+            </p>
+          </div>
+        </div>
+        <div className="home-how-content">
+          <div className="home-how-logo">
+            <FaSearch className="home-how-icon" />
+          </div>
+          <div className="home-how-text">
+            <h5>search property</h5>
+            <p>
+              Register to join our platform to enjoy our wide network either as
+              a real estate agent or a person searching for property. Join Our
+              Network Now!
+            </p>
           </div>
         </div>
       </div>

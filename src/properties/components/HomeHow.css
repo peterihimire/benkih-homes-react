@@ -1,3 +1,14 @@
+.home-how {
+  padding: 4rem 0;
+}
+.home-how-title {
+  width: 600px;
+}
+.home-how-title h4 {
+  font-size: var(--medium-font);
+  color: var(--dark-grey);
+  text-transform: capitalize;
+}
 .home-how-content-logo {
   /* display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -5,14 +16,16 @@
   grid-column-gap: 3rem; */
   display: flex;
   flex-direction: row;
-  
-  margin: 0 auto;
+  padding: 0 0rem;
+  margin: 4rem 0 0 0;
+  /* margin: 0 auto; */
 }
 .home-how-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 4rem;
 }
 .home-how-content {
   text-align: center;
@@ -25,4 +38,13 @@
 .home-how-icon {
   color: var(--main-white);
   font-size: 5rem;
+}
+.home-how-text{
+  margin: 2rem 0 0 0;
+}
+.home-how-text h5{
+  text-transform: uppercase;
+  color: var(--dark-grey);
+  font-size: var(--xsmall-font);
+  padding: 0 0 1rem 0;
 }
