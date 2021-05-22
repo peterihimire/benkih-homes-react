@@ -1,10 +1,10 @@
 .card {
   margin: 0;
-  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26); */
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.26); */
   box-shadow: var(--main-shadow);
   border-radius: 4px;
   padding: 1rem;
   overflow: hidden;
   background: white;
-  /* border: solid 5px red; */
+  /* border: solid 2px red; */
 }

@@ -12,7 +12,8 @@ const PropertySlide = () => {
   return (
     <div className="property-slide">
       <div className="property-slide-container">
-        <div className="hidden-xs">
+        {/* FOR LAPTOPS */}
+        <div className="hidden-xs  hidden-md visible-xl">
           <div className="carousel">
             <div style={{ padding: `0 ${chevronWidth}px` }}>
               <ItemsCarousel
@@ -39,6 +40,33 @@ const PropertySlide = () => {
               >
                 {properties.map((property) => {
                   return (
+                    <div className="one-slide">
+                      <PropertyItem properties={property} key={property.id} />
+                    </div>
+                  );
+                })}
+              </ItemsCarousel>
+            </div>
+          </div>
+        </div>
+        {/* FOR TABLETS */}
+        <div className="hidden-xs visible-md ">
+          <div className="carousel">
+            <div>
+              <ItemsCarousel
+                requestToChangeActive={setActiveItemIndex}
+                activeItemIndex={activeItemIndex}
+                numberOfCards={3.1}
+                gutter={10}
+                freeScrolling={true}
+                outsideChevron={true}
+                chevronWidth={chevronWidth}
+                showSlither={true}
+
+                // infiniteLoop={true}
+              >
+                {properties.map((property) => {
+                  return (
                     <PropertyItem properties={property} key={property.id} />
                   );
                 })}
@@ -46,7 +74,7 @@ const PropertySlide = () => {
             </div>
           </div>
         </div>
-
+        {/* FOR PHONES */}
         <div className="visible-xs hidden-md ">
           <div className="carousel">
             <div>

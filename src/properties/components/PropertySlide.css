@@ -1,3 +1,7 @@
-.property-slide{
+.property-slide {
   padding: 3rem 0;
+}
+.one-slide {
+  padding: 0.5rem;
+  /* display: flex; */
 }

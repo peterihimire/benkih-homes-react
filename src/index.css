@@ -194,22 +194,48 @@ p {
 }
 @media only screen and (min-width: 1201px) {
 }
+/***** LAPTOP *****/
 @media (min-width: 993px) {
   .container {
     width: 80% !important;
   }
+  .hidden-xl {
+    display: none;
+  }
+
+  .hidden-md {
+    display: none;
+    /* visibility: hidden; */
+  }
+  .hidden-xs {
+    display: none !important;
+  }
+  .visible-xl {
+    display: block !important;
+  }
 }
+/***** iPAD *****/
 @media (max-width: 992px) {
   .btn-full-width {
     width: 100%;
   }
+  .hidden-md {
+    display: none;
+  }
+  .visible-md {
+    display: block !important;
+  }
 }
+/***** iPHONE *****/
 @media (max-width: 600px) {
   .hidden-xs {
     display: none !important;
   }
   .visible-xs {
     display: block !important;
+  }
+  .hidden-md {
+    display: none;
   }
   .btn-full-width {
     width: 100%;
