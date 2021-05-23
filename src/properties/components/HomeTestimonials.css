@@ -1,0 +1,22 @@
+.home-testimonials {
+  padding: 4rem 0;
+}
+
+.testimonials-img img {
+  border-radius: 50%;
+}
+
+.testimonials-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  margin: 0 auto;
+  box-shadow: var(--main-shadow);
+  padding: 1rem;
+}
+
+.testimonials-content p {
+  text-align: center;
+}

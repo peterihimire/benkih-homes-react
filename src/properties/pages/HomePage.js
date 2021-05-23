@@ -5,6 +5,7 @@ import Banner from "../../shared/components/Banner";
 import HomeAbout from "../../properties/components/HomeAbout";
 import HomeRecent from "../../properties/components/HomeRecent";
 import HomeHow from "../../properties/components/HomeHow";
+import HomeTestimonials from "../../properties/components/HomeTestimonials";
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
             <HomeAbout />
             <HomeRecent />
             <HomeHow />
+            <HomeTestimonials />
           </div>
         </div>
       </div>
