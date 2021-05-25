@@ -11,7 +11,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
   box-shadow: var(--main-shadow);
   padding: 1rem;
@@ -19,4 +19,30 @@
 
 .testimonials-content p {
   text-align: center;
+}
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .testimonials-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    margin: 0 auto;
+    box-shadow: var(--main-shadow);
+    padding: 1rem;
+  }
+}
+/* LAPTOP */
+@media (min-width: 993px) {
+  .testimonials-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    margin: 0 auto;
+    box-shadow: var(--main-shadow);
+    padding: 1rem;
+  }
 }
