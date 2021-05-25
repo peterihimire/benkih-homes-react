@@ -20,6 +20,9 @@
 .testimonials-content p {
   text-align: center;
 }
+.testimony-chev{
+  margin: 0 .2rem;
+}
 /* TABLET */
 @media screen and (min-width: 768px) {
   .testimonials-content {

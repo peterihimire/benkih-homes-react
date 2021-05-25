@@ -4,8 +4,9 @@ import "./HomeTestimonials.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import img from "../../assets/profile.png";
-// import Card from '../../shared/components/UIElements/Card';
+import TestimonyItem from "../components/TestimonyItem";
+import testimonies from "../../testimonial-items";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 class HomeTestimonials extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class HomeTestimonials extends Component {
       dots: false,
       infinite: true,
       autoplay: true,
-      speed: 500,
+      speed: 4000,
       responsive: [
         {
           breakpoint: 700,
@@ -62,66 +63,21 @@ class HomeTestimonials extends Component {
           for our review which we will update at the appropriate time.
         </p>
         <Slider ref={(c) => (this.slider = c)} {...settings}>
-          <div>
-            <div className="testimonials-content">
-              <div className="testimonials-img">
-                <img src={img} alt="people" />
-              </div>
-              <div>
-                <p>
-                  BNK realestate is the estate for you to invest your
-                  hard-earned money. Feel free to read about the comments of
-                  customers and sellers making use of our platform. And you are
-                  also free to write down your comments for our review which we
-                  will update at the appropriate time.
-                </p>
-                <b>Ihimire Peter</b>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div className="testimonials-content">
-              <div className="testimonials-img">
-                <img src={img} alt="people" />
-              </div>
-              <div>
-                <p>
-                  BNK realestate is the estate for you to invest your
-                  hard-earned money. Feel free to read about the comments of
-                  customers and sellers making use of our platform. And you are
-                  also free to write down your comments for our review which we
-                  will update at the appropriate time.
-                </p>
-                <b>Ihimire Peter</b>
-              </div>
-            </div>
-          </div>
+          {testimonies.map((testimony) => {
+            console.log(testimony);
+            return (
+              <TestimonyItem key={testimony.id} testimonials={testimony} />
+            );
+          })}
         </Slider>
-        <div className="r-slick-container" style={{ textAlign: "center" }}>
-          <button className="button" onClick={this.previous}>
-            <i className="material-icons left">chevron_left</i>
+        <div className="r-slick-container" style={{ textAlign: "right" }}>
+          <button className='chev-btn testimony-chev' onClick={this.previous}>
+            <FaChevronLeft className="arrow-icon" />
           </button>
-          <button className="button" onClick={this.next}>
-            <i className="material-icons right">chevron_right</i>
+          <button className='chev-btn testimony-chev' onClick={this.next}>
+            <FaChevronRight className="arrow-icon" />
           </button>
         </div>
-        {/* <div className="main-testimonials">
-          <div className="testimonials-content">
-            <div className="testimonials-img">
-              <img src={img} alt="people" />
-            </div>
-            <div>
-              <p>
-                BNK realestate is the estate for you to invest your hard-earned
-                money. Feel free to read about the comments of customers and
-                sellers making use of our platform. And you are also free to
-                write down your comments for our review which we will update at
-                the appropriate time.
-              </p>
-              <b>Ihimire Peter</b>
-            </div>
-          </div>
-        </div> */}
       </div>
     );
   }
