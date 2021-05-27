@@ -1,0 +1,14 @@
+.testimonials-content p {
+  text-align: center;
+}
+
+.testimonials-content .testimonials-b {
+  text-align: right;
+}
+.testimonials-img{
+  margin: 0 0 2rem 0;
+}
+.testimonials-img img {
+  border-radius: 50%;
+  width: 150px;
+}

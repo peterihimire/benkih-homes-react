@@ -55,28 +55,33 @@ class HomeTestimonials extends Component {
     };
     return (
       <div className="home-testimonials">
-        <h4>Testimonials</h4>
-        <h4>what they are saying</h4>
-        <p>
-          Feel free to read about the comments of customers and sellers making
-          use of our platform. And you are also free to write down your comments
-          for our review which we will update at the appropriate time.
-        </p>
-        <Slider ref={(c) => (this.slider = c)} {...settings}>
-          {testimonies.map((testimony) => {
-            console.log(testimony);
-            return (
-              <TestimonyItem key={testimony.id} testimonials={testimony} />
-            );
-          })}
-        </Slider>
-        <div className="r-slick-container" style={{ textAlign: "right" }}>
-          <button className='chev-btn testimony-chev' onClick={this.previous}>
-            <FaChevronLeft className="arrow-icon" />
-          </button>
-          <button className='chev-btn testimony-chev' onClick={this.next}>
-            <FaChevronRight className="arrow-icon" />
-          </button>
+        <div className="home-testimonials-head">
+          <h4 className="testimonials-small-font">Testimonials</h4>
+          <h4 className="testimonials-medium-font">what they are saying</h4>
+          <p>
+            Feel free to read about the comments of customers and sellers making
+            use of our platform. And you are also free to write down your
+            comments for our review which we will update at the appropriate
+            time.
+          </p>
+        </div>
+        <div className="home-slider-container">
+          <Slider ref={(c) => (this.slider = c)} {...settings}>
+            {testimonies.map((testimony) => {
+              console.log(testimony);
+              return (
+                <TestimonyItem key={testimony.id} testimonials={testimony} />
+              );
+            })}
+          </Slider>
+          <div className="slick-btn-container" style={{ textAlign: "right" }}>
+            <button className="chev-btn testimony-chev" onClick={this.previous}>
+              <FaChevronLeft className="arrow-icon" />
+            </button>
+            <button className="chev-btn testimony-chev" onClick={this.next}>
+              <FaChevronRight className="arrow-icon" />
+            </button>
+          </div>
         </div>
       </div>
     );
