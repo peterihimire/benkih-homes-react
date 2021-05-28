@@ -1,8 +1,8 @@
 import imgProperty from "../src/assets/property-1.jpg";
 
-let SCAPE;
+let PROPERTY;
 
-SCAPE = [
+PROPERTY = [
   {
     id: 1,
     name: "3 Bedroom Bungalow",
@@ -19,7 +19,7 @@ SCAPE = [
     amount: 50,
     bathrooms: 2,
     bedrooms: 4,
-    location: "Ikeja lagos",
+    location: "Ikeja",
     description: "Find our taxis near you for affordable interstate transports",
     image: imgProperty,
   },
@@ -29,7 +29,7 @@ SCAPE = [
     amount: 50,
     bathrooms: 2,
     bedrooms: 4,
-    location: "Ikeja lagos",
+    location: "Ikeja",
     description: "Find our taxis near you for affordable interstate transports",
     image: imgProperty,
   },
@@ -49,7 +49,7 @@ SCAPE = [
     amount: 50,
     bathrooms: 2,
     bedrooms: 4,
-    location: "Ikoyi lagos",
+    location: "Ikoyi",
     description: "Find our taxis near you for affordable interstate transports",
     image: imgProperty,
   },
@@ -59,7 +59,7 @@ SCAPE = [
     amount: 50,
     bathrooms: 2,
     bedrooms: 4,
-    location: "Lekki lagos",
+    location: "Lekki",
     description: "Find our taxis near you for affordable interstate transports",
     image: imgProperty,
   },
@@ -69,7 +69,7 @@ SCAPE = [
     amount: 50,
     bathrooms: 2,
     bedrooms: 4,
-    location: "Ikoyi lagos",
+    location: "Ikoyi",
     description: "Find our taxis near you for affordable interstate transports",
     image: imgProperty,
   },
@@ -79,10 +79,10 @@ SCAPE = [
     amount: 50,
     bathrooms: 2,
     bedrooms: 4,
-    location: "lekki lagos",
+    location: "lekki",
     description: "Find our taxis near you for affordable interstate transports",
     image: imgProperty,
   },
 ];
 
-export default SCAPE;
+export default PROPERTY;

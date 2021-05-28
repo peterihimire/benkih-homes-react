@@ -7,12 +7,12 @@ const TestimonyItem = (props) => {
   const { testimonials } = props;
   console.log(testimonials);
   return (
-    <Card>
+    <Card className="testimonials-card">
       <div className="testimonials-content">
         <div className="testimonials-img">
           <img src={testimonials.image} alt="people" />
         </div>
-        <div>
+        <div className="testimonials-content-text">
           <p>{testimonials.testimony}</p>
           <div className="testimonials-b">
             <b>{testimonials.name}</b>
