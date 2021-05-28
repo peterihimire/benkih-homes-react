@@ -6,6 +6,7 @@ import HomeAbout from "../../properties/components/HomeAbout";
 import HomeRecent from "../../properties/components/HomeRecent";
 import HomeHow from "../../properties/components/HomeHow";
 import HomeTestimonials from "../../properties/components/HomeTestimonials";
+import HomePopularCities from "../../properties/components/HomePopularCities";
 
 const HomePage = () => {
   return (
@@ -19,6 +20,7 @@ const HomePage = () => {
             <HomeRecent />
             <HomeHow />
             <HomeTestimonials />
+            <HomePopularCities />
           </div>
         </div>
       </div>

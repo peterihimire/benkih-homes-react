@@ -79,7 +79,7 @@ PROPERTY = [
     amount: 50,
     bathrooms: 2,
     bedrooms: 4,
-    location: "lekki",
+    location: "Lekki",
     description: "Find our taxis near you for affordable interstate transports",
     image: imgProperty,
   },
