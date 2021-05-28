@@ -1,0 +1,11 @@
+.home-popular-container{
+  display: flex;
+  /* padding: 1rem; */
+  /* justify-content: space-between; */
+  /* flex-wrap: wrap; */
+}
+
+
+.home-popular-img img{
+  width: 300px;
+}
