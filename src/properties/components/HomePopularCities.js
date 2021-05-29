@@ -33,7 +33,10 @@ const HomePopularCities = () => {
 
   return (
     <div className="home-popular-cities">
-      <h4>HomePopularCities compoent</h4>
+      <div className="home-popular-head">
+        <h4>Popular Cities</h4>
+      </div>
+
       <div className="home-popular-container">
         <div className="home-popular-item">
           <div className="home-popular-img">

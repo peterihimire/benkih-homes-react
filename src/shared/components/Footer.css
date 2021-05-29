@@ -2,3 +2,38 @@ footer {
   background-color: #eaeff3;
   color: var(--main-black);
 }
+footer .footer-logo {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  top: 20px;
+
+  font-size: 2rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: var(--primary-color) !important;
+}
+.upper-footer {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  /* flex-wrap: wrap; */
+  /* right: 20px; */
+}
+.upper-footer ul {
+  display: flex;
+}
+.upper-footer li {
+  list-style: none;
+  padding: 0 0 0 4rem;
+}
+.lower-footer {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}

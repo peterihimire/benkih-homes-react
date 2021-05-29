@@ -1,3 +1,7 @@
+.home-popular-cities {
+  padding: 4rem 0;
+}
+
 .home-popular-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -5,7 +9,14 @@
   grid-column-gap: 4rem;
   padding: 0 0 4rem 0;
 }
-
+.home-popular-head {
+  display: flex;
+  justify-content: center;
+  font-size: var(--medium-font);
+  text-transform: uppercase;
+  color: var(--dark-grey);
+  margin: 0 0 3rem 0;
+}
 .home-popular-img img {
   width: 100%;
 }
@@ -27,6 +38,7 @@
 }
 .home-popular-title h4 {
   font-size: var(--medium-font);
+  /* margin: 0 0 5rem 0; */
 }
 .home-popular-overlay {
   /* display: block; */
