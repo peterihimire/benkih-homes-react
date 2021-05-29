@@ -37,9 +37,10 @@ const HomePopularCities = () => {
       <div className="home-popular-container">
         <div className="home-popular-item">
           <div className="home-popular-img">
+            <div className="home-popular-overlay"></div>
             <img src={property3} alt="home" />
           </div>
-          <div>
+          <div className="home-popular-title">
             <h4>Lekki</h4>
             <p>
               {lekkiProperty.length} <span>Properties Listed</span>
@@ -48,9 +49,10 @@ const HomePopularCities = () => {
         </div>
         <div className="home-popular-item">
           <div className="home-popular-img">
+            <div className="home-popular-overlay"></div>
             <img src={property4} alt="home" />
           </div>
-          <div>
+          <div className="home-popular-title">
             <h4>Abuja</h4>
             <p>
               {abujaProperty.length} <span>Properties Listed</span>
@@ -59,9 +61,10 @@ const HomePopularCities = () => {
         </div>
         <div className="home-popular-item">
           <div className="home-popular-img">
+            <div className="home-popular-overlay"></div>
             <img src={property5} alt="home" />
           </div>
-          <div>
+          <div className="home-popular-title">
             <h4>Ikoyi</h4>
             <p>
               {ikoyiProperty.length} <span>Properties Listed</span>
@@ -70,9 +73,10 @@ const HomePopularCities = () => {
         </div>
         <div className="home-popular-item">
           <div className="home-popular-img">
+            <div className="home-popular-overlay"></div>
             <img src={property9} alt="home" />
           </div>
-          <div>
+          <div className="home-popular-title">
             <h4>Ikeja</h4>
             <p>
               {ikejaProperty.length} <span>Properties Listed</span>
