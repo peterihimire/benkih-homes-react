@@ -1,0 +1,54 @@
+.about-banner {
+  position: relative !important;
+  height: 40vh;
+  min-height: 300px;
+  padding-top: 0;
+  background-color: red;
+  background: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.604),
+      rgba(0, 0, 0, 0.604)
+    ),
+    url("../../assets/home-img.jpg") center/cover no-repeat;
+  padding: 0 2rem;
+  color: var(--main-white);
+}
+/* FOR VERTICAL CENTERING OF CONTENT */
+.about-banner-content {
+  height: 40vh;
+  position: relative;
+}
+.about-banner-left {
+  width: 300px;
+  position: absolute;
+  top: 30%;
+}
+.about-banner-left h1 {
+  font-size: 3.5rem;
+}
+.about-banner-left p {
+  padding: 1rem 0 2rem 0;
+}
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .about-banner-left {
+    width: 700px;
+    position: absolute;
+    top: 35%;
+  }
+}
+/* LAPTOP */
+@media (min-width: 993px) {
+  .about-banner-container {
+    max-width: 117rem;
+    margin: 0 auto;
+  }
+  .about-banner-left {
+    width: 700px;
+    position: absolute;
+    top: 35%;
+  }
+  .about-banner-left h1 {
+    font-size: var(--large-font);
+  }
+}
