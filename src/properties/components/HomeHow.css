@@ -10,11 +10,11 @@
   text-transform: capitalize;
 }
 .home-how-content-logo {
-  display: flex;
-  flex-direction: column;
-  padding: 0 0rem;
   margin: 4rem 0 0 0;
-  /* margin: 0 auto; */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-row-gap: 3rem;
+  grid-column-gap: 3rem;
 }
 .home-how-content {
   display: flex;
@@ -61,7 +61,6 @@
   }
   .home-how-text {
     margin: 2rem 0 0 0;
-    width: 400px;
   }
 }
 /* LAPTOP */
@@ -71,17 +70,5 @@
   }
   .home-how-text {
     margin: 2rem 0 0 0;
-    width: 100%;
-  }
-  .home-how-content-logo {
-    /* display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-row-gap: 3rem;
-    grid-column-gap: 3rem; */
-    display: flex;
-    flex-direction: row;
-    padding: 0 0rem;
-    margin: 4rem 0 0 0;
-    /* margin: 0 auto; */
   }
 }
