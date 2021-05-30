@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../../shared/components/Footer";
 import Navbar from "../../shared/components/Navigation/Navbar";
 import AboutBanner from "../../shared/components/AboutBanner";
+import AboutBlock from "../../properties/components/AboutBlock";
 
 const AboutPage = () => {
   return (
@@ -10,7 +11,9 @@ const AboutPage = () => {
         <Navbar />
         <AboutBanner />
         <div className="main-content">
-          <div className="main-content-container"></div>
+          <div className="main-content-container">
+            <AboutBlock />
+          </div>
         </div>
       </div>
       <Footer />

@@ -32,7 +32,7 @@
 /* TABLET */
 @media screen and (min-width: 768px) {
   .about-banner-left {
-    width: 700px;
+    width: 500px;
     position: absolute;
     top: 35%;
   }
