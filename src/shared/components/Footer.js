@@ -12,11 +12,18 @@ const Footer = () => {
           <li>about us</li>
           <li>contact us</li>
           <li>faqs</li>
-          <li>terms of service & privacy policy</li>
+          <li>terms of service</li>
+          <li>privacy policy</li>
         </ul>
       </div>
       <div className="lower-footer">
-        <p>copyright &copy; of bnk-homes 2021</p>
+        <p>
+          copyright &copy; of
+          <span>
+            <b> bnk-homes </b>
+          </span>
+          2021
+        </p>
       </div>
     </footer>
   );
