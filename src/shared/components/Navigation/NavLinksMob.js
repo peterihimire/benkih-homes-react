@@ -42,7 +42,7 @@ const NavLinksMob = () => {
             about
           </NavLink>
         </li>
-        <li className="side-navbar-item side-navbar-payment">
+        <li className="side-navbar-item ">
           <NavLink
             activeClassName="active"
             className="navbar-single-link"

@@ -56,8 +56,8 @@ const PropertySlide = () => {
               <ItemsCarousel
                 requestToChangeActive={setActiveItemIndex}
                 activeItemIndex={activeItemIndex}
-                numberOfCards={3.1}
-                gutter={10}
+                numberOfCards={3}
+                gutter={20}
                 freeScrolling={true}
                 outsideChevron={true}
                 chevronWidth={chevronWidth}
