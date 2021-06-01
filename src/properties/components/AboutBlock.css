@@ -76,7 +76,7 @@
   height: 200px;
   width: 136px;
   position: absolute;
-  left: 40px;
+  left: 31px;
   border-radius: 5px;
 }
 .about-team-grid {
@@ -101,7 +101,7 @@
 .team-image-text {
   position: absolute;
   top: 20px;
-  left: 60px;
+  left: 51px;
 }
 
 /* TABLET */
