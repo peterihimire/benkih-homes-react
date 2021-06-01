@@ -71,6 +71,39 @@
   left: 0;
   border-bottom: 3px solid var(--primary-color);
 }
+.blank-dark-bg {
+  background-color: var(--dark-grey);
+  height: 200px;
+  width: 136px;
+  position: absolute;
+  left: 40px;
+  border-radius: 5px;
+}
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
+  margin: 4rem 0;
+}
+.about-team-image {
+  position: relative;
+  height: 266px;
+  width: 100%;
+  
+  /* width: 196px; */
+  /* background-color: salmon; */
+}
+.about-team-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+.team-image-text {
+  position: absolute;
+  top: 20px;
+  left: 60px;
+}
+
 /* TABLET */
 @media screen and (min-width: 768px) {
   .about-word-block {

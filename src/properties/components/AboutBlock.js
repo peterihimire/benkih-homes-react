@@ -1,5 +1,6 @@
 import React from "react";
 import "./AboutBlock.css";
+import profIcon from "../../assets/profile.png";
 
 const AboutBlock = () => {
   return (
@@ -38,13 +39,51 @@ const AboutBlock = () => {
 
         <div className="about-team-grid">
           <div className="about-team-image">
-            <div></div>
-            <div className="">
-              <img src="" alt="person" />
+            <div className="blank-dark-bg"></div>
+            <div className="team-image-text">
+              <div className="team-img">
+                <img src={profIcon} alt="person" />
+              </div>
+              <div className="about-team-text">
+                <h4>eromosele ihimire</h4>
+                <p>sales manager</p>
+              </div>
             </div>
-            <div className="about-team-text">
-              <h4>eromosele ihimire</h4>
-              <p>sales manager</p>
+          </div>
+          <div className="about-team-image">
+            <div className="blank-dark-bg"></div>
+            <div className="team-image-text">
+              <div className="team-img">
+                <img src={profIcon} alt="person" />
+              </div>
+              <div className="about-team-text">
+                <h4>eromosele ihimire</h4>
+                <p>sales manager</p>
+              </div>
+            </div>
+          </div>
+          <div className="about-team-image">
+            <div className="blank-dark-bg"></div>
+            <div className="team-image-text">
+              <div className="team-img">
+                <img src={profIcon} alt="person" />
+              </div>
+              <div className="about-team-text">
+                <h4>eromosele ihimire</h4>
+                <p>sales manager</p>
+              </div>
+            </div>
+          </div>
+          <div className="about-team-image">
+            <div className="blank-dark-bg"></div>
+            <div className="team-image-text">
+              <div className="team-img">
+                <img src={profIcon} alt="person" />
+              </div>
+              <div className="about-team-text">
+                <h4>eromosele ihimire</h4>
+                <p>sales manager</p>
+              </div>
             </div>
           </div>
         </div>
