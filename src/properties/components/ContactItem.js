@@ -62,7 +62,30 @@ const ContactItem = () => {
         </div>
       </div>
       <aside className="contact-right">
-        <h4>Right content</h4>
+        <div className="contact-form-container">
+          <h4>Send us a Note</h4>
+          <p>
+            We welcome your feedback and question to get in touch with us,
+            please fill out the information below.
+          </p>
+          <form>
+            <div className="">
+              <input type="text" placeholder="Full Name" />
+            </div>
+            <div className="">
+              <input type="email" placeholder="Email" />
+            </div>
+            <div className="">
+              <input type="text" placeholder="Subject" />
+            </div>
+            <div className="">
+              <textarea placeholder="Message"></textarea>
+            </div>
+            <button type="submit" className="btn">
+              Submit
+            </button>
+          </form>
+        </div>
       </aside>
     </div>
   );
