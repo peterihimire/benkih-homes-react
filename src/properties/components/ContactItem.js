@@ -8,10 +8,10 @@ const ContactItem = () => {
       <div className="contact-left">
         <div className="contact-resource-container">
           <div className="contact-resource-title">
-            <p>
+            <h4>
               Our professional resource centers were designed to answer many of
               your questions.
-            </p>
+            </h4>
           </div>
           <div className="contact-resource">
             <div className="estate-resource">
@@ -46,18 +46,20 @@ const ContactItem = () => {
           </div>
           <div className="customer-resource-text">
             <h4>customer service contact information:</h4>
-            <p>
-              estate.com : (+234) 813-864-7368 <br />
-              customercare@estate.com
-            </p>
-            <p>
-              new homes : (+234) 813-864-7368 <br />
-              newhomes@estate.com
-            </p>
-            <p>
-              rentals : (+234) 813-864-7368 <br />
-              estaterentals@estate.com
-            </p>
+            <div className="customer-resource-contacts">
+              <p>
+                estate.com : <br /> (+234) 813-864-7368 <br />
+                customercare@estate.com
+              </p>
+              <p>
+                new homes : <br /> (+234) 813-864-7368 <br />
+                newhomes@estate.com
+              </p>
+              <p>
+                rentals : <br /> (+234) 813-864-7368 <br />
+                estaterentals@estate.com
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -68,7 +70,7 @@ const ContactItem = () => {
             We welcome your feedback and question to get in touch with us,
             please fill out the information below.
           </p>
-          <form>
+          <form className="contact-form">
             <div className="">
               <input type="text" placeholder="Full Name" />
             </div>

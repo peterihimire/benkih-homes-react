@@ -8,7 +8,7 @@
 }
 .contact-resource-container {
   border: 3px solid var(--main-grey);
-  padding: 4rem;
+  padding: 2rem;
   margin: 0 0 1.5rem 0;
   border-radius: 5px;
 }
@@ -27,12 +27,23 @@
 }
 .customer-resource-container {
   border: 3px solid var(--main-grey);
-  padding: 4rem;
+  padding: 2rem;
   border-radius: 5px;
   display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+.contact-resource-title{
+  margin: 0 0 2rem  0;
+}
+.contact-resource-title h4{
+  text-align: center;
 }
 .customer-resource-text {
-  margin: 0 0 0 3rem;
+  margin: 0 0 0 0rem;
+  width: 100%;
+  text-align: center;
 }
 .home-resource-icon {
   font-size: 13rem;
@@ -43,9 +54,16 @@
 }
 .contact-form-container {
   border: 3px solid var(--main-grey);
-  padding: 4rem;
+  padding: 2rem;
   margin: 0 0 1.5rem 0;
   border-radius: 5px;
+  width: 100%;
+}
+.customer-resource-contacts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
 }
 /* TABLET */
 @media screen and (min-width: 768px) {
@@ -55,13 +73,57 @@
     grid-row-gap: 2rem;
     grid-column-gap: 1.5rem; */
   }
+  .customer-resource-container {
+    border: 3px solid var(--main-grey);
+    padding: 2rem;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+  }
+  .customer-resource-text {
+    margin: 0 0 0 2rem;
+    width: 100%;
+  }
+  .customer-resource-text h4{
+margin: 0 0 2rem 0;
+  }
+  .customer-resource-contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    /* USED IT TO BREAK OVERFLOWING WORDS */
+    overflow-wrap: break-word;
+    grid-row-gap: 2rem;
+    grid-column-gap: 2rem;
+  }
+  .contact-form-container {
+    border: 3px solid var(--main-grey);
+    padding: 2rem;
+    margin: 0 0 1.5rem 0;
+    border-radius: 5px;
+    width: 50%;
+  }
 }
 /* LAPTOP */
 @media (min-width: 993px) {
   .contact-container {
     display: grid;
-    grid-template-columns: 63.5% 35%;
+    grid-template-columns: 73.5% 25%;
     grid-row-gap: 2rem;
     grid-column-gap: 1.5rem;
+  }
+  .contact-form-container {
+    border: 3px solid var(--main-grey);
+    padding: 2rem;
+    margin: 0 0 1.5rem 0;
+    border-radius: 5px;
+    width: 100%;
+  }
+  .customer-resource-contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* USED IT TO BREAK OVERFLOWING WORDS */
+    overflow-wrap: break-word;
+    grid-row-gap: 2rem;
+    grid-column-gap: 2rem;
   }
 }
