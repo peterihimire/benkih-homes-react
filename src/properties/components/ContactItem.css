@@ -34,10 +34,10 @@
   /* justify-content: center; */
   align-items: center;
 }
-.contact-resource-title{
-  margin: 0 0 2rem  0;
+.contact-resource-title {
+  margin: 0 0 2rem 0;
 }
-.contact-resource-title h4{
+.contact-resource-title h4 {
   text-align: center;
 }
 .customer-resource-text {
@@ -65,6 +65,22 @@
   grid-row-gap: 2rem;
   grid-column-gap: 2rem;
 }
+/* FOR THE FORM */
+.form-group {
+  margin: 15px 0;
+}
+
+.form-field {
+  height: 35px;
+  /* font-size: 22px; */
+  width: 100%;
+}
+.form-field-textarea {
+  /* font-size: 22px; */
+  width: 100%;
+  resize: none;
+}
+/* END OF FORM */
 /* TABLET */
 @media screen and (min-width: 768px) {
   .contact-container {
@@ -84,8 +100,8 @@
     margin: 0 0 0 2rem;
     width: 100%;
   }
-  .customer-resource-text h4{
-margin: 0 0 2rem 0;
+  .customer-resource-text h4 {
+    margin: 0 0 2rem 0;
   }
   .customer-resource-contacts {
     display: grid;
