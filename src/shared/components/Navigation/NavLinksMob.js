@@ -61,9 +61,10 @@ const NavLinksMob = () => {
           </NavLink>
         </li>
       </ul>
-      <button className="btn btn-side-navbar">
-        <Link to="sign-up">get started</Link>
-      </button>
+
+      <Link to="/register">
+        <button className="btn btn-side-navbar">get started</button>
+      </Link>
     </div>
   );
 };

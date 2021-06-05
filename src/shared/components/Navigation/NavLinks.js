@@ -92,9 +92,9 @@ const NavLinks = (props) => {
           </NavLink>
         </div>
         <div className="navbar-links-getstarted">
-          <button className="btn ">
-            <Link to="/signup">register</Link>
-          </button>
+          <Link to="/register">
+            <button className="btn">register</button>
+          </Link>
         </div>
       </div>
     </div>

@@ -1,0 +1,27 @@
+.auth-item {
+  display: flex;
+}
+.login-bg-div {
+  height: 100vh !important;
+  /* width: 100%; */
+  /* width: 40vw !important; */
+
+  flex-basis: 40%;
+  flex-grow: 0;
+  overflow: hidden;
+}
+.login-bg-div img {
+  height: 100% !important;
+  /* width: 100% !important; */
+  /* width: 40vw !important; */
+}
+.login-form {
+  flex-basis: 60%;
+  flex-grow: 0;
+  padding: 10rem;
+}
+/* background-image: url("../../assets/full-property.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh; */
