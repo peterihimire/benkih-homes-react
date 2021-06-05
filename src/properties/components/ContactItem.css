@@ -1,15 +1,15 @@
 .contact-left {
-  padding: 4rem 0;
+  padding: 4rem 0 0 0;
   /* background-color: salmon; */
 }
 .contact-right {
-  padding: 4rem 0;
+  padding: 1.5rem 0 4rem 0;
   /* background-color: seagreen; */
 }
 .contact-resource-container {
   border: 3px solid var(--main-grey);
   padding: 2rem;
-  margin: 0 0 1.5rem 0;
+  margin: 0 0 0 0;
   border-radius: 5px;
 }
 .contact-resource {
@@ -31,7 +31,7 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
+  margin: 0 0 1.5rem 0;
   align-items: center;
 }
 .contact-resource-title {
@@ -65,24 +65,54 @@
   grid-row-gap: 2rem;
   grid-column-gap: 2rem;
 }
+
 /* FOR THE FORM */
 .form-group {
   margin: 15px 0;
 }
-
 .form-field {
   height: 35px;
-  /* font-size: 22px; */
   width: 100%;
 }
+input {
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--sec-grey);
+  border: none;
+}
+textarea {
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--sec-grey);
+  border: none;
+}
+input::placeholder {
+  font-weight: lighter;
+  /* color: var(--main-grey); */
+}
+textarea::placeholder {
+  font-weight: lighter;
+  /* color: var(--main-grey); */
+}
+
 .form-field-textarea {
-  /* font-size: 22px; */
   width: 100%;
   resize: none;
 }
 /* END OF FORM */
+
 /* TABLET */
 @media screen and (min-width: 768px) {
+  .contact-left {
+    padding: 4rem 0 0 0;
+    /* background-color: salmon; */
+  }
+  .contact-right {
+    padding: 1.5rem 0 4rem 0;
+    /* background-color: seagreen; */
+  }
   .contact-container {
     /* display: grid;
     grid-template-columns: 63.5% 35%;
@@ -121,6 +151,14 @@
 }
 /* LAPTOP */
 @media (min-width: 993px) {
+  .contact-left {
+    padding: 4rem 0;
+    /* background-color: salmon; */
+  }
+  .contact-right {
+    padding: 4rem 0;
+    /* background-color: seagreen; */
+  }
   .contact-container {
     display: grid;
     grid-template-columns: 73.5% 25%;
