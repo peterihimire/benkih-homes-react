@@ -5,7 +5,7 @@ import homeBg from "../../assets/full-modal.svg";
 const LoginItem = () => {
   return (
     <div className="auth-item">
-      <div className="login-bg-div">
+      <div className="login-bg-div hidden-xs">
         <img src={homeBg} alt="home" />
       </div>
       <div className="login-form">
