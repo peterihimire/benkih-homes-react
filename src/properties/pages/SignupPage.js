@@ -26,7 +26,7 @@ const SignupPage = (props) => {
               <input
                 name="name"
                 type="text"
-                placeholder="Username"
+                placeholder="Full Name"
                 className="form-field"
                 id="name"
                 value=""

@@ -45,6 +45,11 @@
   text-decoration: none;
   color: var(--primary-color);
 }
+.forgot-password-div{
+  margin: 0 0 2rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
 /***** TABLET *****/
 @media screen and (min-width: 768px) {
   .login-bg-div {

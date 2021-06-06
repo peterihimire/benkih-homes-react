@@ -29,17 +29,6 @@ const LoginPage = (props) => {
           <form>
             <div className="form-group">
               <input
-                name="name"
-                type="text"
-                placeholder="Full Name"
-                className="form-field"
-                id="name"
-                value=""
-                onChange={(e) => console.log(e)}
-              />
-            </div>
-            <div className="form-group">
-              <input
                 name="email"
                 type="email"
                 placeholder="Email"
@@ -48,6 +37,26 @@ const LoginPage = (props) => {
                 id="email"
                 onChange={(e) => console.log(e)}
               />
+            </div>
+            <div className="form-group">
+              <input
+                name="password"
+                type="password"
+                placeholder="Password"
+                className="form-field"
+                id="password"
+                value=""
+                onChange={(e) => console.log(e)}
+              />
+            </div>
+            <div className="forgot-password-div">
+              <p>
+                <span>
+                  <Link to="/forgot-password" className="alt-auth">
+                    <b> Forgot your password ?</b>
+                  </Link>
+                </span>
+              </p>
             </div>
             <button type="submit" className="btn btn-full">
               Login
