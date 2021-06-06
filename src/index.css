@@ -213,9 +213,9 @@ p {
     display: none;
     /* visibility: hidden; */
   }
-  /* .hidden-xs {
+  .hidden-xs {
     display: none !important;
-  } */
+  }
   .visible-xl {
     display: block !important;
   }

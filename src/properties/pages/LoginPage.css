@@ -18,7 +18,7 @@
   height: 100vh;
   margin: 0 auto;
 }
-.login-form-content{
+.login-form-content {
   position: absolute;
   padding: 0 2rem;
   top: 30vh;
@@ -26,6 +26,11 @@
 /***** END OF VERTICAL *****/
 .btn-full {
   width: 100%;
+}
+.back-btn {
+  border: none;
+  background-color: transparent;
+  outline: none !important;
 }
 /***** TABLET *****/
 @media screen and (min-width: 768px) {
@@ -45,7 +50,7 @@
     height: 100vh;
     margin: 0 auto;
   }
-  .login-form-content{
+  .login-form-content {
     position: absolute;
     padding: 0 5rem;
     top: 30vh;
@@ -74,7 +79,7 @@
     height: 100vh;
     margin: 0 auto;
   }
-  .login-form-content{
+  .login-form-content {
     position: absolute;
     top: 30vh;
   }
