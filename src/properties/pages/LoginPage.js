@@ -7,10 +7,30 @@ import { FaArrowLeft } from "react-icons/fa";
 
 const LoginPage = (props) => {
   console.log(props);
+  // const ValidationMessage = (props) => {
+  //   if (!props.valid) {
+  //     return <div className="error-msg">{props.message}</div>;
+  //   }
+  //   return null;
+  // };
+
+  // const [email, setEmail] = React.useState("");
+  // const [emailValid, setEmailValid] = React.useState(false);
+  // const [password, setPassword] = React.useState("");
+  // const [passwordValid, setPasswordValid] = React.useState(false);
+  // const [formValid, setFormValid] = React.useState(false);
+  // const [errorMsg, setErrorMsg] = React.useState({});
+  // const [isLoading, setIsLoading] = React.useState(false);
+  // const [error, setError] = React.useState(null);
+
+  // const validateForm = () => {
+  //   setFormValid(() => {
+
+  //   })
+  // }
+
   return (
-    // <div>
-    //   <LoginItem />
-    // </div>
+   
     <div className="auth-item">
       <div className="login-bg-div hidden-xs visible-md visible-xl">
         <img src={homeBg} alt="home" />

@@ -71,9 +71,9 @@ const NavLinks = (props) => {
                 ? "navbar-single-link navbar-single-color"
                 : "navbar-single-link"
             }
-            to="/make-payment"
+            to="/property/new"
           >
-            make a payment
+            add property
           </NavLink>
         </li>
       </ul>

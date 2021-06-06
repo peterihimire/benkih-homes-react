@@ -46,9 +46,9 @@ const NavLinksMob = () => {
           <NavLink
             activeClassName="active"
             className="navbar-single-link"
-            to="/make-payment"
+            to="/property/new"
           >
-            make a payment
+            add property
           </NavLink>
         </li>
         <li className="side-navbar-item">
