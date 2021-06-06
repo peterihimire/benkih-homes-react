@@ -58,10 +58,11 @@
   --line-height: 1.4;
 
   --large-font: 5rem;
+  --medium-large: 4rem;
   --medium-font: 2.5rem;
   --small-font: 2rem;
   --xsmall-font: 1.5rem;
-  
+
   --main-shadow: 1px 4px 4px rgba(0, 0, 0, 0.04);
 
   --font: "lato", sans-serif;

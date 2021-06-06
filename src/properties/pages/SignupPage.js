@@ -57,12 +57,12 @@ const SignupPage = (props) => {
             </div>
             <div className="form-group">
               <input
-                name="password"
-                type="password"
+                name="confirm-password"
+                type="confirm-password"
                 placeholder="Confirm password"
                 className="form-field"
                 value=""
-                id="password"
+                id="confirm-password"
                 onChange={(e) => console.log(e)}
               />
             </div>

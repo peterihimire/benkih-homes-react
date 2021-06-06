@@ -10,6 +10,9 @@
 .login-bg-div img {
   height: 100% !important;
 }
+.heading h2 {
+  font-size: var(--medium-font);
+}
 /***** VEERTICAL CENTERING *****/
 .login-form {
   flex-basis: 100%;
@@ -22,6 +25,7 @@
   position: absolute;
   padding: 0 2rem;
   top: 20vh;
+  width: 100%;
 }
 /***** END OF VERTICAL *****/
 .btn-full {
@@ -38,14 +42,14 @@
 .arrow-back-icon {
   font-size: 2rem;
 }
-.alt-auth-div{
+.alt-auth-div {
   margin: 3rem 0 0 0;
 }
-.alt-auth{
+.alt-auth {
   text-decoration: none;
   color: var(--primary-color);
 }
-.forgot-password-div{
+.forgot-password-div {
   margin: 0 0 2rem 0;
   display: flex;
   justify-content: flex-end;
@@ -72,6 +76,10 @@
     position: absolute;
     padding: 0 5rem;
     top: 25vh;
+    width: 100%;
+  }
+  .heading h2 {
+    font-size: var(--medium-large);
   }
 }
 /***** LAPTOP *****/
@@ -102,10 +110,10 @@
     padding: 0 10rem;
     top: 25vh;
     margin: 0 auto;
+    width: 100%;
   }
-  .auth-item .login-form {
-    /* max-width: 600px !important;
-    margin: 0 auto; */
+  .heading h2 {
+    font-size: var(--large-font);
   }
 }
 /* background-image: url("../../assets/full-property.jpg");
