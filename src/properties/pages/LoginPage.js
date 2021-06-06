@@ -2,6 +2,7 @@ import React from "react";
 // import LoginItem from "../../properties/components/LoginItem";
 import "./LoginPage.css";
 import homeBg from "../../assets/full-modal.svg";
+import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 const LoginPage = (props) => {
@@ -17,7 +18,7 @@ const LoginPage = (props) => {
       <div className="login-form">
         <div className="login-form-content">
           <div className="back-arrow">
-            <button className='back-btn' onClick={() => props.history.goBack()}>
+            <button className="back-btn" onClick={() => props.history.goBack()}>
               <FaArrowLeft className="arrow-back-icon" />
             </button>
           </div>
@@ -51,6 +52,16 @@ const LoginPage = (props) => {
             <button type="submit" className="btn btn-full">
               Login
             </button>
+            <div className="alt-auth-div">
+              <p>
+                Don't have an account ?
+                <span>
+                  <Link to="/register" className="alt-auth">
+                    <b> Sign Up</b>
+                  </Link>
+                </span>
+              </p>
+            </div>
           </form>
         </div>
       </div>

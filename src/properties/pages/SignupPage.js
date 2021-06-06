@@ -1,5 +1,6 @@
 import React from "react";
 import "./LoginPage.css";
+import { Link } from "react-router-dom";
 import homeBg from "../../assets/full-modal.svg";
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -66,8 +67,18 @@ const SignupPage = (props) => {
               />
             </div>
             <button type="submit" className="btn btn-full">
-              Login
+              SignUp
             </button>
+            <div className="alt-auth-div">
+              <p>
+                Already have an account ?
+                <span>
+                  <Link to="/login" className="alt-auth">
+                    <b> Sign In</b>
+                  </Link>
+                </span>
+              </p>
+            </div>
           </form>
         </div>
       </div>

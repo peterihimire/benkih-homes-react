@@ -21,7 +21,7 @@
 .login-form-content {
   position: absolute;
   padding: 0 2rem;
-  top: 30vh;
+  top: 20vh;
 }
 /***** END OF VERTICAL *****/
 .btn-full {
@@ -37,6 +37,13 @@
 }
 .arrow-back-icon {
   font-size: 2rem;
+}
+.alt-auth-div{
+  margin: 3rem 0 0 0;
+}
+.alt-auth{
+  text-decoration: none;
+  color: var(--primary-color);
 }
 /***** TABLET *****/
 @media screen and (min-width: 768px) {
@@ -59,7 +66,7 @@
   .login-form-content {
     position: absolute;
     padding: 0 5rem;
-    top: 30vh;
+    top: 25vh;
   }
 }
 /***** LAPTOP *****/
@@ -80,18 +87,20 @@
   .login-form {
     flex-basis: 60%;
     flex-grow: 0;
-    padding: 0 0rem;
     position: relative;
     height: 100vh;
     margin: 0 auto;
+    max-width: 600px;
   }
   .login-form-content {
     position: absolute;
-    top: 30vh;
+    padding: 0 10rem;
+    top: 25vh;
+    margin: 0 auto;
   }
   .auth-item .login-form {
-    max-width: 500px !important;
-    margin: 0 auto;
+    /* max-width: 600px !important;
+    margin: 0 auto; */
   }
 }
 /* background-image: url("../../assets/full-property.jpg");
