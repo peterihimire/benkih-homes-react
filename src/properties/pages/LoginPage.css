@@ -32,6 +32,12 @@
   background-color: transparent;
   outline: none !important;
 }
+.back-arrow {
+  margin: 0 0 3rem 0;
+}
+.arrow-back-icon {
+  font-size: 2rem;
+}
 /***** TABLET *****/
 @media screen and (min-width: 768px) {
   .login-bg-div {

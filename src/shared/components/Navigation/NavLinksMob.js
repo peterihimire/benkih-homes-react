@@ -55,7 +55,7 @@ const NavLinksMob = () => {
           <NavLink
             activeClassName="active"
             className="navbar-single-link"
-            to="/signin"
+            to="/login"
           >
             sign in
           </NavLink>

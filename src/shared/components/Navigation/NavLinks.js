@@ -86,7 +86,7 @@ const NavLinks = (props) => {
                 ? "navbar-single-link navbar-single-color"
                 : "navbar-single-link"
             }
-            to="/signin"
+            to="/login"
           >
             sign in
           </NavLink>

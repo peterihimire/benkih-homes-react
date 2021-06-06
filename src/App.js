@@ -18,7 +18,7 @@ function App() {
         <Route path="/" exact component={HomePage} />
         <Route path="/about" exact component={AboutPage} />
         <Route path="/contact" exact component={ContactPage} />
-        <Route path="/signin" exact component={LoginPage} />
+        <Route path="/login" exact component={LoginPage} />
         <Route path="/register" exact component={SignupPage} />
         <Redirect to="/" />
       </Switch>
