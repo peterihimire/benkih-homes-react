@@ -90,11 +90,11 @@ textarea {
 }
 input::placeholder {
   font-weight: lighter;
-  /* color: var(--main-grey); */
+  color: var(--main-grey);
 }
 textarea::placeholder {
   font-weight: lighter;
-  /* color: var(--main-grey); */
+  color: var(--main-grey);
 }
 
 .form-field-textarea {
@@ -148,6 +148,14 @@ textarea::placeholder {
     border-radius: 5px;
     width: 50%;
   }
+  input::placeholder {
+    font-weight: lighter;
+    color: var(--main-grey);
+  }
+  textarea::placeholder {
+    font-weight: lighter;
+    color: var(--main-grey);
+  }
 }
 /* LAPTOP */
 @media (min-width: 993px) {
@@ -179,5 +187,13 @@ textarea::placeholder {
     overflow-wrap: break-word;
     grid-row-gap: 2rem;
     grid-column-gap: 2rem;
+  }
+  input::placeholder {
+    font-weight: lighter;
+    color: var(--main-grey);
+  }
+  textarea::placeholder {
+    font-weight: lighter;
+    color: var(--main-grey);
   }
 }
