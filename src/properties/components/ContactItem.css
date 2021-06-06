@@ -90,11 +90,11 @@ textarea {
 }
 input::placeholder {
   font-weight: lighter;
-  color: var(--main-grey);
+  /* color: var(--main-grey); */
 }
 textarea::placeholder {
   font-weight: lighter;
-  color: var(--main-grey);
+  /* color: var(--main-grey); */
 }
 
 .form-field-textarea {
@@ -150,11 +150,11 @@ textarea::placeholder {
   }
   input::placeholder {
     font-weight: lighter;
-    color: var(--main-grey);
+    /* color: var(--main-grey); */
   }
   textarea::placeholder {
     font-weight: lighter;
-    color: var(--main-grey);
+    /* color: var(--main-grey); */
   }
 }
 /* LAPTOP */
@@ -190,10 +190,10 @@ textarea::placeholder {
   }
   input::placeholder {
     font-weight: lighter;
-    color: var(--main-grey);
+    /* color: var(--main-grey); */
   }
   textarea::placeholder {
     font-weight: lighter;
-    color: var(--main-grey);
+    /* color: var(--main-grey); */
   }
 }
