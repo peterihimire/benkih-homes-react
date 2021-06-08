@@ -5,31 +5,13 @@ import homeBg from "../../assets/full-modal.svg";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
+function ValidationMessage(props) {
+  if (!props.valid) {
+    return <div className="error-msg">{props.message}</div>;
+  }
+  return null;
+}
 class LoginPage extends Component {
-  // console.log(props);
-
-  // const ValidationMessage = (props) => {
-  //   if (!props.valid) {
-  //     return <div className="error-msg">{props.message}</div>;
-  //   }
-  //   return null;
-  // };
-
-  // const [email, setEmail] = React.useState("");
-  // const [emailValid, setEmailValid] = React.useState(false);
-  // const [password, setPassword] = React.useState("");
-  // const [passwordValid, setPasswordValid] = React.useState(false);
-  // const [formValid, setFormValid] = React.useState(false);
-  // const [errorMsg, setErrorMsg] = React.useState({});
-  // const [isLoading, setIsLoading] = React.useState(false);
-  // const [error, setError] = React.useState(null);
-
-  // const validateForm = () => {
-  //   setFormValid(emailValid && passwordValid);
-  // };
-
-  // const updateEmail = (email) => {};
-
   state = {
     email: "",
     emailValid: false,
@@ -39,6 +21,59 @@ class LoginPage extends Component {
     errorMsg: {},
     loading: false,
     error: null,
+  };
+
+  validateForm = () => {
+    const { emailValid, passwordValid } = this.state;
+    this.setState({
+      formValid: emailValid && passwordValid,
+    });
+  };
+
+  updateEmail = (email) => {
+    this.setState({ email }, this.validateEmail);
+  };
+
+  validateEmail = () => {
+    const { email } = this.state;
+    let emailValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    // checks for format _@_._
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailValid = false;
+      errorMsg.email = "Invalid email format";
+    }
+
+    this.setState({ emailValid, errorMsg }, this.validateForm);
+  };
+
+  updatePassword = (password) => {
+    this.setState({ password }, this.validatePassword);
+  };
+
+  validatePassword = () => {
+    const { password } = this.state;
+    let passwordValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    // must be 6 chars
+    // must contain a number
+    // must contain a special character
+
+    if (password.length < 6) {
+      passwordValid = false;
+      errorMsg.password = "Password must be at least 6 characters long";
+    } else if (!/\d/.test(password)) {
+      passwordValid = false;
+      errorMsg.password = "Password must contain a digit";
+    }
+    // else if (!/[!@#$%^&*]/.test(password)) {
+    //   passwordValid = false;
+    //   errorMsg.password = "Password must contain special character: !@#$%^&*";
+    // }
+
+    this.setState({ passwordValid, errorMsg }, this.validateForm);
   };
 
   render() {
@@ -63,25 +98,33 @@ class LoginPage extends Component {
             </div>
             <form>
               <div className="form-group">
+                <ValidationMessage
+                  valid={this.state.emailValid}
+                  message={this.state.errorMsg.email}
+                />
                 <input
                   name="email"
                   type="email"
                   placeholder="Email"
                   className="form-field"
-                  value=""
+                  value={this.state.email}
                   id="email"
-                  onChange={(e) => console.log(e)}
+                  onChange={(e) => this.updateEmail(e.target.value)}
                 />
               </div>
               <div className="form-group">
+                <ValidationMessage
+                  valid={this.state.passwordValid}
+                  message={this.state.errorMsg.password}
+                />
                 <input
                   name="password"
                   type="password"
                   placeholder="Password"
                   className="form-field"
                   id="password"
-                  value=""
-                  onChange={(e) => console.log(e)}
+                  value={this.state.password}
+                  onChange={(e) => this.updatePassword(e.target.value)}
                 />
               </div>
               <div className="forgot-password-div">
