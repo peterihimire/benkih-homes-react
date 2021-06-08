@@ -11,6 +11,7 @@ function ValidationMessage(props) {
   }
   return null;
 }
+
 class LoginPage extends Component {
   state = {
     email: "",
@@ -23,6 +24,7 @@ class LoginPage extends Component {
     error: null,
   };
 
+  // FOR OVERALL FORM VALIDATION
   validateForm = () => {
     const { emailValid, passwordValid } = this.state;
     this.setState({
@@ -30,6 +32,7 @@ class LoginPage extends Component {
     });
   };
 
+  // FOR EMAIL VALIDATION
   updateEmail = (email) => {
     this.setState({ email }, this.validateEmail);
   };
@@ -39,7 +42,7 @@ class LoginPage extends Component {
     let emailValid = true;
     let errorMsg = { ...this.state.errorMsg };
 
-    // checks for format _@_._
+    // Regex checks for format _@_._
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       emailValid = false;
       errorMsg.email = "Invalid email format";
@@ -48,6 +51,7 @@ class LoginPage extends Component {
     this.setState({ emailValid, errorMsg }, this.validateForm);
   };
 
+  // FOR PASSWORD VALIDATION
   updatePassword = (password) => {
     this.setState({ password }, this.validatePassword);
   };
