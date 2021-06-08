@@ -157,36 +157,48 @@ class SignupPage extends Component {
                 />
               </div>
               <div className="form-group">
+                <ValidationMessage
+                  valid={this.state.emailValid}
+                  message={this.state.errorMsg.email}
+                />
                 <input
                   name="email"
                   type="email"
                   placeholder="Email Address"
                   className="form-field"
-                  value=""
                   id="email"
-                  onChange={(e) => console.log(e)}
+                  value={this.state.email}
+                  onChange={(e) => this.updateEmail(e.target.value)}
                 />
               </div>
               <div className="form-group">
+                <ValidationMessage
+                  valid={this.state.passwordValid}
+                  message={this.state.errorMsg.password}
+                />
                 <input
                   name="password"
                   type="password"
                   placeholder="Password"
                   className="form-field"
                   id="password"
-                  value=""
-                  onChange={(e) => console.log(e)}
+                  value={this.state.password}
+                  onChange={(e) => this.updatePassword(e.target.value)}
                 />
               </div>
               <div className="form-group">
+                <ValidationMessage
+                  valid={this.state.passwordConfirmValid}
+                  message={this.state.errorMsg.passwordConfirm}
+                />
                 <input
                   name="confirm-password"
                   type="confirm-password"
                   placeholder="Confirm password"
                   className="form-field"
-                  value=""
                   id="confirm-password"
-                  onChange={(e) => console.log(e)}
+                  value={this.state.passwordConfirm}
+                  onChange={(e) => this.updatePasswordConfirm(e.target.value)}
                 />
               </div>
               <button type="submit" className="btn btn-full">
