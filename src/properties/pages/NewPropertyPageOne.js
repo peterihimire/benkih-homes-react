@@ -54,80 +54,64 @@ class NewPropertyPageOne extends Component {
   };
 
   // FOR SLUG VALIDATION
-  updateEmail = (email) => {
-    this.setState({ email }, this.validateEmail);
+  updateSlug = (slug) => {
+    this.setState({ slug }, this.validateSlug);
   };
 
-  validateEmail = () => {
-    const { email } = this.state;
-    let emailValid = true;
+  validateSlug = () => {
+    const { slug } = this.state;
+    let slugValid = true;
     let errorMsg = { ...this.state.errorMsg };
 
     // checks for format _@_._
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      emailValid = false;
-      errorMsg.email = "Invalid email format";
+    if (slug.length < 5) {
+      slugValid = false;
+      errorMsg.slug = "Must be at least 5 characters long";
     }
 
-    this.setState({ emailValid, errorMsg }, this.validateForm);
+    this.setState({ slugValid, errorMsg }, this.validateForm);
   };
 
-  // FOR PASSWORD VALIDATION
-  updatePassword = (password) => {
-    this.setState({ password }, this.validatePassword);
+  // FOR ADDRESS VALIDATION
+  updateAddress = (address) => {
+    this.setState({ address }, this.validateAddress);
   };
 
-  validatePassword = () => {
-    const { password } = this.state;
-    let passwordValid = true;
+  validateAddress = () => {
+    const { address } = this.state;
+    let addressValid = true;
     let errorMsg = { ...this.state.errorMsg };
 
-    // password must be 6 chars and must contain a number
-    if (password.length < 6) {
-      passwordValid = false;
-      errorMsg.password = "Password must be at least 6 characters long";
-    } else if (!/\d/.test(password)) {
-      passwordValid = false;
-      errorMsg.password = "Password must contain a digit";
+    // address must be 6 chars and must contain a number
+    if (address.length < 6) {
+      addressValid = false;
+      errorMsg.address = "Address must be at least 6 characters long";
     }
 
-    this.setState({ passwordValid, errorMsg }, this.validateForm);
+    this.setState({ addressValid, errorMsg }, this.validateForm);
   };
 
-  // FOR PASSWORD CONFIRM VALIDATION
-  updatePasswordConfirm = (passwordConfirm) => {
-    this.setState({ passwordConfirm }, this.validatePasswordConfirm);
+  // FOR AMOUNT VALIDATION
+  updateAmount = (amount) => {
+    this.setState({ amount }, this.validateAmount);
   };
 
-  validatePasswordConfirm = () => {
-    const { passwordConfirm, password } = this.state;
-    let passwordConfirmValid = true;
+  validateAmount = () => {
+    const { amount } = this.state;
+    let amountValid = true;
     let errorMsg = { ...this.state.errorMsg };
 
-    if (password !== passwordConfirm) {
-      passwordConfirmValid = false;
-      errorMsg.passwordConfirm = "Passwords do not match";
+    if (!/\d/.test(amount)) {
+      amountValid = false;
+      errorMsg.amount = "Amount must contain only digits";
     }
 
-    this.setState({ passwordConfirmValid, errorMsg }, this.validateForm);
+    this.setState({ amountValid, errorMsg }, this.validateForm);
   };
 
-  // FOR ADMIN CODE
-  updateAdminCode = (adminCode) => {
-    this.setState({ adminCode }, this.validateAdminCode);
-  };
-
-  validateAdminCode = () => {
-    const { adminCode } = this.state;
-    let adminValid = true;
-    let errorMsg = { ...this.state.errorMsg };
-
-    if (adminCode.length < 3) {
-      adminValid = false;
-      errorMsg.name = "Must be at least 3 characters long";
-    }
-
-    this.setState({ adminValid, errorMsg }, this.validateForm);
+  continue = (e) => {
+    e.preventDefault();
+    this.props.nextStep();
   };
 
   render() {
@@ -216,6 +200,7 @@ class NewPropertyPageOne extends Component {
                 type="submit"
                 className="btn btn-full"
                 disabled={!this.state.formValid}
+                onClick={this.continue}
               >
                 Continue
               </button>

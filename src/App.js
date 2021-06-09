@@ -5,7 +5,7 @@ import AboutPage from "../src/properties/pages/AboutPage";
 import LoginPage from "../src/properties/pages/LoginPage";
 import SignupPage from "../src/properties/pages/SignupPage";
 import ForgotPasswordPage from "../src/properties/pages/ForgotPasswordPage";
-import NewPropertyPageOne from "../src/properties/pages/NewPropertyPageOne";
+import NewPropertyPageOne from "../src/properties/pages/PropertyStepForm";
 import {
   BrowserRouter as Router,
   Route,
