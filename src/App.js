@@ -5,7 +5,7 @@ import AboutPage from "../src/properties/pages/AboutPage";
 import LoginPage from "../src/properties/pages/LoginPage";
 import SignupPage from "../src/properties/pages/SignupPage";
 import ForgotPasswordPage from "../src/properties/pages/ForgotPasswordPage";
-import NewPropertyPage from "../src/properties/pages/NewPropertyPage";
+import NewPropertyPageOne from "../src/properties/pages/NewPropertyPageOne";
 import {
   BrowserRouter as Router,
   Route,
@@ -23,7 +23,7 @@ function App() {
         <Route path="/login" exact component={LoginPage} />
         <Route path="/register" exact component={SignupPage} />
         <Route path="/forgot-password" exact component={ForgotPasswordPage} />
-        <Route path="/property/new" exact component={NewPropertyPage} />
+        <Route path="/property/new" exact component={NewPropertyPageOne} />
         <Redirect to="/" />
       </Switch>
     </Router>
