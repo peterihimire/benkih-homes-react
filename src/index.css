@@ -199,6 +199,15 @@ p {
   padding: 0 0rem !important;
   width: 160px;
 }
+.btn:disabled,
+.btn:hover:disabled,
+.btn:active:disabled {
+  background: #ccc !important;
+  color: #979797 !important;
+  border-color: #ccc !important;
+  cursor: not-allowed !important;
+}
+
 @media only screen and (min-width: 1201px) {
 }
 /***** LAPTOP *****/

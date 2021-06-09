@@ -120,6 +120,24 @@ class SignupPage extends Component {
     this.setState({ passwordConfirmValid, errorMsg }, this.validateForm);
   };
 
+  // FOR ADMIN CODE
+  updateAdminCode = (adminCode) => {
+    this.setState({ adminCode }, this.validateAdminCode);
+  };
+
+  validateAdminCode = () => {
+    const { adminCode } = this.state;
+    let adminValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (adminCode.length < 3) {
+      adminValid = false;
+      errorMsg.name = "Must be at least 3 characters long";
+    }
+
+    this.setState({ adminValid, errorMsg }, this.validateForm);
+  };
+
   render() {
     return (
       <div className="auth-item">
@@ -193,7 +211,7 @@ class SignupPage extends Component {
                 />
                 <input
                   name="confirm-password"
-                  type="confirm-password"
+                  type="password"
                   placeholder="Confirm password"
                   className="form-field"
                   id="confirm-password"
@@ -201,7 +219,23 @@ class SignupPage extends Component {
                   onChange={(e) => this.updatePasswordConfirm(e.target.value)}
                 />
               </div>
-              <button type="submit" className="btn btn-full">
+              <div className="form-group">
+                <input
+                  type="password"
+                  id="admincode"
+                  name="admincode"
+                  className="form-field"
+                  value={this.state.adminCode}
+                  placeholder="ignore input field"
+                  // onChange={(e) => e.target.value}
+                  onChange={(e) => this.updateAdminCode(e.target.value)}
+                />
+              </div>
+              <button
+                type="submit"
+                className="btn btn-full"
+                disabled={!this.state.formValid}
+              >
                 SignUp
               </button>
               <div className="alt-auth-div">
