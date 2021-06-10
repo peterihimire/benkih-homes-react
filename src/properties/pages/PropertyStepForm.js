@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import PropTypes from "prop-types";
 import NewPropertyPageOne from "./NewPropertyPageOne";
 import NewPropertyPageTwo from "./NewPropertyPageTwo";
+import NewPropertyPageThree from "./NewPropertyPageThree";
 
 export class PropertyStepForm extends Component {
   state = {
@@ -64,7 +65,19 @@ export class PropertyStepForm extends Component {
           jobLocation={jobLocation}
         />
       );
-    // if (step === 3)
+
+    if (step === 3)
+      return (
+        <NewPropertyPageThree
+          nextStep={this.nextStep}
+          prevStep={this.prevStep}
+          // handleChange={this.handleChange}
+          jobTitle={jobTitle}
+          jobCompany={jobCompany}
+          jobLocation={jobLocation}
+        />
+      );
+    // if (step === 4)
     //   return (
     //     <AllInfo
     //       firstName={firstName}

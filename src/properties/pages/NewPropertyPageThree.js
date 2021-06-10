@@ -11,7 +11,7 @@ function ValidationMessage(props) {
   return null;
 }
 
-class NewPropertyPageTwo extends Component {
+class NewPropertyPageThree extends Component {
   state = {
     description: "",
     descriptionValid: false,
@@ -205,7 +205,7 @@ class NewPropertyPageTwo extends Component {
                 disabled={!this.state.formValid}
                 onClick={this.continue}
               >
-                Continue
+                Next
               </button>
             </form>
           </div>
@@ -215,4 +215,4 @@ class NewPropertyPageTwo extends Component {
   }
 }
 
-export default NewPropertyPageTwo;
+export default NewPropertyPageThree;
