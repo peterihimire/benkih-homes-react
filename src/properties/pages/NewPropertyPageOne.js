@@ -115,6 +115,7 @@ class NewPropertyPageOne extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">

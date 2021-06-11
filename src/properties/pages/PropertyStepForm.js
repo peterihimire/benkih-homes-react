@@ -52,6 +52,7 @@ export class PropertyStepForm extends Component {
           // handleChange={this.handleChange}
           firstName={firstName}
           lastName={lastName}
+          closeForm={this.props}
         />
       );
     if (step === 2)
@@ -94,6 +95,7 @@ export class PropertyStepForm extends Component {
 
   render() {
     // const { step } = this.state;
+    console.log(this.props);
     return (
       <>
         {/* <h2>Step {step} of 3.</h2> */}

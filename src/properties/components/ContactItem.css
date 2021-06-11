@@ -88,6 +88,13 @@ textarea {
   background-color: var(--sec-grey);
   border: none;
 }
+select {
+  padding: 10px 10px;
+  border-radius: 5px;
+  outline: none;
+  background-color: var(--sec-grey);
+  border: none;
+}
 input::placeholder {
   font-weight: lighter;
   /* color: var(--main-grey); */
@@ -102,6 +109,37 @@ textarea::placeholder {
   resize: none;
 }
 
+.privacy-radio-div {
+  display: flex;
+}
+.privacy-radio-div p {
+  font-size: 12px;
+}
+/* Old radio-css */
+.radio-public {
+  margin-right: 4rem;
+}
+
+.form-group .radio-privacy {
+  height: 10px;
+}
+
+.radio-privacy-label {
+  margin-bottom: 0;
+  /* font-size: 1rem !important; */
+  color: var(--main-black) !important;
+  font-weight: normal !important;
+  padding: 0 0 0 0.6rem;
+}
+
+.privacy-radio-div input[type="radio"] {
+  transform: scale(1.5);
+  height: 15px;
+}
+.form-group-radio {
+  display: flex;
+  justify-content: space-between;
+}
 /* END OF FORM */
 
 /* TABLET */

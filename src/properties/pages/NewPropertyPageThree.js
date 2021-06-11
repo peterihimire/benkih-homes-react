@@ -153,6 +153,100 @@ class NewPropertyPageThree extends Component {
                   onChange={(e) => this.updateCreator(e.target.value)}
                 />
               </div>
+
+              <div className="form-group">
+                {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
+
+                <ValidationMessage
+                  valid={this.state.creatorValid}
+                  message={this.state.errorMsg.creator}
+                />
+                <select
+                  type="text"
+                  name="viewerLoc"
+                  className="form-control my-select form-field"
+                  id="viewerLoc"
+                  placeholder=""
+                  required
+                  // value={viewerLoc}
+                  // onChange={setForm}
+                >
+                  <option value="none">Choose City ...</option>
+                  <option value="Ikeja">Ikeja</option>
+                  <option value="Lekki">Lekki</option>
+                  <option value="Abuja">Abuja</option>
+                  <option value="Ikoyi">Ikoyi</option>
+                </select>
+              </div>
+
+              <div className="form-group">
+                {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
+                <ValidationMessage
+                  valid={this.state.creatorValid}
+                  message={this.state.errorMsg.creator}
+                />
+                <select
+                  type="text"
+                  name="viewerLoc"
+                  className="form-control my-select form-field"
+                  id="viewerLoc"
+                  placeholder=""
+                  required
+                  // value={viewerLoc}
+                  // onChange={setForm}
+                >
+                  <option value="none">Choose State ...</option>
+                  <option value="Lagos">Lagos</option>
+                  <option value="Edo">Edo</option>
+                  <option value="Imo">Imo</option>
+                  <option value="Rivers">Rivers</option>
+                </select>
+              </div>
+
+              <div className="form-group form-group-radio">
+                <label htmlFor="Featured">Featured</label>
+                <div className=" privacy-radio-div">
+                  <div className="radio-public">
+                    <input
+                      type="radio"
+                      // id="radioPublic"
+                      name="privacy"
+                      className="radio-privacy"
+                      // value={privacyPublic}
+                      value="yes"
+                      defaultChecked
+                      // onChange={setForm}
+                    />
+                    <label
+                      className="radio-privacy-label"
+                      htmlFor="radioPublic"
+                    >
+                      Yes
+                    </label>
+                    <p>Will be featured</p>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      // id="radioPrivate"
+                      name="privacy"
+                      className="radio-privacy"
+                      // value={privacyPrivate}
+                      value="private"
+                      // onChange={setForm}
+                    />
+                    <label
+                      className="radio-privacy-label"
+                      htmlFor="radioPrivate"
+                    >
+                      No
+                    </label>
+                    <p>Will not be featured</p>
+                  </div>
+                </div>
+              </div>
+
               <div className="form-group">
                 <ValidationMessage
                   valid={this.state.latitudeValid}
