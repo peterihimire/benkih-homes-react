@@ -14,14 +14,14 @@ function ValidationMessage(props) {
 
 class NewPropertyPageThree extends Component {
   state = {
-    description: "",
-    descriptionValid: false,
-    creator: "",
-    creatorValid: false,
-    latitude: "",
-    latitudeValid: false,
-    longitude: "",
-    longitudeValid: false,
+    propertyCity: "",
+    propertyCityValid: false,
+    propertyState: "",
+    propertyStateValid: false,
+    featured: "",
+    featuredValid: false,
+    recent: "",
+    recentValid: false,
     formValid: false,
     errorMsg: {},
     loading: false,
@@ -30,89 +30,85 @@ class NewPropertyPageThree extends Component {
 
   // FOR OVERALL FORM VALIDATION
   validateForm = () => {
-    const {
-      descriptionValid,
-      creatorValid,
-      latitudeValid,
-      longitudeValid,
-    } = this.state;
+    const { propertyCityValid, propertyStateValid } = this.state;
     this.setState({
-      formValid:
-        descriptionValid && creatorValid && latitudeValid && longitudeValid,
+      formValid: propertyCityValid && propertyStateValid ,
     });
   };
 
-  // FOR DESCRIPTION VALIDATION
-  updateDescription = (description) => {
-    this.setState({ description }, this.validateDescription);
+  // FOR CITY VALIDATION
+  updateCity = (propertyCity) => {
+    this.setState({ propertyCity }, this.validateCity);
   };
 
-  validateDescription = () => {
-    const { description } = this.state;
-    let descriptionValid = true;
+  validateCity = () => {
+    const { propertyCity } = this.state;
+    console.log(propertyCity);
+    let propertyCityValid = true;
     let errorMsg = { ...this.state.errorMsg };
 
-    if (description.length < 7) {
-      descriptionValid = false;
-      errorMsg.description = "Must be at least 7 characters long";
+    if (propertyCity === "none") {
+      propertyCityValid = false;
+      errorMsg.propertyCity = "Please choose a city";
     }
 
-    this.setState({ descriptionValid, errorMsg }, this.validateForm);
+    this.setState({ propertyCityValid, errorMsg }, this.validateForm);
   };
 
-  // FOR CREATOR VALIDATION
-  updateCreator = (creator) => {
-    this.setState({ creator }, this.validateCreator);
+  // FOR STATE VALIDATION
+  updateState = (propertyState) => {
+    this.setState({ propertyState }, this.validateState);
   };
 
-  validateCreator = () => {
-    const { creator } = this.state;
-    let creatorValid = true;
+  validateState = () => {
+    const { propertyState } = this.state;
+    let propertyStateValid = true;
     let errorMsg = { ...this.state.errorMsg };
 
-    if (creator.length < 7) {
-      creatorValid = false;
-      errorMsg.creator = "Must be at least 7 characters long";
+    if (propertyState === "none") {
+      propertyStateValid = false;
+      errorMsg.state = "Please choose a state";
     }
 
-    this.setState({ creatorValid, errorMsg }, this.validateForm);
+    this.setState({ propertyStateValid, errorMsg }, this.validateForm);
   };
 
-  // FOR LATITUDE VALIDATION
-  updateLatitude = (latitude) => {
-    this.setState({ latitude }, this.validateLatitude);
-  };
+  // // FOR FEATURED VALIDATION
+  // updateFeatured = (featured) => {
+  //   this.setState({ featured }, this.validateFeatured);
+  // };
 
-  validateLatitude = () => {
-    const { latitude } = this.state;
-    let latitudeValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateFeatured = () => {
+  //   const { featured } = this.state;
+  //   let featuredValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (!/\d/.test(latitude)) {
-      latitudeValid = false;
-      errorMsg.latitude = "Latitude must contain only digits";
-    }
+  //   if (featured.length < 4) {
+  //     featuredValid = false;
+  //     errorMsg.featured = "Latitude must contain only digits";
+  //   }
 
-    this.setState({ latitudeValid, errorMsg }, this.validateForm);
-  };
+  //   this.setState({ featuredValid, errorMsg }, this.validateForm);
+  // };
 
-  // FOR LONGITUDE VALIDATION
-  updateLongitude = (longitude) => {
-    this.setState({ longitude }, this.validateLongitude);
-  };
+  // // FOR RECENT VALIDATION
+  // updateRecent = (recent) => {
+  //   this.setState({ recent }, this.validateRecent);
+  // };
 
-  validateLongitude = () => {
-    const { longitude } = this.state;
-    let longitudeValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateRecent = () => {
+  //   const { recent } = this.state;
+  //   console.log(recent);
+  //   let recentValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (!/\d/.test(longitude)) {
-      longitudeValid = false;
-      errorMsg.longitude = "Latitude must contain only digits";
-    }
+  //   if (recent.length < 4) {
+  //     recentValid = false;
+  //     errorMsg.recent = "Latitude must contain only digits";
+  //   }
 
-    this.setState({ longitudeValid, errorMsg }, this.validateForm);
-  };
+  //   this.setState({ recentValid, errorMsg }, this.validateForm);
+  // };
 
   continue = (e) => {
     e.preventDefault();
@@ -156,7 +152,7 @@ class NewPropertyPageThree extends Component {
               <p>Add or create new property for sale.</p>
             </div>
             <form>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <ValidationMessage
                   valid={this.state.creatorValid}
                   message={this.state.errorMsg.creator}
@@ -170,14 +166,14 @@ class NewPropertyPageThree extends Component {
                   value={this.state.creator}
                   onChange={(e) => this.updateCreator(e.target.value)}
                 />
-              </div>
+              </div> */}
 
               <div className="form-group">
                 {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
 
                 <ValidationMessage
-                  valid={this.state.creatorValid}
-                  message={this.state.errorMsg.creator}
+                  valid={this.state.propertyCityValid}
+                  message={this.state.errorMsg.propertyCity}
                 />
                 <select
                   type="text"
@@ -187,7 +183,7 @@ class NewPropertyPageThree extends Component {
                   placeholder=""
                   required
                   // value={viewerLoc}
-                  // onChange={setForm}
+                  onChange={(e) => this.updateCity(e.target.value)}
                 >
                   <option value="none">Choose City ...</option>
                   <option value="Ikeja">Ikeja</option>
@@ -200,8 +196,8 @@ class NewPropertyPageThree extends Component {
               <div className="form-group">
                 {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
                 <ValidationMessage
-                  valid={this.state.creatorValid}
-                  message={this.state.errorMsg.creator}
+                  valid={this.state.propertyStateValid}
+                  message={this.state.errorMsg.propertyState}
                 />
                 <select
                   type="text"
@@ -211,7 +207,7 @@ class NewPropertyPageThree extends Component {
                   placeholder=""
                   required
                   // value={viewerLoc}
-                  // onChange={setForm}
+                  // onChange={(e) => this.updateState(e.target.value)}
                 >
                   <option value="none">Choose State ...</option>
                   <option value="Lagos">Lagos</option>
@@ -236,7 +232,7 @@ class NewPropertyPageThree extends Component {
                       // value={privacyPublic}
                       value="yes"
                       // defaultChecked
-                      // onChange={setForm}
+                      // onChange={(e) => this.updateFeatured(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioYes">
                       Yes
@@ -254,7 +250,7 @@ class NewPropertyPageThree extends Component {
                       value="no"
                       defaultChecked
 
-                      // onChange={setForm}
+                      // onChange={(e) => this.updateFeatured(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioNo">
                       No
@@ -278,7 +274,7 @@ class NewPropertyPageThree extends Component {
                       className="radio-privacy"
                       // value={privacyPublic}
                       value="yes"
-                      // onChange={setForm}
+                      // onChange={(e) => this.updateRecent(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioYes">
                       Yes
@@ -295,8 +291,7 @@ class NewPropertyPageThree extends Component {
                       // value={privacyPrivate}
                       value="no"
                       defaultChecked
-
-                      // onChange={setForm}
+                      // onChange={(e) => this.updateRecent(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioNo">
                       No

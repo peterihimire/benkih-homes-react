@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import NewPropertyPageOne from "./NewPropertyPageOne";
 import NewPropertyPageTwo from "./NewPropertyPageTwo";
 import NewPropertyPageThree from "./NewPropertyPageThree";
+import AllStepFormInfo from "./AllStepFormInfo";
 
 export class PropertyStepForm extends Component {
   state = {
@@ -45,11 +46,21 @@ export class PropertyStepForm extends Component {
   showStep = () => {
     const {
       step,
-      firstName,
-      lastName,
-      jobTitle,
-      jobCompany,
-      jobLocation,
+
+      title,
+      slug,
+      address,
+      amount,
+
+      description,
+      creator,
+      latitude,
+      longitude,
+
+      city,
+      state,
+      featured,
+      recent,
     } = this.state;
 
     if (step === 1)
@@ -57,8 +68,10 @@ export class PropertyStepForm extends Component {
         <NewPropertyPageOne
           nextStep={this.nextStep}
           // handleChange={this.handleChange}
-          firstName={firstName}
-          lastName={lastName}
+          title={title}
+          slug={slug}
+          address={address}
+          amount={amount}
           closeForm={this.props}
         />
       );
@@ -68,9 +81,10 @@ export class PropertyStepForm extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           // handleChange={this.handleChange}
-          jobTitle={jobTitle}
-          jobCompany={jobCompany}
-          jobLocation={jobLocation}
+          description={description}
+          creator={creator}
+          latitude={latitude}
+          longitude={longitude}
           closeForm={this.props}
         />
       );
@@ -81,23 +95,31 @@ export class PropertyStepForm extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           // handleChange={this.handleChange}
-          jobTitle={jobTitle}
-          jobCompany={jobCompany}
-          jobLocation={jobLocation}
+          city={city}
+          state={state}
+          featured={featured}
+          recent={recent}
           closeForm={this.props}
         />
       );
-    // if (step === 4)
-    //   return (
-    //     <AllInfo
-    //       firstName={firstName}
-    //       lastName={lastName}
-    //       jobTitle={jobTitle}
-    //       jobCompany={jobCompany}
-    //       jobLocation={jobLocation}
-    //       prevStep={this.prevStep}
-    //     />
-    //   );
+    if (step === 4)
+      return (
+        <AllStepFormInfo
+          title={title}
+          slug={slug}
+          address={address}
+          amount={amount}
+          description={description}
+          creator={creator}
+          latitude={latitude}
+          longitude={longitude}
+          city={city}
+          state={state}
+          featured={featured}
+          recent={recent}
+          prevStep={this.prevStep}
+        />
+      );
   };
 
   // static propTypes = {};
