@@ -37,11 +37,11 @@ class NewPropertyPageThree extends Component {
   };
 
   // FOR CITY VALIDATION
-  updateCity = (propertyCity) => {
-    this.setState({ propertyCity }, this.validateCity);
+  updatePropertyCity = (propertyCity) => {
+    this.setState({ propertyCity }, this.validatePropertyCity);
   };
 
-  validateCity = () => {
+  validatePropertyCity = () => {
     const { propertyCity } = this.state;
     console.log(propertyCity);
     let propertyCityValid = true;
@@ -56,18 +56,18 @@ class NewPropertyPageThree extends Component {
   };
 
   // FOR STATE VALIDATION
-  updateState = (propertyState) => {
-    this.setState({ propertyState }, this.validateState);
+  updatePropertyState = (propertyState) => {
+    this.setState({ propertyState }, this.validatePropertyState);
   };
 
-  validateState = () => {
+  validatePropertyState = () => {
     const { propertyState } = this.state;
     let propertyStateValid = true;
     let errorMsg = { ...this.state.errorMsg };
 
     if (propertyState === "none") {
       propertyStateValid = false;
-      errorMsg.state = "Please choose a state";
+      errorMsg.propertyState = "Please choose a state";
     }
 
     this.setState({ propertyStateValid, errorMsg }, this.validateForm);
@@ -183,7 +183,7 @@ class NewPropertyPageThree extends Component {
                   placeholder=""
                   required
                   // value={viewerLoc}
-                  onChange={(e) => this.updateCity(e.target.value)}
+                  onChange={(e) => this.updatePropertyCity(e.target.value)}
                 >
                   <option value="none">Choose City ...</option>
                   <option value="Ikeja">Ikeja</option>
@@ -207,7 +207,7 @@ class NewPropertyPageThree extends Component {
                   placeholder=""
                   required
                   // value={viewerLoc}
-                  // onChange={(e) => this.updateState(e.target.value)}
+                  onChange={(e) => this.updatePropertyState(e.target.value)}
                 >
                   <option value="none">Choose State ...</option>
                   <option value="Lagos">Lagos</option>
