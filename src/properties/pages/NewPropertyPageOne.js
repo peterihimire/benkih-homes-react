@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import "./LoginPage.css";
 // import { Link } from "react-router-dom";
 import homeBg from "../../assets/full-modal.svg";
-import { FaArrowLeft } from "react-icons/fa";
+import closeIcon from "../../assets/close-icon.svg";
+// import { FaArrowLeft } from "react-icons/fa";
 
 function ValidationMessage(props) {
   if (!props.valid) {
@@ -116,21 +117,31 @@ class NewPropertyPageOne extends Component {
 
   render() {
     console.log(this.props);
+    console.log(this.props.closeForm.history.goBack);
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
           <img src={homeBg} alt="home" />
         </div>
         <div className="login-form">
+          <div className="back-arrow">
+            <button
+              className="back-btn"
+              onClick={() => this.props.closeForm.history.goBack()}
+            >
+              <img src={closeIcon} alt="close icon" />
+            </button>
+          </div>
           <div className="login-form-content">
-            <div className="back-arrow">
+            {/* <div className="back-arrow">
               <button
                 className="back-btn"
-                onClick={() => this.props.history.goBack()}
+                // onClick={() => this.props.history.goBack()}
+                onClick={() => this.props.closeForm.history.goBack()}
               >
                 <FaArrowLeft className="arrow-back-icon" />
               </button>
-            </div>
+            </div> */}
             <div className="heading">
               <h2>Add new property.</h2>
               <p>Add or create new property for sale.</p>

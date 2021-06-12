@@ -64,6 +64,7 @@ export class PropertyStepForm extends Component {
           jobTitle={jobTitle}
           jobCompany={jobCompany}
           jobLocation={jobLocation}
+          closeForm={this.props}
         />
       );
 
@@ -76,6 +77,7 @@ export class PropertyStepForm extends Component {
           jobTitle={jobTitle}
           jobCompany={jobCompany}
           jobLocation={jobLocation}
+          closeForm={this.props}
         />
       );
     // if (step === 4)
