@@ -117,7 +117,7 @@ textarea::placeholder {
 }
 /* Old radio-css */
 .radio-public {
-  margin-right: 4rem;
+  margin-right: 2rem;
 }
 
 .form-group .radio-privacy {
@@ -138,7 +138,11 @@ textarea::placeholder {
 }
 .form-group-radio {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  padding: 0 1.5rem;
+}
+.form-label-div{
+  width: 150px !important;
 }
 /* END OF FORM */
 

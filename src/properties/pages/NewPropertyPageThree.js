@@ -222,23 +222,23 @@ class NewPropertyPageThree extends Component {
               </div>
 
               <div className="form-group form-group-radio">
-                <label htmlFor="Featured">Featured</label>
+                <div className="form-label-div">
+                  <label htmlFor="Featured">Featured</label>
+                </div>
+
                 <div className=" privacy-radio-div">
                   <div className="radio-public">
                     <input
                       type="radio"
                       // id="radioPublic"
-                      name="privacy"
+                      name="featured"
                       className="radio-privacy"
                       // value={privacyPublic}
                       value="yes"
-                      defaultChecked
+                      // defaultChecked
                       // onChange={setForm}
                     />
-                    <label
-                      className="radio-privacy-label"
-                      htmlFor="radioPublic"
-                    >
+                    <label className="radio-privacy-label" htmlFor="radioYes">
                       Yes
                     </label>
                     <p>Will be featured</p>
@@ -248,16 +248,15 @@ class NewPropertyPageThree extends Component {
                     <input
                       type="radio"
                       // id="radioPrivate"
-                      name="privacy"
+                      name="featured"
                       className="radio-privacy"
                       // value={privacyPrivate}
-                      value="private"
+                      value="no"
+                      defaultChecked
+
                       // onChange={setForm}
                     />
-                    <label
-                      className="radio-privacy-label"
-                      htmlFor="radioPrivate"
-                    >
+                    <label className="radio-privacy-label" htmlFor="radioNo">
                       No
                     </label>
                     <p>Will not be featured</p>
@@ -265,52 +264,48 @@ class NewPropertyPageThree extends Component {
                 </div>
               </div>
 
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.latitudeValid}
-                  message={this.state.errorMsg.latitude}
-                />
-                <input
-                  name="latitude"
-                  type="number"
-                  placeholder="Latitude"
-                  className="form-field"
-                  id="latitude"
-                  value={this.state.latitude}
-                  onChange={(e) => this.updateLatitude(e.target.value)}
-                />
+              <div className="form-group form-group-radio">
+                <div className="form-label-div">
+                  <label htmlFor="Recent">Recent</label>
+                </div>
+
+                <div className=" privacy-radio-div">
+                  <div className="radio-public">
+                    <input
+                      type="radio"
+                      // id="radioPublic"
+                      name="recent"
+                      className="radio-privacy"
+                      // value={privacyPublic}
+                      value="yes"
+                      // onChange={setForm}
+                    />
+                    <label className="radio-privacy-label" htmlFor="radioYes">
+                      Yes
+                    </label>
+                    <p>Recently added</p>
+                  </div>
+
+                  <div>
+                    <input
+                      type="radio"
+                      // id="radioPrivate"
+                      name="recent"
+                      className="radio-privacy"
+                      // value={privacyPrivate}
+                      value="no"
+                      defaultChecked
+
+                      // onChange={setForm}
+                    />
+                    <label className="radio-privacy-label" htmlFor="radioNo">
+                      No
+                    </label>
+                    <p>Not recently added</p>
+                  </div>
+                </div>
               </div>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.longitudeValid}
-                  message={this.state.errorMsg.longitude}
-                />
-                <input
-                  name="longitude"
-                  type="number"
-                  placeholder="Longitude"
-                  className="form-field"
-                  id="longitude"
-                  value={this.state.longitude}
-                  onChange={(e) => this.updateLongitude(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.descriptionValid}
-                  message={this.state.errorMsg.description}
-                />
-                <textarea
-                  name="description"
-                  type="text"
-                  placeholder="Description"
-                  className="form-field-textarea"
-                  id="description"
-                  value={this.state.description}
-                  onChange={(e) => this.updateDescription(e.target.value)}
-                  rows="4"
-                ></textarea>
-              </div>
+
               <button
                 type="submit"
                 className="btn btn-full"

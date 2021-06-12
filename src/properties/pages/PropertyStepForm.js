@@ -15,9 +15,16 @@ export class PropertyStepForm extends Component {
     amount: 0,
 
     // step 2
-    jobTitle: "",
-    jobCompany: "",
-    jobLocation: "",
+    description: "",
+    creator: "",
+    latitude: "",
+    longitude: "",
+
+    // step 3
+    city: "",
+    state: "",
+    featured: "no",
+    recent: "no",
   };
 
   nextStep = () => {
