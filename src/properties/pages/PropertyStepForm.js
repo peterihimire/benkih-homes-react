@@ -10,22 +10,52 @@ export class PropertyStepForm extends Component {
     step: 1,
 
     // step 1
+    // title: "3 Bedroom duplex",
+    // slug: "",
+    // address: "",
+    // amount: 0,
     title: "3 Bedroom duplex",
-    slug: "",
+    titleValid: false,
+    slug: "3-Bedroom-duplex",
+    slugValid: false,
     address: "",
+    addressValid: false,
     amount: 0,
+    amountValid: false,
 
     // step 2
+    // description: "",
+    // creator: "",
+    // latitude: "",
+    // longitude: "",
     description: "",
+    descriptionValid: false,
     creator: "",
+    creatorValid: false,
     latitude: "",
+    latitudeValid: false,
     longitude: "",
+    longitudeValid: false,
 
     // step 3
-    city: "",
-    state: "",
+    // propertyCity: "",
+    // propertyState: "",
+    // featured: "no",
+    // recent: "no",
+    propertyCity: "",
+    propertyCityValid: false,
+    propertyState: "",
+    propertyStateValid: false,
     featured: "no",
+    featuredValid: false,
     recent: "no",
+    recentValid: false,
+
+    // FORM VALIDATION STATE
+    formValid: false,
+    errorMsg: {},
+    loading: false,
+    error: "",
   };
 
   nextStep = () => {
@@ -57,8 +87,8 @@ export class PropertyStepForm extends Component {
       latitude,
       longitude,
 
-      city,
-      state,
+      propertyCity,
+      propertyState,
       featured,
       recent,
     } = this.state;
@@ -95,8 +125,8 @@ export class PropertyStepForm extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           // handleChange={this.handleChange}
-          city={city}
-          state={state}
+          properrtyCity={propertyCity}
+          propertyState={propertyState}
           featured={featured}
           recent={recent}
           closeForm={this.props}
@@ -113,8 +143,8 @@ export class PropertyStepForm extends Component {
           creator={creator}
           latitude={latitude}
           longitude={longitude}
-          city={city}
-          state={state}
+          properrtyCity={propertyCity}
+          propertyState={propertyState}
           featured={featured}
           recent={recent}
           prevStep={this.prevStep}
