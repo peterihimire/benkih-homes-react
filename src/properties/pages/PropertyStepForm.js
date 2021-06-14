@@ -5,15 +5,19 @@ import NewPropertyPageTwo from "./NewPropertyPageTwo";
 import NewPropertyPageThree from "./NewPropertyPageThree";
 import AllStepFormInfo from "./AllStepFormInfo";
 
+// function ValidationMessage(props) {
+//   if (!props.valid) {
+//     return <div className="error-msg">{props.message}</div>;
+//   }
+//   return null;
+// }
+
 export class PropertyStepForm extends Component {
   state = {
     step: 1,
 
     // step 1
-    // title: "3 Bedroom duplex",
-    // slug: "",
-    // address: "",
-    // amount: 0,
+
     title: "3 Bedroom duplex",
     titleValid: false,
     slug: "3-Bedroom-duplex",
@@ -24,10 +28,7 @@ export class PropertyStepForm extends Component {
     amountValid: false,
 
     // step 2
-    // description: "",
-    // creator: "",
-    // latitude: "",
-    // longitude: "",
+
     description: "",
     descriptionValid: false,
     creator: "",
@@ -38,10 +39,7 @@ export class PropertyStepForm extends Component {
     longitudeValid: false,
 
     // step 3
-    // propertyCity: "",
-    // propertyState: "",
-    // featured: "no",
-    // recent: "no",
+
     propertyCity: "",
     propertyCityValid: false,
     propertyState: "",
