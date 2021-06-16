@@ -76,9 +76,14 @@ export class PropertyStepForm extends Component {
       step,
 
       title,
+      titleValid,
       slug,
+      slugValid,
       address,
+      addressValid,
       amount,
+      amountValid,
+      errorMsg,
 
       description,
       creator,
@@ -97,9 +102,14 @@ export class PropertyStepForm extends Component {
           nextStep={this.nextStep}
           // handleChange={this.handleChange}
           title={title}
+          titleValid={titleValid}
           slug={slug}
+          slugValid={slugValid}
           address={address}
+          addressValid={addressValid}
           amount={amount}
+          amountValid={amountValid}
+          errorMsg={errorMsg}
           closeForm={this.props}
         />
       );

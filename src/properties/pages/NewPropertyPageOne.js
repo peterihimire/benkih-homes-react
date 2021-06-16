@@ -30,7 +30,17 @@ class NewPropertyPageOne extends Component {
 
   // FOR OVERALL FORM VALIDATION
   validateForm = () => {
-    const { titleValid, slugValid, addressValid, amountValid } = this.state;
+    console.log(this.props);
+    const {
+      title,
+      titleValid,
+      slug,
+      slugValid,
+      address,
+      addressValid,
+      amount,
+      amountValid,
+    } = this.props;
     this.setState({
       formValid: titleValid && slugValid && addressValid && amountValid,
     });
@@ -42,16 +52,27 @@ class NewPropertyPageOne extends Component {
   };
 
   validatetitle = () => {
-    const { title } = this.state;
+    // const { title } = this.state;
+    const {
+      title,
+      // titleValid,
+      slug,
+      slugValid,
+      address,
+      addressValid,
+      amount,
+      amountValid,
+      errorMsg
+    } = this.props;
     let titleValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+    // let errorMsg = { ...this.state.errorMsg };
 
     if (title.length < 7) {
       titleValid = false;
       errorMsg.title = "Must be at least 7 characters long";
     }
 
-    this.setState({ titleValid, errorMsg }, this.validateForm);
+    // this.setState({ titleValid, errorMsg }, this.validateForm);
   };
 
   // FOR SLUG VALIDATION
@@ -118,6 +139,16 @@ class NewPropertyPageOne extends Component {
   render() {
     console.log(this.props);
     console.log(this.props.closeForm.history.goBack);
+    const {
+      title,
+      titleValid,
+      slug,
+      slugValid,
+      address,
+      addressValid,
+      amount,
+      amountValid,
+    } = this.props;
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
@@ -158,7 +189,8 @@ class NewPropertyPageOne extends Component {
                   placeholder="Title"
                   className="form-field"
                   id="title"
-                  value={this.state.title}
+                  // value={this.state.title}
+                  value={title}
                   onChange={(e) => this.updateTitle(e.target.value)}
                 />
               </div>
@@ -173,7 +205,8 @@ class NewPropertyPageOne extends Component {
                   placeholder="Slug"
                   className="form-field"
                   id="slug"
-                  value={this.state.slug}
+                  // value={this.state.slug}
+                  value={slug}
                   onChange={(e) => this.updateSlug(e.target.value)}
                 />
               </div>
@@ -188,7 +221,8 @@ class NewPropertyPageOne extends Component {
                   placeholder="Address"
                   className="form-field"
                   id="address"
-                  value={this.state.address}
+                  // value={this.state.address}
+                  value={address}
                   onChange={(e) => this.updateAddress(e.target.value)}
                 />
               </div>
@@ -203,7 +237,8 @@ class NewPropertyPageOne extends Component {
                   placeholder="Amount"
                   className="form-field"
                   id="amount"
-                  value={this.state.amount}
+                  // value={this.state.amount}
+                  value={amount}
                   onChange={(e) => this.updateAmount(e.target.value)}
                 />
               </div>
