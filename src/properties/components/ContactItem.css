@@ -141,8 +141,18 @@ textarea::placeholder {
   /* justify-content: space-between; */
   padding: 0 1.5rem;
 }
-.form-label-div{
+.form-label-div {
   width: 150px !important;
+}
+.close-form-btn-div {
+  text-align: right;
+  padding: 2rem 
+}
+.back-btn {
+  width: 20px;
+}
+.back-btn img {
+  width: 100%;
 }
 /* END OF FORM */
 
@@ -199,6 +209,10 @@ textarea::placeholder {
     font-weight: lighter;
     /* color: var(--main-grey); */
   }
+  .close-form-btn-div {
+    text-align: right;
+    padding: 5rem 
+  }
 }
 /* LAPTOP */
 @media (min-width: 993px) {
@@ -238,5 +252,9 @@ textarea::placeholder {
   textarea::placeholder {
     font-weight: lighter;
     /* color: var(--main-grey); */
+  }
+  .close-form-btn-div {
+    text-align: right;
+    padding: 10rem 
   }
 }

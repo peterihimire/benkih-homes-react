@@ -124,7 +124,7 @@ class NewPropertyPageOne extends Component {
       titleChange,
       titleValid,
       errorMsg,
-      
+
       slug,
       slugValid,
       address,
@@ -139,7 +139,7 @@ class NewPropertyPageOne extends Component {
           <img src={homeBg} alt="home" />
         </div>
         <div className="login-form">
-          <div className="back-arrow">
+          <div className="close-form-btn-div">
             <button
               className="back-btn"
               onClick={() => this.props.closeForm.history.goBack()}
