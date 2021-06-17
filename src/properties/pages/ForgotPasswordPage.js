@@ -2,7 +2,8 @@ import React from "react";
 import "./LoginPage.css";
 import homeBg from "../../assets/full-modal.svg";
 // import { Link } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
+// import { FaArrowLeft } from "react-icons/fa";
+import closeIcon from "../../assets/close-icon.svg";
 
 const ForgotPasswordPage = (props) => {
   return (
@@ -11,12 +12,20 @@ const ForgotPasswordPage = (props) => {
         <img src={homeBg} alt="home" />
       </div>
       <div className="login-form">
+        <div className="close-form-btn-div">
+          <button
+            className="back-btn"
+            onClick={() => props.history.goBack()}
+          >
+            <img src={closeIcon} alt="close icon" />
+          </button>
+        </div>
         <div className="login-form-content">
-          <div className="back-arrow">
+          {/* <div className="back-arrow">
             <button className="back-btn" onClick={() => props.history.goBack()}>
               <FaArrowLeft className="arrow-back-icon" />
             </button>
-          </div>
+          </div> */}
           <div className="heading">
             <h2>We got you covered</h2>
             <p>Enter the Email associated with your account.</p>

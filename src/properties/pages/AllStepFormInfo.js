@@ -22,11 +22,10 @@ class AllStepFormInfo extends Component {
           <img src={homeBg} alt="home" />
         </div>
         <div className="login-form">
-          <div className="back-arrow">
+        <div className="close-form-btn-div">
             <button
               className="back-btn"
-              // onClick={() => this.props.closeForm.history.goBack()}
-              onClick={() => this.props.closeForm.history.goBack()}
+              onClick={() => this.props.history.goBack()}
             >
               <img src={closeIcon} alt="close icon" />
             </button>
