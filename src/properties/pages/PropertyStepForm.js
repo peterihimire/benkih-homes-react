@@ -71,6 +71,33 @@ export class PropertyStepForm extends Component {
     });
   };
 
+  // FOR OVERALL FORM VALIDATION
+  validateFormOne = () => {
+    console.log(this.props);
+    const { titleValid, slugValid, addressValid, amountValid } = this.state;
+    this.setState({
+      formValid: titleValid && slugValid && addressValid && amountValid,
+    });
+  };
+
+  // FOR TITLE VALIDATION
+  updateTitle = (title) => {
+    this.setState({ title }, this.validatetitle);
+  };
+
+  validatetitle = () => {
+    const { title } = this.state;
+    let titleValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (title.length < 7) {
+      titleValid = false;
+      errorMsg.title = "Must be at least 7 characters long";
+    }
+
+    this.setState({ titleValid, errorMsg }, this.validateFormOne);
+  };
+
   showStep = () => {
     const {
       step,
@@ -100,7 +127,7 @@ export class PropertyStepForm extends Component {
       return (
         <NewPropertyPageOne
           nextStep={this.nextStep}
-          // handleChange={this.handleChange}
+          titleChange={this.updateTitle}
           title={title}
           titleValid={titleValid}
           slug={slug}

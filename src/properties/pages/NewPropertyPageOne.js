@@ -31,16 +31,7 @@ class NewPropertyPageOne extends Component {
   // FOR OVERALL FORM VALIDATION
   validateForm = () => {
     console.log(this.props);
-    const {
-      title,
-      titleValid,
-      slug,
-      slugValid,
-      address,
-      addressValid,
-      amount,
-      amountValid,
-    } = this.props;
+    const { titleValid, slugValid, addressValid, amountValid } = this.props;
     this.setState({
       formValid: titleValid && slugValid && addressValid && amountValid,
     });
@@ -52,27 +43,16 @@ class NewPropertyPageOne extends Component {
   };
 
   validatetitle = () => {
-    // const { title } = this.state;
-    const {
-      title,
-      // titleValid,
-      slug,
-      slugValid,
-      address,
-      addressValid,
-      amount,
-      amountValid,
-      errorMsg
-    } = this.props;
+    const { title } = this.state;
     let titleValid = true;
-    // let errorMsg = { ...this.state.errorMsg };
+    let errorMsg = { ...this.state.errorMsg };
 
     if (title.length < 7) {
       titleValid = false;
       errorMsg.title = "Must be at least 7 characters long";
     }
 
-    // this.setState({ titleValid, errorMsg }, this.validateForm);
+    this.setState({ titleValid, errorMsg }, this.validateForm);
   };
 
   // FOR SLUG VALIDATION
@@ -141,13 +121,17 @@ class NewPropertyPageOne extends Component {
     console.log(this.props.closeForm.history.goBack);
     const {
       title,
+      titleChange,
       titleValid,
+      errorMsg,
+      
       slug,
       slugValid,
       address,
       addressValid,
       amount,
       amountValid,
+      
     } = this.props;
     return (
       <div className="auth-item">
@@ -180,8 +164,8 @@ class NewPropertyPageOne extends Component {
             <form>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.titleValid}
-                  message={this.state.errorMsg.title}
+                  valid={titleValid}
+                  message={errorMsg.title}
                 />
                 <input
                   name="title"
@@ -191,7 +175,8 @@ class NewPropertyPageOne extends Component {
                   id="title"
                   // value={this.state.title}
                   value={title}
-                  onChange={(e) => this.updateTitle(e.target.value)}
+                  // onChange={(e) => this.updateTitle(e.target.value)}
+                  onChange={(e) => titleChange(e.target.value)}
                 />
               </div>
               <div className="form-group">
