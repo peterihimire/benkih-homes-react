@@ -32,7 +32,7 @@ class NewPropertyPageThree extends Component {
   validateForm = () => {
     const { propertyCityValid, propertyStateValid } = this.state;
     this.setState({
-      formValid: propertyCityValid && propertyStateValid ,
+      formValid: propertyCityValid && propertyStateValid,
     });
   };
 
@@ -127,10 +127,9 @@ class NewPropertyPageThree extends Component {
           <img src={homeBg} alt="home" />
         </div>
         <div className="login-form">
-          <div className="back-arrow">
+          <div className="close-form-btn-div">
             <button
               className="back-btn"
-              // onClick={() => this.props.closeForm.history.goBack()}
               onClick={() => this.props.closeForm.history.goBack()}
             >
               <img src={closeIcon} alt="close icon" />

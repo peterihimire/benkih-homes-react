@@ -126,12 +126,18 @@ class NewPropertyPageOne extends Component {
       errorMsg,
 
       slug,
+      slugChange,
       slugValid,
+
       address,
+      addressChange,
       addressValid,
+
       amount,
+      amountChange,
       amountValid,
-      
+
+      formOneValid
     } = this.props;
     return (
       <div className="auth-item">
@@ -181,8 +187,8 @@ class NewPropertyPageOne extends Component {
               </div>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.slugValid}
-                  message={this.state.errorMsg.slug}
+                  valid={slugValid}
+                  message={errorMsg.slug}
                 />
                 <input
                   name="slug"
@@ -192,13 +198,13 @@ class NewPropertyPageOne extends Component {
                   id="slug"
                   // value={this.state.slug}
                   value={slug}
-                  onChange={(e) => this.updateSlug(e.target.value)}
+                  onChange={(e) => slugChange(e.target.value)}
                 />
               </div>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.addressValid}
-                  message={this.state.errorMsg.address}
+                  valid={addressValid}
+                  message={errorMsg.address}
                 />
                 <input
                   name="address"
@@ -208,13 +214,13 @@ class NewPropertyPageOne extends Component {
                   id="address"
                   // value={this.state.address}
                   value={address}
-                  onChange={(e) => this.updateAddress(e.target.value)}
+                  onChange={(e) => addressChange(e.target.value)}
                 />
               </div>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.amountValid}
-                  message={this.state.errorMsg.amount}
+                  valid={amountValid}
+                  message={errorMsg.amount}
                 />
                 <input
                   name="amount"
@@ -224,14 +230,14 @@ class NewPropertyPageOne extends Component {
                   id="amount"
                   // value={this.state.amount}
                   value={amount}
-                  onChange={(e) => this.updateAmount(e.target.value)}
+                  onChange={(e) => amountChange(e.target.value)}
                 />
               </div>
 
               <button
                 type="submit"
                 className="btn btn-full"
-                disabled={!this.state.formValid}
+                disabled={!formOneValid}
                 onClick={this.continue}
               >
                 Continue
