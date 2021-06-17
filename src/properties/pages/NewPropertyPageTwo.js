@@ -125,6 +125,26 @@ class NewPropertyPageTwo extends Component {
   };
 
   render() {
+    const {
+      description,
+      descriptionChange,
+      descriptionValid,
+      errorMsg,
+
+      creator,
+      creatorChange,
+      creatorValid,
+
+      latitude,
+      latitudeChange,
+      latitudeValid,
+
+      longitude,
+      longitudeChange,
+      longitudeValid,
+
+      formTwoValid,
+    } = this.props;
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
@@ -157,8 +177,8 @@ class NewPropertyPageTwo extends Component {
             <form>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.creatorValid}
-                  message={this.state.errorMsg.creator}
+                  valid={creatorValid}
+                  message={errorMsg.creator}
                 />
                 <input
                   name="creator"
@@ -166,14 +186,14 @@ class NewPropertyPageTwo extends Component {
                   placeholder="Creator"
                   className="form-field"
                   id="creator"
-                  value={this.state.creator}
-                  onChange={(e) => this.updateCreator(e.target.value)}
+                  value={creator}
+                  onChange={(e) => creatorChange(e.target.value)}
                 />
               </div>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.latitudeValid}
-                  message={this.state.errorMsg.latitude}
+                  valid={latitudeValid}
+                  message={errorMsg.latitude}
                 />
                 <input
                   name="latitude"
@@ -181,14 +201,14 @@ class NewPropertyPageTwo extends Component {
                   placeholder="Latitude"
                   className="form-field"
                   id="latitude"
-                  value={this.state.latitude}
-                  onChange={(e) => this.updateLatitude(e.target.value)}
+                  value={latitude}
+                  onChange={(e) => latitudeChange(e.target.value)}
                 />
               </div>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.longitudeValid}
-                  message={this.state.errorMsg.longitude}
+                  valid={longitudeValid}
+                  message={errorMsg.longitude}
                 />
                 <input
                   name="longitude"
@@ -196,14 +216,14 @@ class NewPropertyPageTwo extends Component {
                   placeholder="Longitude"
                   className="form-field"
                   id="longitude"
-                  value={this.state.longitude}
-                  onChange={(e) => this.updateLongitude(e.target.value)}
+                  value={longitude}
+                  onChange={(e) => longitudeChange(e.target.value)}
                 />
               </div>
               <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.descriptionValid}
-                  message={this.state.errorMsg.description}
+                  valid={descriptionValid}
+                  message={errorMsg.description}
                 />
                 <textarea
                   name="description"
@@ -211,15 +231,15 @@ class NewPropertyPageTwo extends Component {
                   placeholder="Description"
                   className="form-field-textarea"
                   id="description"
-                  value={this.state.description}
-                  onChange={(e) => this.updateDescription(e.target.value)}
+                  value={description}
+                  onChange={(e) => descriptionChange(e.target.value)}
                   rows="4"
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="btn btn-full"
-                disabled={!this.state.formValid}
+                disabled={!formTwoValid}
                 onClick={this.continue}
               >
                 Continue

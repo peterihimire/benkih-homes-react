@@ -27,6 +27,7 @@ export class PropertyStepForm extends Component {
     amount: null,
     amountValid: false,
     formOneValid: false,
+
     // step 2
 
     description: "",
@@ -37,6 +38,7 @@ export class PropertyStepForm extends Component {
     latitudeValid: false,
     longitude: "",
     longitudeValid: false,
+    formTwoValid: false,
 
     // step 3
 
@@ -71,7 +73,7 @@ export class PropertyStepForm extends Component {
     });
   };
 
-  // FOR OVERALL FORM VALIDATION
+  // FOR FORM-ONE VALIDATION
   validateFormOne = () => {
     console.log(this.props);
     const { titleValid, slugValid, addressValid, amountValid } = this.state;
@@ -154,6 +156,92 @@ export class PropertyStepForm extends Component {
     this.setState({ amountValid, errorMsg }, this.validateFormOne);
   };
 
+  // FOR FORM-TWO VALIDATION
+  validateFormTwo = () => {
+    const {
+      descriptionValid,
+      creatorValid,
+      latitudeValid,
+      longitudeValid,
+    } = this.state;
+    this.setState({
+      formTwoValid:
+        descriptionValid && creatorValid && latitudeValid && longitudeValid,
+    });
+  };
+
+  // FOR DESCRIPTION VALIDATION
+  updateDescription = (description) => {
+    this.setState({ description }, this.validateDescription);
+  };
+
+  validateDescription = () => {
+    const { description } = this.state;
+    let descriptionValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (description.length < 7) {
+      descriptionValid = false;
+      errorMsg.description = "Must be at least 7 characters long";
+    }
+
+    this.setState({ descriptionValid, errorMsg }, this.validateFormTwo);
+  };
+
+  // FOR CREATOR VALIDATION
+  updateCreator = (creator) => {
+    this.setState({ creator }, this.validateCreator);
+  };
+
+  validateCreator = () => {
+    const { creator } = this.state;
+    let creatorValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (creator.length < 7) {
+      creatorValid = false;
+      errorMsg.creator = "Must be at least 7 characters long";
+    }
+
+    this.setState({ creatorValid, errorMsg }, this.validateFormTwo);
+  };
+
+  // FOR LATITUDE VALIDATION
+  updateLatitude = (latitude) => {
+    this.setState({ latitude }, this.validateLatitude);
+  };
+
+  validateLatitude = () => {
+    const { latitude } = this.state;
+    let latitudeValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (!/\d/.test(latitude)) {
+      latitudeValid = false;
+      errorMsg.latitude = "Latitude must contain only digits";
+    }
+
+    this.setState({ latitudeValid, errorMsg }, this.validateFormTwo);
+  };
+
+  // FOR LONGITUDE VALIDATION
+  updateLongitude = (longitude) => {
+    this.setState({ longitude }, this.validateLongitude);
+  };
+
+  validateLongitude = () => {
+    const { longitude } = this.state;
+    let longitudeValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (!/\d/.test(longitude)) {
+      longitudeValid = false;
+      errorMsg.longitude = "Latitude must contain only digits";
+    }
+
+    this.setState({ longitudeValid, errorMsg }, this.validateFormTwo);
+  };
+
   showStep = () => {
     const {
       step,
@@ -170,9 +258,14 @@ export class PropertyStepForm extends Component {
       formOneValid,
 
       description,
+      descriptionValid,
       creator,
+      creatorValid,
       latitude,
+      latitudeValid,
       longitude,
+      longitudeValid,
+      formTwoValid,
 
       propertyCity,
       propertyState,
@@ -208,9 +301,19 @@ export class PropertyStepForm extends Component {
           prevStep={this.prevStep}
           // handleChange={this.handleChange}
           description={description}
+          descriptionValid={descriptionValid}
+          descriptionChange={this.updateDescription}
           creator={creator}
+          creatorValid={creatorValid}
+          creatorChange={this.updateCreator}
           latitude={latitude}
+          latitudeValid={latitudeValid}
+          latitudeChange={this.updateLatitude}
           longitude={longitude}
+          longitudeValid={longitudeValid}
+          longitudeChange={this.updateLongitude}
+          formTwoValid={formTwoValid}
+          errorMsg={errorMsg}
           closeForm={this.props}
         />
       );
