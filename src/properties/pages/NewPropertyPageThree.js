@@ -151,21 +151,37 @@ class NewPropertyPageThree extends Component {
               <p>Add or create new property for sale.</p>
             </div>
             <form>
-              {/* <div className="form-group">
+
+              <div className="form-group">
                 <ValidationMessage
-                  valid={this.state.creatorValid}
-                  message={this.state.errorMsg.creator}
+                  valid={bedroomValid}
+                  message={errorMsg.bedroom}
                 />
                 <input
-                  name="creator"
-                  type="creator"
-                  placeholder="Creator"
+                  name="bedroom"
+                  type="number"
+                  placeholder="bedroom"
                   className="form-field"
-                  id="creator"
-                  value={this.state.creator}
-                  onChange={(e) => this.updateCreator(e.target.value)}
+                  id="bedroom"
+                  value={bedroom}
+                  onChange={(e) => bedroomChange(e.target.value)}
                 />
-              </div> */}
+              </div>
+              <div className="form-group">
+                <ValidationMessage
+                  valid={bathroomValid}
+                  message={errorMsg.bathroom}
+                />
+                <input
+                  name="bathroom"
+                  type="number"
+                  placeholder="bathroom"
+                  className="form-field"
+                  id="bathroom"
+                  value={bathroom}
+                  onChange={(e) => bathroomChange(e.target.value)}
+                />
+              </div>
 
               <div className="form-group">
                 {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}

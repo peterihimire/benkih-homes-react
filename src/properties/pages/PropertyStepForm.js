@@ -41,7 +41,10 @@ export class PropertyStepForm extends Component {
     formTwoValid: false,
 
     // step 3
-
+    bedroom: null,
+    bedroomValid: false,
+    bathroom: null,
+    bathroomValid: false,
     propertyCity: "",
     propertyCityValid: false,
     propertyState: "",
@@ -50,6 +53,7 @@ export class PropertyStepForm extends Component {
     featuredValid: false,
     recent: "no",
     recentValid: false,
+    formThreeValid: false,
 
     // FORM VALIDATION STATE
     formValid: false,
@@ -242,6 +246,100 @@ export class PropertyStepForm extends Component {
     this.setState({ longitudeValid, errorMsg }, this.validateFormTwo);
   };
 
+  // FOR FORM-THREE VALIDATION
+  validateFormThree = () => {
+    const {
+      bedroomValid,
+      bathroomValid,
+      propertyCityValid,
+      propertyStateValid,
+      featuredValid,
+      recentValid,
+    } = this.state;
+    this.setState({
+      formTwoValid:
+        bedroomValid &&
+        bathroomValid &&
+        propertyCityValid &&
+        propertyStateValid &&
+        featuredValid &&
+        recentValid,
+    });
+  };
+
+  // FOR BEDROOM VALIDATION
+  updateBedroom = (bedroom) => {
+    this.setState({ bedroom }, this.validateBedroom);
+  };
+
+  validateBedroom = () => {
+    const { bedroom } = this.state;
+    let bedroomValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (!/\d/.test(bedroom)) {
+      bedroomValid = false;
+      errorMsg.bedroom = "Bedroom must contain only digits";
+    }
+
+    this.setState({ bedroomValid, errorMsg }, this.validateFormThree);
+  };
+
+  // FOR BATHROOM VALIDATION
+  updateBathroom = (bathroom) => {
+    this.setState({ bathroom }, this.validateBathroom);
+  };
+
+  validateBathroom = () => {
+    const { bathroom } = this.state;
+    let bathroomValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (!/\d/.test(bathroom)) {
+      bathroomValid = false;
+      errorMsg.bathroom = "Bathroom must contain only digits";
+    }
+
+    this.setState({ bathroomValid, errorMsg }, this.validateFormThree);
+  };
+
+  // FOR PROPERTY-CITY VALIDATION
+  updatePropertyCity = (propertyCity) => {
+    this.setState({ propertyCity }, this.validatePropertyCity);
+  };
+
+  validatePropertyCity = () => {
+    const { propertyCity } = this.state;
+    console.log(propertyCity);
+    let propertyCityValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (propertyCity === "none") {
+      propertyCityValid = false;
+      errorMsg.propertyCity = "Please choose a city";
+    }
+
+    this.setState({ propertyCityValid, errorMsg }, this.validateFormThree);
+  };
+
+  // FOR PROPERTY-STATE VALIDATION
+  updatePropertyState = (propertyState) => {
+    this.setState({ propertyState }, this.validatePropertyState);
+  };
+
+  validatePropertyState = () => {
+    const { propertyState } = this.state;
+    let propertyStateValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (propertyState === "none") {
+      propertyStateValid = false;
+      errorMsg.propertyState = "Please choose a state";
+    }
+
+    this.setState({ propertyStateValid, errorMsg }, this.validateFormThree);
+  };
+
   showStep = () => {
     const {
       step,
@@ -257,20 +355,29 @@ export class PropertyStepForm extends Component {
       errorMsg,
       formOneValid,
 
-      description,
-      descriptionValid,
       creator,
       creatorValid,
       latitude,
       latitudeValid,
       longitude,
       longitudeValid,
+      description,
+      descriptionValid,
       formTwoValid,
 
+      bedroom,
+      bedroomValid,
+      bathroom,
+      bathroomValid,
       propertyCity,
+      propertyCityValid,
       propertyState,
+      propertyStateValid,
       featured,
+      featuredValid,
       recent,
+      recentValid,
+      formThreeValid,
     } = this.state;
 
     if (step === 1)
@@ -324,10 +431,20 @@ export class PropertyStepForm extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           // handleChange={this.handleChange}
-          properrtyCity={propertyCity}
+          bedroom={bedroom}
+          bedroomValid={bedroomValid}
+          bathroom={bathroom}
+          bathroomValid={bathroomValid}
+          propertyCity={propertyCity}
+          propertyCityValid={propertyCityValid}
           propertyState={propertyState}
+          propertyStateValid={propertyStateValid}
           featured={featured}
+          featuredValid={featuredValid}
           recent={recent}
+          recentValid={recentValid}
+          formThreeValid={formThreeValid}
+          errorMsg={errorMsg}
           closeForm={this.props}
         />
       );
@@ -342,6 +459,8 @@ export class PropertyStepForm extends Component {
           creator={creator}
           latitude={latitude}
           longitude={longitude}
+          bedroom={bedroom}
+          bathroom={bathroom}
           properrtyCity={propertyCity}
           propertyState={propertyState}
           featured={featured}
