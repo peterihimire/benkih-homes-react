@@ -32,6 +32,22 @@ class AllStepFormInfo extends Component {
       featured,
       recent,
     } = this.props;
+    console.log(
+      title,
+      slug,
+      address,
+      amount,
+      description,
+      creator,
+      latitude,
+      longitude,
+      bedroom,
+      bathroom,
+      propertyCity,
+      propertyState,
+      featured,
+      recent
+    );
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
@@ -69,6 +85,24 @@ class AllStepFormInfo extends Component {
               Address: <b>{address}</b>
               <br />
               Amount: <b>{amount}</b>
+              <br />
+              Description: <b>{description}</b>
+              <br />
+              Creator: <b>{creator}</b>
+              <br />
+              Latitude: <b>{latitude}</b>
+              <br />
+              Longitude: <b>{longitude}</b>
+              <br />
+              Bedroom: <b>{bedroom}</b>
+              <br />
+              Bathroom: <b>{bathroom}</b>
+              <br />
+              Property City: <b>{propertyCity}</b>
+              <br />
+              Property State: <b>{propertyState}</b>
+              <br />
+              Featured: <b>{featured}</b>
               <br />
               Recent: <b>{recent}</b>
               <br />

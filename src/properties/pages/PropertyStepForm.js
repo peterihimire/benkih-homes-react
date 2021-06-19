@@ -336,6 +336,42 @@ export class PropertyStepForm extends Component {
     this.setState({ propertyStateValid, errorMsg }, this.validateFormThree);
   };
 
+  // FOR FEATURED VALIDATION
+  updateFeatured = (featured) => {
+    this.setState({ featured }, this.validateFeatured);
+  };
+
+  validateFeatured = () => {
+    const { featured } = this.state;
+    let featuredValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (featured === "none") {
+      featuredValid = true;
+      errorMsg.featured = "This is chosen";
+    }
+
+    this.setState({ featuredValid, errorMsg }, this.validateFormThree);
+  };
+
+  // FOR RECENT VALIDATION
+  updateRecent = (recent) => {
+    this.setState({ recent }, this.validateRecent);
+  };
+
+  validateRecent = () => {
+    const { recent } = this.state;
+    let recentValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (recent === "none") {
+      recentValid = true;
+      errorMsg.recent = "This is chosen";
+    }
+
+    this.setState({ recentValid, errorMsg }, this.validateFormThree);
+  };
+
   showStep = () => {
     const {
       step,
@@ -441,8 +477,10 @@ export class PropertyStepForm extends Component {
           propertyStateChange={this.updatePropertyState}
           featured={featured}
           featuredValid={featuredValid}
+          featuredChange={this.updateFeatured}
           recent={recent}
           recentValid={recentValid}
+          recentChange={this.updateRecent}
           formThreeValid={formThreeValid}
           errorMsg={errorMsg}
           closeForm={this.props}
@@ -461,7 +499,7 @@ export class PropertyStepForm extends Component {
           longitude={longitude}
           bedroom={bedroom}
           bathroom={bathroom}
-          properrtyCity={propertyCity}
+          propertyCity={propertyCity}
           propertyState={propertyState}
           featured={featured}
           recent={recent}

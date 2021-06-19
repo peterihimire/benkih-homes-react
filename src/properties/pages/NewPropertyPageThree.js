@@ -139,13 +139,13 @@ class NewPropertyPageThree extends Component {
       propertyStateChange,
       propertyStateValid,
 
-      // featured,
-      // featuredChange,
-      // featuredValid,
+      featured,
+      featuredChange,
+      featuredValid,
 
-      // recent,
-      // recentChange,
-      // recentValid,
+      recent,
+      recentChange,
+      recentValid,
 
       formThreeValid,
     } = this.props;
@@ -179,7 +179,6 @@ class NewPropertyPageThree extends Component {
               <p>Add or create new property for sale.</p>
             </div>
             <form>
-
               <div className="form-group">
                 <ValidationMessage
                   valid={bedroomValid}
@@ -277,7 +276,7 @@ class NewPropertyPageThree extends Component {
                       // value={privacyPublic}
                       value="yes"
                       // defaultChecked
-                      // onChange={(e) => this.updateFeatured(e.target.value)}
+                      onChange={(e) => featuredChange(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioYes">
                       Yes
@@ -294,8 +293,7 @@ class NewPropertyPageThree extends Component {
                       // value={privacyPrivate}
                       value="no"
                       defaultChecked
-
-                      // onChange={(e) => this.updateFeatured(e.target.value)}
+                      onChange={(e) => featuredChange(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioNo">
                       No
@@ -319,7 +317,7 @@ class NewPropertyPageThree extends Component {
                       className="radio-privacy"
                       // value={privacyPublic}
                       value="yes"
-                      // onChange={(e) => this.updateRecent(e.target.value)}
+                      onChange={(e) => recentChange(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioYes">
                       Yes
@@ -336,7 +334,7 @@ class NewPropertyPageThree extends Component {
                       // value={privacyPrivate}
                       value="no"
                       defaultChecked
-                      // onChange={(e) => this.updateRecent(e.target.value)}
+                      onChange={(e) => recentChange(e.target.value)}
                     />
                     <label className="radio-privacy-label" htmlFor="radioNo">
                       No
@@ -344,6 +342,18 @@ class NewPropertyPageThree extends Component {
                     <p>Not recently added</p>
                   </div>
                 </div>
+              </div>
+              <div className="form-group form-checkbox">
+                <div className="post-eng-div">
+                  <p>New</p>
+                </div>
+                <input
+                  type="checkbox"
+                  name="descriptionBranch"
+                  // required
+                  // value={descriptionBranch}
+                  // onChange={setForm}
+                />
               </div>
 
               <button
