@@ -16,13 +16,29 @@ class AllStepFormInfo extends Component {
     this.props.prevStep();
   };
   render() {
+    const {
+      title,
+      slug,
+      address,
+      amount,
+      description,
+      creator,
+      latitude,
+      longitude,
+      bedroom,
+      bathroom,
+      propertyCity,
+      propertyState,
+      featured,
+      recent,
+    } = this.props;
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
           <img src={homeBg} alt="home" />
         </div>
         <div className="login-form">
-        <div className="close-form-btn-div">
+          <div className="close-form-btn-div">
             <button
               className="back-btn"
               onClick={() => this.props.history.goBack()}
@@ -45,6 +61,19 @@ class AllStepFormInfo extends Component {
               <h2>Add new property.</h2>
               <p>All filled property information.</p>
             </div>
+            <div>
+              Title: <b>{title}</b>
+              <br />
+              Slug: <b>{slug}</b>
+              <br />
+              Address: <b>{address}</b>
+              <br />
+              Amount: <b>{amount}</b>
+              <br />
+              Recent: <b>{recent}</b>
+              <br />
+            </div>
+
             <form>
               {/* <div className="form-group">
                 <ValidationMessage

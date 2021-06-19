@@ -121,6 +121,34 @@ class NewPropertyPageThree extends Component {
   };
 
   render() {
+    const {
+      bedroom,
+      bedroomChange,
+      bedroomValid,
+      errorMsg,
+
+      bathroom,
+      bathroomChange,
+      bathroomValid,
+
+      propertyCity,
+      propertyCityChange,
+      propertyCityValid,
+
+      propertyState,
+      propertyStateChange,
+      propertyStateValid,
+
+      // featured,
+      // featuredChange,
+      // featuredValid,
+
+      // recent,
+      // recentChange,
+      // recentValid,
+
+      formThreeValid,
+    } = this.props;
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
@@ -187,8 +215,8 @@ class NewPropertyPageThree extends Component {
                 {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
 
                 <ValidationMessage
-                  valid={this.state.propertyCityValid}
-                  message={this.state.errorMsg.propertyCity}
+                  valid={propertyCityValid}
+                  message={errorMsg.propertyCity}
                 />
                 <select
                   type="text"
@@ -198,7 +226,8 @@ class NewPropertyPageThree extends Component {
                   placeholder=""
                   required
                   // value={viewerLoc}
-                  onChange={(e) => this.updatePropertyCity(e.target.value)}
+                  value={propertyCity}
+                  onChange={(e) => propertyCityChange(e.target.value)}
                 >
                   <option value="none">Choose City ...</option>
                   <option value="Ikeja">Ikeja</option>
@@ -211,8 +240,8 @@ class NewPropertyPageThree extends Component {
               <div className="form-group">
                 {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
                 <ValidationMessage
-                  valid={this.state.propertyStateValid}
-                  message={this.state.errorMsg.propertyState}
+                  valid={propertyStateValid}
+                  message={errorMsg.propertyState}
                 />
                 <select
                   type="text"
@@ -222,7 +251,8 @@ class NewPropertyPageThree extends Component {
                   placeholder=""
                   required
                   // value={viewerLoc}
-                  onChange={(e) => this.updatePropertyState(e.target.value)}
+                  value={propertyState}
+                  onChange={(e) => propertyStateChange(e.target.value)}
                 >
                   <option value="none">Choose State ...</option>
                   <option value="Lagos">Lagos</option>
@@ -319,7 +349,7 @@ class NewPropertyPageThree extends Component {
               <button
                 type="submit"
                 className="btn btn-full"
-                disabled={!this.state.formValid}
+                disabled={!formThreeValid}
                 onClick={this.continue}
               >
                 Next

@@ -24,7 +24,7 @@ export class PropertyStepForm extends Component {
     slugValid: false,
     address: "",
     addressValid: false,
-    amount: null,
+    amount: "",
     amountValid: false,
     formOneValid: false,
 
@@ -41,9 +41,9 @@ export class PropertyStepForm extends Component {
     formTwoValid: false,
 
     // step 3
-    bedroom: null,
+    bedroom: "",
     bedroomValid: false,
-    bathroom: null,
+    bathroom: "",
     bathroomValid: false,
     propertyCity: "",
     propertyCityValid: false,
@@ -253,17 +253,13 @@ export class PropertyStepForm extends Component {
       bathroomValid,
       propertyCityValid,
       propertyStateValid,
-      featuredValid,
-      recentValid,
     } = this.state;
     this.setState({
-      formTwoValid:
+      formThreeValid:
         bedroomValid &&
         bathroomValid &&
         propertyCityValid &&
-        propertyStateValid &&
-        featuredValid &&
-        recentValid,
+        propertyStateValid,
     });
   };
 
@@ -433,12 +429,16 @@ export class PropertyStepForm extends Component {
           // handleChange={this.handleChange}
           bedroom={bedroom}
           bedroomValid={bedroomValid}
+          bedroomChange={this.updateBedroom}
           bathroom={bathroom}
           bathroomValid={bathroomValid}
+          bathroomChange={this.updateBathroom}
           propertyCity={propertyCity}
           propertyCityValid={propertyCityValid}
+          propertyCityChange={this.updatePropertyCity}
           propertyState={propertyState}
           propertyStateValid={propertyStateValid}
+          propertyStateChange={this.updatePropertyState}
           featured={featured}
           featuredValid={featuredValid}
           recent={recent}
