@@ -139,13 +139,13 @@ class NewPropertyPageThree extends Component {
       propertyStateChange,
       propertyStateValid,
 
-      featured,
+      // featured,
       featuredChange,
-      featuredValid,
+      // featuredValid,
 
-      recent,
+      // recent,
       recentChange,
-      recentValid,
+      // recentValid,
 
       formThreeValid,
     } = this.props;
@@ -187,7 +187,7 @@ class NewPropertyPageThree extends Component {
                 <input
                   name="bedroom"
                   type="number"
-                  placeholder="bedroom"
+                  placeholder="no. of bedroom"
                   className="form-field"
                   id="bedroom"
                   value={bedroom}
@@ -202,7 +202,7 @@ class NewPropertyPageThree extends Component {
                 <input
                   name="bathroom"
                   type="number"
-                  placeholder="bathroom"
+                  placeholder="no. of bathroom"
                   className="form-field"
                   id="bathroom"
                   value={bathroom}
@@ -343,17 +343,19 @@ class NewPropertyPageThree extends Component {
                   </div>
                 </div>
               </div>
-              <div className="form-group form-checkbox">
-                <div className="post-eng-div">
-                  <p>New</p>
+              <div className="form-group form-group-checkbox ">
+                <div className="form-label-div">
+                  <label htmlFor="checkbox-new">New</label>
                 </div>
-                <input
-                  type="checkbox"
-                  name="descriptionBranch"
-                  // required
-                  // value={descriptionBranch}
-                  // onChange={setForm}
-                />
+                <div className="new-checkbox-div">
+                  <input
+                    type="checkbox"
+                    name="checkbox-new"
+                    // required
+                    // value={descriptionBranch}
+                    // onChange={setForm}
+                  />
+                </div>
               </div>
 
               <button
