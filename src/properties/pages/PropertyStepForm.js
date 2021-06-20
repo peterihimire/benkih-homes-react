@@ -374,6 +374,24 @@ export class PropertyStepForm extends Component {
     this.setState({ recentValid, errorMsg }, this.validateFormThree);
   };
 
+  // FOR NEWPROPERTY VALIDATION
+  updateNewProperty = (newProperty) => {
+    this.setState({ newProperty }, this.validateNewProperty);
+  };
+
+  validateNewProperty = () => {
+    const { newProperty } = this.state;
+    let newPropertyValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (newProperty === false) {
+      newPropertyValid = false;
+      errorMsg.newProperty = "Property not new";
+    }
+
+    this.setState({ newPropertyValid, errorMsg }, this.validateFormThree);
+  };
+
   showStep = () => {
     const {
       step,
@@ -486,6 +504,9 @@ export class PropertyStepForm extends Component {
           recent={recent}
           recentValid={recentValid}
           recentChange={this.updateRecent}
+          newProperty={newProperty}
+          newPropertyValid={newPropertyValid}
+          newPropertyChange={this.updateNewProperty}
           formThreeValid={formThreeValid}
           errorMsg={errorMsg}
           closeForm={this.props}
