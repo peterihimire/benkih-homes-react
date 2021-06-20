@@ -53,6 +53,8 @@ export class PropertyStepForm extends Component {
     featuredValid: false,
     recent: "no",
     recentValid: false,
+    newProperty: false,
+    newPropertyValid: false,
     formThreeValid: false,
 
     // FORM VALIDATION STATE
@@ -409,7 +411,10 @@ export class PropertyStepForm extends Component {
       featuredValid,
       recent,
       recentValid,
+      newProperty,
+      newPropertyValid,
       formThreeValid,
+
     } = this.state;
 
     if (step === 1)
