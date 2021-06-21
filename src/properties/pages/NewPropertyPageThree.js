@@ -143,7 +143,7 @@ class NewPropertyPageThree extends Component {
       featuredChange,
       // featuredValid,
 
-      // recent,
+      recent,
       recentChange,
       // recentValid,
 
@@ -295,7 +295,7 @@ class NewPropertyPageThree extends Component {
                       name="featured"
                       className="radio-privacy"
                       // value={privacyPrivate}
-                      value="no"
+                      // value="no"
                       defaultChecked
                       onChange={(e) => featuredChange(e.target.value)}
                     />
@@ -319,9 +319,10 @@ class NewPropertyPageThree extends Component {
                       // id="radioPublic"
                       name="recent"
                       className="radio-privacy"
-                      // value={privacyPublic}
-                      value="yes"
-                      onChange={(e) => recentChange(e.target.value)}
+                      value={recent}
+                      // value="yes"
+                      // defaultChecked={recent}
+                      onChange={recentChange}
                     />
                     <label className="radio-privacy-label" htmlFor="radioYes">
                       Yes
@@ -335,10 +336,10 @@ class NewPropertyPageThree extends Component {
                       // id="radioPrivate"
                       name="recent"
                       className="radio-privacy"
-                      // value={privacyPrivate}
-                      value="no"
-                      defaultChecked
-                      onChange={(e) => recentChange(e.target.value)}
+                      value={recent}
+                      // value="no"
+                      // defaultChecked={recent}
+                      onChange={recentChange}
                     />
                     <label className="radio-privacy-label" htmlFor="radioNo">
                       No
