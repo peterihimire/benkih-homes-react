@@ -375,6 +375,10 @@ export class PropertyStepForm extends Component {
   };
 
   // FOR NEWPROPERTY VALIDATION
+  handleChange = (input) => (e) => {
+    this.setState({ [input]: e.target.value });
+  };
+
   updateNewProperty = (newProperty) => {
     this.setState({ newProperty }, this.validateNewProperty);
   };
@@ -432,7 +436,6 @@ export class PropertyStepForm extends Component {
       newProperty,
       newPropertyValid,
       formThreeValid,
-
     } = this.state;
 
     if (step === 1)
@@ -506,7 +509,7 @@ export class PropertyStepForm extends Component {
           recentChange={this.updateRecent}
           newProperty={newProperty}
           newPropertyValid={newPropertyValid}
-          newPropertyChange={this.updateNewProperty}
+          newPropertyChange={this.handleChange}
           formThreeValid={formThreeValid}
           errorMsg={errorMsg}
           closeForm={this.props}
@@ -529,6 +532,7 @@ export class PropertyStepForm extends Component {
           propertyState={propertyState}
           featured={featured}
           recent={recent}
+          newProperty={newProperty}
           prevStep={this.prevStep}
         />
       );

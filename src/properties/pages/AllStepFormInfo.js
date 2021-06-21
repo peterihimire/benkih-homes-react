@@ -31,6 +31,7 @@ class AllStepFormInfo extends Component {
       propertyState,
       featured,
       recent,
+      newProperty,
     } = this.props;
     console.log(
       title,
@@ -46,7 +47,8 @@ class AllStepFormInfo extends Component {
       propertyCity,
       propertyState,
       featured,
-      recent
+      recent,
+      newProperty
     );
     return (
       <div className="auth-item">
@@ -106,6 +108,7 @@ class AllStepFormInfo extends Component {
               <br />
               Recent: <b>{recent}</b>
               <br />
+              New Property: <b>{newProperty}</b>
             </div>
 
             <form>

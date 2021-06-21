@@ -147,6 +147,10 @@ class NewPropertyPageThree extends Component {
       recentChange,
       // recentValid,
 
+      newProperty,
+      newPropertyChange,
+      newPropertyValid,
+
       formThreeValid,
     } = this.props;
     return (
@@ -343,18 +347,24 @@ class NewPropertyPageThree extends Component {
                   </div>
                 </div>
               </div>
-              <div className="form-group form-group-checkbox ">
-                <div className="form-label-div">
-                  <label htmlFor="checkbox-new">New</label>
-                </div>
-                <div className="new-checkbox-div">
-                  <input
-                    type="checkbox"
-                    name="checkbox-new"
-                    // required
-                    // value={descriptionBranch}
-                    // onChange={setForm}
-                  />
+              <div className="form-group ">
+                <ValidationMessage
+                  valid={newPropertyValid}
+                  message={errorMsg.newProperty}
+                />
+                <div className="form-group-checkbox ">
+                  <div className="form-label-div">
+                    <label htmlFor="checkbox-new">New</label>
+                  </div>
+                  <div className="new-checkbox-div">
+                    <input
+                      type="checkbox"
+                      name="checkbox-new"
+                      // required
+                      value={newProperty}
+                      onChange={newPropertyChange("checkbox-new")}
+                    />
+                  </div>
                 </div>
               </div>
 
