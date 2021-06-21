@@ -53,8 +53,10 @@ export class PropertyStepForm extends Component {
     featuredValid: false,
     recent: "no",
     recentValid: false,
+
     newProperty: false,
     newPropertyValid: false,
+
     formThreeValid: false,
 
     // FORM VALIDATION STATE
@@ -379,6 +381,12 @@ export class PropertyStepForm extends Component {
     this.setState({ [input]: e.target.value });
   };
 
+  toggleCheck = () => {
+    console.log(this.state.newProperty);
+    // setIsChecked(!isChecked);
+    this.setState({  newProperty: !this.state.newProperty });
+  };
+
   updateNewProperty = (newProperty) => {
     this.setState({ newProperty }, this.validateNewProperty);
   };
@@ -509,7 +517,7 @@ export class PropertyStepForm extends Component {
           recentChange={this.updateRecent}
           newProperty={newProperty}
           newPropertyValid={newPropertyValid}
-          newPropertyChange={this.handleChange}
+          newPropertyChange={this.toggleCheck}
           formThreeValid={formThreeValid}
           errorMsg={errorMsg}
           closeForm={this.props}

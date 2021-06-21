@@ -354,15 +354,16 @@ class NewPropertyPageThree extends Component {
                 />
                 <div className="form-group-checkbox ">
                   <div className="form-label-div">
-                    <label htmlFor="checkbox-new">New</label>
+                    <label htmlFor="checkbus">New</label>
                   </div>
                   <div className="new-checkbox-div">
                     <input
                       type="checkbox"
-                      name="checkbox-new"
+                      name="checkbus"
                       // required
-                      value={newProperty}
-                      onChange={newPropertyChange("checkbox-new")}
+                      // value={newProperty}
+                      defaultChecked={newProperty}
+                      onChange={newPropertyChange}
                     />
                   </div>
                 </div>

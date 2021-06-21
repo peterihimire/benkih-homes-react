@@ -108,7 +108,8 @@ class AllStepFormInfo extends Component {
               <br />
               Recent: <b>{recent}</b>
               <br />
-              New Property: <b>{newProperty}</b>
+              {/* used the toString() method to convert boolean to string */}
+              New Property: <b>{newProperty.toString()}</b>
             </div>
 
             <form>
