@@ -59,7 +59,7 @@ class AllStepFormInfo extends Component {
           <div className="close-form-btn-div">
             <button
               className="back-btn"
-              onClick={() => this.props.history.goBack()}
+              onClick={() => this.props.closeForm.history.goBack()}
             >
               <img src={closeIcon} alt="close icon" />
             </button>
@@ -106,7 +106,7 @@ class AllStepFormInfo extends Component {
               <br />
               Featured: <b>{featured}</b>
               <br />
-              Recent: <b>{recent}</b>
+              Recent: <b>{recent.toString()}</b>
               <br />
               {/* used the toString() method to convert boolean to string */}
               New Property: <b>{newProperty.toString()}</b>

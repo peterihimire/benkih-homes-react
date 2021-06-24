@@ -149,7 +149,7 @@ class NewPropertyPageThree extends Component {
 
       newProperty,
       newPropertyChange,
-      newPropertyValid,
+      // newPropertyValid,
 
       formThreeValid,
     } = this.props;
@@ -295,7 +295,7 @@ class NewPropertyPageThree extends Component {
                       name="featured"
                       className="radio-privacy"
                       // value={privacyPrivate}
-                      // value="no"
+                      value="no"
                       defaultChecked
                       onChange={(e) => featuredChange(e.target.value)}
                     />
@@ -307,52 +307,23 @@ class NewPropertyPageThree extends Component {
                 </div>
               </div>
 
-              <div className="form-group form-group-radio">
-                <div className="form-label-div">
-                  <label htmlFor="Recent">Recent</label>
-                </div>
-
-                <div className=" privacy-radio-div">
-                  <div className="radio-public">
-                    <input
-                      type="radio"
-                      // id="radioPublic"
-                      name="recent"
-                      className="radio-privacy"
-                      value={recent}
-                      // value="yes"
-                      // defaultChecked={recent}
-                      onChange={recentChange}
-                    />
-                    <label className="radio-privacy-label" htmlFor="radioYes">
-                      Yes
-                    </label>
-                    <p>Recently added</p>
+              <div className="form-group ">
+                <div className="form-group-checkbox ">
+                  <div className="form-label-div">
+                    <label htmlFor="checkbus">Recent</label>
                   </div>
-
-                  <div>
+                  <div className="new-checkbox-div">
                     <input
-                      type="radio"
-                      // id="radioPrivate"
-                      name="recent"
-                      className="radio-privacy"
-                      value={recent}
-                      // value="no"
-                      // defaultChecked={recent}
+                      type="checkbox"
+                      name="checkbus"
+                      defaultChecked={recent}
                       onChange={recentChange}
                     />
-                    <label className="radio-privacy-label" htmlFor="radioNo">
-                      No
-                    </label>
-                    <p>Not recently added</p>
                   </div>
                 </div>
               </div>
+
               <div className="form-group ">
-                <ValidationMessage
-                  valid={newPropertyValid}
-                  message={errorMsg.newProperty}
-                />
                 <div className="form-group-checkbox ">
                   <div className="form-label-div">
                     <label htmlFor="checkbus">New</label>
