@@ -36,4 +36,4 @@ and Android app tutorial by [@eericon](https://www.eericon.github.io/post/timer-
 
 ## Demo
 
-You can view the live demo of this application by visiting this [link](https://benkih-homes.netlify.app) 
+You can view the live demo of this application by visiting this [link](https://bnk-homes.netlify.app) 
