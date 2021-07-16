@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../../shared/components/Footer";
 import Navbar from "../../shared/components/Navigation/Navbar";
-import AboutBanner from "../../shared/components/AboutBanner";
+import PropertiesBanner from "../../shared/components/PropertiesBanner";
 // import AboutBlock from "../../properties/components/AboutBlock";
 
 const PropertiesPage = () => {
@@ -9,7 +9,7 @@ const PropertiesPage = () => {
     <div id="page-container" className="App">
       <div id="content-wrapper">
         <Navbar />
-        <AboutBanner />
+        <PropertiesBanner />
         <div className="main-content">
           <div className="main-content-container">
             {/* <AboutBlock /> */}
