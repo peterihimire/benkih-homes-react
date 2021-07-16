@@ -28,9 +28,9 @@ const NavLinksMob = () => {
           <NavLink
             activeClassName="active"
             className="navbar-single-link"
-            to="/features"
+            to="/properties"
           >
-            features
+            properties
           </NavLink>
         </li>
         <li className="side-navbar-item">

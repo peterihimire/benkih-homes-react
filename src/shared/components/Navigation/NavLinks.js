@@ -43,9 +43,9 @@ const NavLinks = (props) => {
                 ? "navbar-single-link navbar-single-color"
                 : "navbar-single-link"
             }
-            to="/features"
+            to="/properties"
           >
-            features
+            properties
           </NavLink>
         </li>
         <li className="navbar-item">

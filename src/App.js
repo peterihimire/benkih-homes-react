@@ -6,6 +6,7 @@ import LoginPage from "../src/properties/pages/LoginPage";
 import SignupPage from "../src/properties/pages/SignupPage";
 import ForgotPasswordPage from "../src/properties/pages/ForgotPasswordPage";
 import NewPropertyPageOne from "../src/properties/pages/PropertyStepForm";
+import PropertiesPage from "../src/properties/pages/PropertiesPage";
 import {
   BrowserRouter as Router,
   Route,
@@ -22,6 +23,7 @@ function App() {
         <Route path="/contact" exact component={ContactPage} />
         <Route path="/login" exact component={LoginPage} />
         <Route path="/register" exact component={SignupPage} />
+        <Route path="/properties" exact component={PropertiesPage} />
         <Route path="/forgot-password" exact component={ForgotPasswordPage} />
         <Route path="/property/new" exact component={NewPropertyPageOne} />
         <Redirect to="/" />
