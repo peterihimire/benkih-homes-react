@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../../shared/components/Footer";
 import Navbar from "../../shared/components/Navigation/Navbar";
 import PropertiesBanner from "../../shared/components/PropertiesBanner";
-// import AboutBlock from "../../properties/components/AboutBlock";
+import PropertyBlock from "../../properties/components/PropertyBlock";
 
 const PropertiesPage = () => {
   return (
@@ -12,7 +12,7 @@ const PropertiesPage = () => {
         <PropertiesBanner />
         <div className="main-content">
           <div className="main-content-container">
-            {/* <AboutBlock /> */}
+            <PropertyBlock />
           </div>
         </div>
       </div>

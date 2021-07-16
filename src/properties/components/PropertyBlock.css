@@ -1,0 +1,136 @@
+.property-block {
+  padding: 4rem 0;
+}
+
+.property-block-search {
+  padding: 2rem 2rem;
+  /* height: 300px; */
+  background-color: var(--main-grey);
+  text-align: center;
+  font-weight: bold;
+  border-radius: 4px;
+  font-family: var(--sec-font-bold);
+}
+.about-word-block p {
+  font-size: var(--medium-font);
+}
+.about-word-block span {
+  color: var(--primary-color);
+}
+.about-us {
+  padding: 4rem 0rem;
+}
+.about-us h4 {
+}
+.about-us p {
+  margin: 0 0 2rem 0;
+}
+.about-us-title {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+}
+.about-us-title h4 {
+  text-align: center;
+  font-size: var(--medium-font);
+  /* text-decoration: underline; */
+  text-transform: capitalize;
+  display: inline-block;
+  padding: 0 0 0.2rem 0;
+  position: relative;
+}
+.about-us-title h4::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid var(--primary-color);
+}
+.about-team-title {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+}
+.about-team-title h4 {
+  text-align: center;
+  font-size: var(--medium-font);
+  /* text-decoration: underline; */
+  text-transform: capitalize;
+  display: inline-block;
+  padding: 0 0 0.2rem 0;
+  position: relative;
+}
+.about-team-title h4::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  border-bottom: 3px solid var(--primary-color);
+}
+.blank-dark-bg {
+  background-color: var(--dark-grey);
+  height: 200px;
+  width: 136px;
+  position: absolute;
+  left: 31px;
+  border-radius: 5px;
+}
+.about-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  grid-row-gap: 2rem;
+  grid-column-gap: 2rem;
+  margin: 4rem 0;
+}
+.about-team-image {
+  position: relative;
+  height: 266px;
+  width: 100%;
+  
+  /* width: 196px; */
+  /* background-color: salmon; */
+}
+.about-team-image img {
+  width: 100%;
+  border-radius: 5px;
+}
+.team-image-text {
+  position: absolute;
+  top: 20px;
+  left: 51px;
+}
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .about-word-block {
+    padding: 4rem 5rem;
+    /* height: 300px; */
+    background-color: var(--main-grey);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: var(--sec-font-bold);
+  }
+  .about-us {
+    padding: 4rem 10rem;
+  }
+}
+/* LAPTOP */
+@media (min-width: 993px) {
+  .about-word-block {
+    padding: 4rem 15rem;
+    /* height: 300px; */
+    background-color: var(--main-grey);
+    text-align: center;
+    font-weight: bold;
+    border-radius: 4px;
+    font-family: var(--sec-font-bold);
+  }
+  .about-us {
+    padding: 4rem 20rem;
+  }
+}
