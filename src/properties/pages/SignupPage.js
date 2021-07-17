@@ -135,6 +135,7 @@ class SignupPage extends Component {
     this.setState({ adminValid, errorMsg }, this.validateForm);
   };
 
+  // SIGN-UP HANDLER
   signUpHandler = (e) => {
     e.preventDefault();
     console.log({
@@ -148,10 +149,10 @@ class SignupPage extends Component {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        fullName: this.state.fullName,
+        fullname: this.state.fullName,
         email: this.state.email,
         password: this.state.password,
-        adminCode: this.state.adminCode,
+        admincode: this.state.adminCode,
       }),
     })
       .then((response) => {
@@ -164,6 +165,7 @@ class SignupPage extends Component {
               throw new Error(res.msg);
             }
             this.setState({ loading: false });
+            this.props.history.push("/login"); //Directs to login page , after successful signup
           })
           .catch((err) => {
             console.log(err);
@@ -175,6 +177,7 @@ class SignupPage extends Component {
         this.setState({ loading: false });
       });
   };
+
   render() {
     return (
       <div className="auth-item">
