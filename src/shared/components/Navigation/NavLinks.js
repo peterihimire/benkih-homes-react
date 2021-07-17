@@ -30,9 +30,9 @@ const NavLinks = (props) => {
                 ? "navbar-single-link navbar-single-color"
                 : "navbar-single-link"
             }
-            to="/how-works"
+            to="/profile"
           >
-            how it works
+            profile
           </NavLink>
         </li>
         <li className="navbar-item">

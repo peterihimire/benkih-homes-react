@@ -32,12 +32,8 @@ class SignupPage extends Component {
 
   // FOR OVERALL FORM VALIDATION
   validateForm = () => {
-    const {
-      fullNameValid,
-      emailValid,
-      passwordValid,
-      passwordConfirmValid,
-    } = this.state;
+    const { fullNameValid, emailValid, passwordValid, passwordConfirmValid } =
+      this.state;
     this.setState({
       formValid:
         fullNameValid && emailValid && passwordValid && passwordConfirmValid,
@@ -139,6 +135,46 @@ class SignupPage extends Component {
     this.setState({ adminValid, errorMsg }, this.validateForm);
   };
 
+  signUpHandler = (e) => {
+    e.preventDefault();
+    console.log({
+      fullName: this.state.fullName,
+      email: this.state.email,
+      password: this.state.password,
+      adminCode: this.state.adminCode,
+    });
+    this.setState({ loading: true });
+    fetch(`http://localhost:4000/api/users/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName: this.state.fullName,
+        email: this.state.email,
+        password: this.state.password,
+        adminCode: this.state.adminCode,
+      }),
+    })
+      .then((response) => {
+        console.log(response);
+        response
+          .json()
+          .then((res) => {
+            console.log(res);
+            if (!response.ok) {
+              throw new Error(res.msg);
+            }
+            this.setState({ loading: false });
+          })
+          .catch((err) => {
+            console.log(err);
+            this.setState({ loading: false });
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({ loading: false });
+      });
+  };
   render() {
     return (
       <div className="auth-item">
@@ -167,7 +203,7 @@ class SignupPage extends Component {
               <h2>Create an account with us.</h2>
               <p>To access all properties, searches, notes and more.</p>
             </div>
-            <form>
+            <form onSubmit={this.signUpHandler}>
               <div className="form-group">
                 <ValidationMessage
                   valid={this.state.fullNameValid}

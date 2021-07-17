@@ -19,9 +19,9 @@ const NavLinksMob = () => {
           <NavLink
             activeClassName="active"
             className="navbar-single-link"
-            to="/how-works"
+            to="/profile"
           >
-            how it works
+            profile
           </NavLink>
         </li>
         <li className="side-navbar-item">
