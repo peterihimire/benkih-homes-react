@@ -81,6 +81,45 @@ class LoginPage extends Component {
     this.setState({ passwordValid, errorMsg }, this.validateForm);
   };
 
+  // LOGIN HANDLER
+  loginHandler = (e) => {
+    e.preventDefault();
+    console.log({
+      email: this.state.email,
+      password: this.state.password,
+    });
+    this.setState({ loading: true });
+    fetch(`http://localhost:4000/api/users/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: this.state.email,
+        password: this.state.password,
+      }),
+    })
+      .then((response) => {
+        console.log(response);
+        response
+          .json()
+          .then((res) => {
+            console.log(res);
+            if (!response.ok) {
+              throw new Error(res.msg);
+            }
+            this.setState({ loading: false });
+            this.props.history.push("/profile");
+          })
+          .catch((err) => {
+            console.log(err);
+            this.setState({ loading: false });
+          });
+      })
+      .catch((err) => {
+        console.log(err);
+        this.setState({ loading: false });
+      });
+  };
+
   render() {
     return (
       <div className="auth-item">
@@ -109,7 +148,7 @@ class LoginPage extends Component {
               <h2>Login to your account</h2>
               <p>Access all your saved properties, searches, notes and more.</p>
             </div>
-            <form>
+            <form onSubmit={this.loginHandler}>
               <div className="form-group">
                 <ValidationMessage
                   valid={this.state.emailValid}
