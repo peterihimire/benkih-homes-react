@@ -5,6 +5,7 @@ import homeBg from "../../assets/full-modal.svg";
 import { Link } from "react-router-dom";
 // import { FaArrowLeft } from "react-icons/fa";
 import closeIcon from "../../assets/close-icon.svg";
+import { AuthContext } from "../../shared/context/auth-context";
 
 function ValidationMessage(props) {
   if (!props.valid) {
@@ -14,6 +15,9 @@ function ValidationMessage(props) {
 }
 
 class LoginPage extends Component {
+  static contextType = AuthContext;
+  // context = this.context;
+
   state = {
     email: "",
     emailValid: false,
@@ -119,6 +123,14 @@ class LoginPage extends Component {
         this.setState({ loading: false });
       });
   };
+
+
+  // FOR STATE MANAGEMENT
+  componentDidMount(){
+    const context = this.context;
+    console.log(context);
+    console.log(context.login);
+  }
 
   render() {
     return (

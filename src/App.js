@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import "./App.css";
 import HomePage from "../src/properties/pages/HomePage";
 import ContactPage from "../src/properties/pages/ContactPage";
@@ -20,12 +20,47 @@ import { AuthContext } from "../src/shared/context/auth-context";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
-  const [userId, setUserId] = React.useState(false);
-  const [token, setToken] = React.useState(false);
+  const [userId, setUserId] = React.useState();
+  const [token, setToken] = React.useState();
   const [isAdmin, setIsAdmin] = React.useState(false);
 
-  const login = () => {};
-  const logout = () => {};
+  const login = useCallback((uid, token, admin) => {
+    setIsLoggedIn(true);
+    setUserId(uid)
+    setToken(token)
+    setIsAdmin(admin)
+  }, []);
+  const logout = useCallback(() => {
+    setIsLoggedIn(false);
+  }, []);
+
+  let routes;
+
+  if (isLoggedIn) {
+    routes = (
+      <Switch>
+        <Route path="/forgot-password" exact component={ForgotPasswordPage} />
+        <Route path="/property/new" exact component={NewPropertyPageOne} />
+
+        <Redirect to="/" />
+      </Switch>
+    );
+  } else {
+    routes = (
+      <Switch>
+        <Route path="/" exact component={HomePage} />
+        <Route path="/about" exact component={AboutPage} />
+        <Route path="/contact" exact component={ContactPage} />
+        <Route path="/properties" exact component={PropertiesPage} />
+        <Route path="/login" exact component={LoginPage} />
+        <Route path="/register" exact component={SignupPage} />
+        <Route path="/profile" exact component={ProfilePage} />
+
+
+        <Redirect to="/" />
+      </Switch>
+    );
+  }
 
   return (
     <AuthContext.Provider
@@ -38,22 +73,22 @@ function App() {
         logout: logout,
       }}
     >
-      <Router>
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/about" exact component={AboutPage} />
-          <Route path="/contact" exact component={ContactPage} />
-          <Route path="/login" exact component={LoginPage} />
-          <Route path="/register" exact component={SignupPage} />
-          <Route path="/properties" exact component={PropertiesPage} />
-          <Route path="/forgot-password" exact component={ForgotPasswordPage} />
-          <Route path="/property/new" exact component={NewPropertyPageOne} />
-          <Route path="/profile" exact component={ProfilePage} />
-          <Redirect to="/" />
-        </Switch>
-      </Router>
+      <Router>{routes}</Router>
     </AuthContext.Provider>
   );
 }
 
 export default App;
+
+/* <Switch>
+  <Route path="/" exact component={HomePage} />
+  <Route path="/about" exact component={AboutPage} />
+  <Route path="/contact" exact component={ContactPage} />
+  <Route path="/login" exact component={LoginPage} />
+  <Route path="/register" exact component={SignupPage} />
+  <Route path="/properties" exact component={PropertiesPage} />
+  <Route path="/forgot-password" exact component={ForgotPasswordPage} />
+  <Route path="/property/new" exact component={NewPropertyPageOne} />
+  <Route path="/profile" exact component={ProfilePage} />
+  <Redirect to="/" />
+</Switch>; */

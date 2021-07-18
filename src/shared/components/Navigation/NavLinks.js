@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./NavLinks.css";
 import { NavLink, Link } from "react-router-dom";
+import { AuthContext } from "../../context/auth-context";
 
 const NavLinks = (props) => {
   const { scrollColor } = props;
   console.log(props);
+
+  const auth = useContext(AuthContext);
+  console.log(auth);
+  
   return (
     <div className="navbar-main-links">
       <ul className="navbar-links">
