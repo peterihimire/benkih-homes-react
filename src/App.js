@@ -32,6 +32,9 @@ function App() {
   }, []);
   const logout = useCallback(() => {
     setIsLoggedIn(false);
+    setUserId(null);
+    setToken(null);
+    setIsAdmin(null);
   }, []);
 
   let routes;
