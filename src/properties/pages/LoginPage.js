@@ -107,11 +107,17 @@ class LoginPage extends Component {
           .json()
           .then((res) => {
             console.log(res);
+            console.log(res.token);
+            console.log(res.userId);
+            console.log(res.fullname);
+            console.log(res.admin);
+
             if (!response.ok) {
               throw new Error(res.msg);
             }
             this.setState({ loading: false });
-            this.props.history.push("/profile");
+            this.context.login(res.userId, res.token, res.admin);
+            // this.props.history.push("/profile");
           })
           .catch((err) => {
             console.log(err);
@@ -124,9 +130,8 @@ class LoginPage extends Component {
       });
   };
 
-
   // FOR STATE MANAGEMENT
-  componentDidMount(){
+  componentDidMount() {
     const context = this.context;
     console.log(context);
     console.log(context.login);

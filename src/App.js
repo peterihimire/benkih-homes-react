@@ -26,9 +26,9 @@ function App() {
 
   const login = useCallback((uid, token, admin) => {
     setIsLoggedIn(true);
-    setUserId(uid)
-    setToken(token)
-    setIsAdmin(admin)
+    setUserId(uid);
+    setToken(token);
+    setIsAdmin(admin);
   }, []);
   const logout = useCallback(() => {
     setIsLoggedIn(false);
@@ -41,8 +41,9 @@ function App() {
       <Switch>
         <Route path="/forgot-password" exact component={ForgotPasswordPage} />
         <Route path="/property/new" exact component={NewPropertyPageOne} />
+        <Route path="/profile" exact component={ProfilePage} />
 
-        <Redirect to="/" />
+        <Redirect to="/profile" />
       </Switch>
     );
   } else {
@@ -54,8 +55,6 @@ function App() {
         <Route path="/properties" exact component={PropertiesPage} />
         <Route path="/login" exact component={LoginPage} />
         <Route path="/register" exact component={SignupPage} />
-        <Route path="/profile" exact component={ProfilePage} />
-
 
         <Redirect to="/" />
       </Switch>
