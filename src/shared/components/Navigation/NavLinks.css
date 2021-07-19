@@ -25,7 +25,25 @@
   letter-spacing: var(--mainSpacing);
   text-align: left;
 }
+/* FOR THE SIGN-OUT BUTTON COLOR CHANGE */
+.navbar-signout {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  color: var(--main-white);
+  transition: var(--mainTransition);
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  text-align: left;
+  background: none;
+  box-shadow: var(--main-shadow);
+  border: none;
+}
 
+.navbar-signout-color{
+  color: var(--main-black) !important;
+}
 /* LAPTOP */
 @media (min-width: 993px) {
   .navbar-links {
@@ -35,7 +53,7 @@
   .navbar-links a {
     margin: 0 2rem;
     padding: 0.5rem 0;
-    color: var(--main-white);
+    color: var(--main-white) ;
   }
   .navbar-single-color {
     color: var(--main-black) !important;

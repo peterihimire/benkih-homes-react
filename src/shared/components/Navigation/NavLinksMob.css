@@ -24,6 +24,16 @@
 .side-navbar-payment {
   padding: 0 0 0rem 0;
 }
+.navbar-signout-mob {
+  color: var(--main-black);
+  transition: var(--mainTransition);
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  text-align: left;
+  background: none;
+  border: none;
+}
 
 /* TABLET */
 @media screen and (min-width: 768px) {
@@ -47,5 +57,16 @@
   .btn-side-navbar a{
     font-weight: bold;
     font-size: 1.5rem;
+  }
+
+  .navbar-signout-mob {
+    color: var(--main-black);
+    transition: var(--mainTransition);
+    font-size: 2rem;
+    text-transform: capitalize;
+    letter-spacing: var(--mainSpacing);
+    text-align: left;
+    background: none;
+    border: none;
   }
 }

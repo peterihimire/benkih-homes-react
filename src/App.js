@@ -42,6 +42,11 @@ function App() {
   if (isLoggedIn) {
     routes = (
       <Switch>
+         <Route path="/" exact component={HomePage} />
+        <Route path="/about" exact component={AboutPage} />
+        <Route path="/contact" exact component={ContactPage} />
+        <Route path="/properties" exact component={PropertiesPage} />
+        
         <Route path="/forgot-password" exact component={ForgotPasswordPage} />
         <Route path="/property/new" exact component={NewPropertyPageOne} />
         <Route path="/profile" exact component={ProfilePage} />
