@@ -16,8 +16,8 @@ class NewPropertyPageTwo extends Component {
   state = {
     description: "",
     descriptionValid: false,
-    creator: "",
-    creatorValid: false,
+    // creator: "",
+    // creatorValid: false,
     latitude: "",
     latitudeValid: false,
     longitude: "",
@@ -32,13 +32,13 @@ class NewPropertyPageTwo extends Component {
   validateForm = () => {
     const {
       descriptionValid,
-      creatorValid,
+      // creatorValid,
       latitudeValid,
       longitudeValid,
     } = this.state;
     this.setState({
       formValid:
-        descriptionValid && creatorValid && latitudeValid && longitudeValid,
+        descriptionValid  && latitudeValid && longitudeValid,
     });
   };
 
@@ -60,23 +60,23 @@ class NewPropertyPageTwo extends Component {
     this.setState({ descriptionValid, errorMsg }, this.validateForm);
   };
 
-  // FOR CREATOR VALIDATION
-  updateCreator = (creator) => {
-    this.setState({ creator }, this.validateCreator);
-  };
+  // // FOR CREATOR VALIDATION
+  // updateCreator = (creator) => {
+  //   this.setState({ creator }, this.validateCreator);
+  // };
 
-  validateCreator = () => {
-    const { creator } = this.state;
-    let creatorValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateCreator = () => {
+  //   const { creator } = this.state;
+  //   let creatorValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (creator.length < 7) {
-      creatorValid = false;
-      errorMsg.creator = "Must be at least 7 characters long";
-    }
+  //   if (creator.length < 7) {
+  //     creatorValid = false;
+  //     errorMsg.creator = "Must be at least 7 characters long";
+  //   }
 
-    this.setState({ creatorValid, errorMsg }, this.validateForm);
-  };
+  //   this.setState({ creatorValid, errorMsg }, this.validateForm);
+  // };
 
   // FOR LATITUDE VALIDATION
   updateLatitude = (latitude) => {
@@ -131,9 +131,9 @@ class NewPropertyPageTwo extends Component {
       descriptionValid,
       errorMsg,
 
-      creator,
-      creatorChange,
-      creatorValid,
+      // creator,
+      // creatorChange,
+      // creatorValid,
 
       latitude,
       latitudeChange,
@@ -175,7 +175,7 @@ class NewPropertyPageTwo extends Component {
               <p>Add or create new property for sale.</p>
             </div>
             <form>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <ValidationMessage
                   valid={creatorValid}
                   message={errorMsg.creator}
@@ -189,7 +189,7 @@ class NewPropertyPageTwo extends Component {
                   value={creator}
                   onChange={(e) => creatorChange(e.target.value)}
                 />
-              </div>
+              </div> */}
               <div className="form-group">
                 <ValidationMessage
                   valid={latitudeValid}

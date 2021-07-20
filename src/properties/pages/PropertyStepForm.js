@@ -50,14 +50,15 @@ export class PropertyStepForm extends Component {
     propertyState: "",
     propertyStateValid: false,
 
-    featured: "no",
-    featuredValid: false,
+    // FOR OLD FEATURED STATE
+    // featured: "no",
+    // featuredValid: false,
+
+    featured: false,
 
     recent: false,
-    // recentValid: false,
 
     newProperty: false,
-    // newPropertyValid: false,
 
     formThreeValid: false,
 
@@ -168,11 +169,9 @@ export class PropertyStepForm extends Component {
 
   // FOR FORM-TWO VALIDATION
   validateFormTwo = () => {
-    const { descriptionValid, creatorValid, latitudeValid, longitudeValid } =
-      this.state;
+    const { descriptionValid, latitudeValid, longitudeValid } = this.state;
     this.setState({
-      formTwoValid:
-        descriptionValid && creatorValid && latitudeValid && longitudeValid,
+      formTwoValid: descriptionValid && latitudeValid && longitudeValid,
     });
   };
 
@@ -194,23 +193,23 @@ export class PropertyStepForm extends Component {
     this.setState({ descriptionValid, errorMsg }, this.validateFormTwo);
   };
 
-  // FOR CREATOR VALIDATION
-  updateCreator = (creator) => {
-    this.setState({ creator }, this.validateCreator);
-  };
+  // // FOR CREATOR VALIDATION
+  // updateCreator = (creator) => {
+  //   this.setState({ creator }, this.validateCreator);
+  // };
 
-  validateCreator = () => {
-    const { creator } = this.state;
-    let creatorValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateCreator = () => {
+  //   const { creator } = this.state;
+  //   let creatorValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (creator.length < 7) {
-      creatorValid = false;
-      errorMsg.creator = "Must be at least 7 characters long";
-    }
+  //   if (creator.length < 7) {
+  //     creatorValid = false;
+  //     errorMsg.creator = "Must be at least 7 characters long";
+  //   }
 
-    this.setState({ creatorValid, errorMsg }, this.validateFormTwo);
-  };
+  //   this.setState({ creatorValid, errorMsg }, this.validateFormTwo);
+  // };
 
   // FOR LATITUDE VALIDATION
   updateLatitude = (latitude) => {
@@ -356,11 +355,11 @@ export class PropertyStepForm extends Component {
   //   this.setState({ featuredValid, errorMsg }, this.validateFormThree);
   // };
 
-    // FOR RECENT VALIDATION
-    toggleCheckFeatured = () => {
-      console.log(this.state.recent);
-      this.setState({ recent: !this.state.featured });
-    };
+  // FOR FEATURED VALIDATION
+  toggleCheckFeatured = () => {
+    console.log(this.state.featured);
+    this.setState({ featured: !this.state.featured });
+  };
 
   // FOR RECENT VALIDATION
   toggleCheckRecent = () => {
@@ -390,8 +389,8 @@ export class PropertyStepForm extends Component {
       errorMsg,
       formOneValid,
 
-      creator,
-      creatorValid,
+      // creator,
+      // creatorValid,
       latitude,
       latitudeValid,
       longitude,
@@ -447,9 +446,9 @@ export class PropertyStepForm extends Component {
           description={description}
           descriptionValid={descriptionValid}
           descriptionChange={this.updateDescription}
-          creator={creator}
-          creatorValid={creatorValid}
-          creatorChange={this.updateCreator}
+          // creator={creator}
+          // creatorValid={creatorValid}
+          // creatorChange={this.updateCreator}
           latitude={latitude}
           latitudeValid={latitudeValid}
           latitudeChange={this.updateLatitude}
@@ -487,8 +486,7 @@ export class PropertyStepForm extends Component {
 
           // CURRENT FEATURED LOGIC BASED ON CHECKBOX
           featured={featured}
-          featuredChange={this.updateFeatured}
-
+          featuredChange={this.toggleCheckFeatured}
           recent={recent}
           // recentValid={recentValid}
           recentChange={this.toggleCheckRecent}
@@ -509,7 +507,7 @@ export class PropertyStepForm extends Component {
           address={address}
           amount={amount}
           description={description}
-          creator={creator}
+          // creator={creator}
           latitude={latitude}
           longitude={longitude}
           bedroom={bedroom}
