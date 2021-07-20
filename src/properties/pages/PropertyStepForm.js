@@ -168,12 +168,8 @@ export class PropertyStepForm extends Component {
 
   // FOR FORM-TWO VALIDATION
   validateFormTwo = () => {
-    const {
-      descriptionValid,
-      creatorValid,
-      latitudeValid,
-      longitudeValid,
-    } = this.state;
+    const { descriptionValid, creatorValid, latitudeValid, longitudeValid } =
+      this.state;
     this.setState({
       formTwoValid:
         descriptionValid && creatorValid && latitudeValid && longitudeValid,
@@ -342,23 +338,29 @@ export class PropertyStepForm extends Component {
     this.setState({ propertyStateValid, errorMsg }, this.validateFormThree);
   };
 
-  // FOR FEATURED VALIDATION
-  updateFeatured = (featured) => {
-    this.setState({ featured }, this.validateFeatured);
-  };
+  // // FOR FEATURED VALIDATION
+  // updateFeatured = (featured) => {
+  //   this.setState({ featured }, this.validateFeatured);
+  // };
 
-  validateFeatured = () => {
-    const { featured } = this.state;
-    let featuredValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateFeatured = () => {
+  //   const { featured } = this.state;
+  //   let featuredValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (featured === "none") {
-      featuredValid = true;
-      errorMsg.featured = "This is chosen";
-    }
+  //   if (featured === "none") {
+  //     featuredValid = true;
+  //     errorMsg.featured = "This is chosen";
+  //   }
 
-    this.setState({ featuredValid, errorMsg }, this.validateFormThree);
-  };
+  //   this.setState({ featuredValid, errorMsg }, this.validateFormThree);
+  // };
+
+    // FOR RECENT VALIDATION
+    toggleCheckFeatured = () => {
+      console.log(this.state.recent);
+      this.setState({ recent: !this.state.featured });
+    };
 
   // FOR RECENT VALIDATION
   toggleCheckRecent = () => {
@@ -407,7 +409,7 @@ export class PropertyStepForm extends Component {
       propertyState,
       propertyStateValid,
       featured,
-      featuredValid,
+      // featuredValid,
       recent,
       // recentValid,
       newProperty,
@@ -478,9 +480,15 @@ export class PropertyStepForm extends Component {
           propertyState={propertyState}
           propertyStateValid={propertyStateValid}
           propertyStateChange={this.updatePropertyState}
+          // FORMER FEATURED LOGIC RADIO BUTTON
+          // featured={featured}
+          // featuredValid={featuredValid}
+          // featuredChange={this.updateFeatured}
+
+          // CURRENT FEATURED LOGIC BASED ON CHECKBOX
           featured={featured}
-          featuredValid={featuredValid}
           featuredChange={this.updateFeatured}
+
           recent={recent}
           // recentValid={recentValid}
           recentChange={this.toggleCheckRecent}
@@ -571,12 +579,3 @@ export default PropertyStepForm;
 // https://vercel.com/peterihimire/peterihimire-next/dDPVahDtfgwHPGVNnUN71Y69Bpta
 // https://www.npmjs.com/package/react-leaflet-geosearch
 // https://www.google.com/search?q=react+esri+leaflet+codesandbox&oq=react+esri+leaflet+codesandbox&aqs=chrome..69i57j69i60.16539j0j1&sourceid=chrome&ie=UTF-8
-
-
-
-
-
-
-
-
-

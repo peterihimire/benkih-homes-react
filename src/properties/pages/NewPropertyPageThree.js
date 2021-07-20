@@ -139,7 +139,7 @@ class NewPropertyPageThree extends Component {
       propertyStateChange,
       propertyStateValid,
 
-      // featured,
+      featured,
       featuredChange,
       // featuredValid,
 
@@ -265,7 +265,7 @@ class NewPropertyPageThree extends Component {
                 </select>
               </div>
 
-              <div className="form-group form-group-radio">
+              {/* <div className="form-group form-group-radio">
                 <div className="form-label-div">
                   <label htmlFor="Featured">Featured</label>
                 </div>
@@ -303,6 +303,22 @@ class NewPropertyPageThree extends Component {
                       No
                     </label>
                     <p>Will not be featured</p>
+                  </div>
+                </div>
+              </div> */}
+
+              <div className="form-group ">
+                <div className="form-group-checkbox ">
+                  <div className="form-label-div">
+                    <label htmlFor="checkbus">Featured</label>
+                  </div>
+                  <div className="new-checkbox-div">
+                    <input
+                      type="checkbox"
+                      name="checkbus"
+                      defaultChecked={featured}
+                      onChange={featuredChange}
+                    />
                   </div>
                 </div>
               </div>
