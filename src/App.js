@@ -10,6 +10,7 @@ import NewPropertyPageOne from "../src/properties/pages/PropertyStepForm";
 import PropertiesPage from "../src/properties/pages/PropertiesPage";
 import ProfilePage from "../src/properties/pages/ProfilePage";
 
+
 import {
   BrowserRouter as Router,
   Route,
@@ -46,7 +47,7 @@ function App() {
         <Route path="/about" exact component={AboutPage} />
         <Route path="/contact" exact component={ContactPage} />
         <Route path="/properties" exact component={PropertiesPage} />
-        
+
         <Route path="/forgot-password" exact component={ForgotPasswordPage} />
         <Route path="/property/new" exact component={NewPropertyPageOne} />
         <Route path="/profile" exact component={ProfilePage} />

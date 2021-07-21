@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 // import { FaArrowLeft } from "react-icons/fa";
 import closeIcon from "../../assets/close-icon.svg";
 import { AuthContext } from "../../shared/context/auth-context";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 
 function ValidationMessage(props) {
   if (!props.valid) {
@@ -122,11 +123,17 @@ class LoginPage extends Component {
           .catch((err) => {
             console.log(err);
             this.setState({ loading: false });
+            this.setState({
+              error: err.msg || "Could not login, please try again.",
+            });
           });
       })
       .catch((err) => {
         console.log(err);
         this.setState({ loading: false });
+        this.setState({
+          error: err.msg || "Could not login, please try again.",
+        });
       });
   };
 
@@ -137,23 +144,30 @@ class LoginPage extends Component {
     console.log(context.login);
   }
 
+  // TO REMOVE ERROR MODAL
+  errorModalHandler = () => {
+    this.setState({ error: null });
+  };
+
   render() {
     return (
-      <div className="auth-item">
-        <div className="login-bg-div hidden-xs visible-md visible-xl">
-          <img src={homeBg} alt="home" />
-        </div>
-        <div className="login-form">
-          <div className="close-form-btn-div">
-            <button
-              className="back-btn"
-              onClick={() => this.props.history.goBack()}
-            >
-              <img src={closeIcon} alt="close icon" />
-            </button>
+      <>
+        <ErrorModal error={this.state.error} onClear={this.errorModalHandler} />
+        <div className="auth-item">
+          <div className="login-bg-div hidden-xs visible-md visible-xl">
+            <img src={homeBg} alt="home" />
           </div>
-          <div className="login-form-content">
-            {/* <div className="back-arrow">
+          <div className="login-form">
+            <div className="close-form-btn-div">
+              <button
+                className="back-btn"
+                onClick={() => this.props.history.goBack()}
+              >
+                <img src={closeIcon} alt="close icon" />
+              </button>
+            </div>
+            <div className="login-form-content">
+              {/* <div className="back-arrow">
               <button
                 className="back-btn"
                 onClick={() => this.props.history.goBack()}
@@ -161,67 +175,70 @@ class LoginPage extends Component {
                 <FaArrowLeft className="arrow-back-icon" />
               </button>
             </div> */}
-            <div className="heading">
-              <h2>Login to your account</h2>
-              <p>Access all your saved properties, searches, notes and more.</p>
+              <div className="heading">
+                <h2>Login to your account</h2>
+                <p>
+                  Access all your saved properties, searches, notes and more.
+                </p>
+              </div>
+              <form onSubmit={this.loginHandler}>
+                <div className="form-group">
+                  <ValidationMessage
+                    valid={this.state.emailValid}
+                    message={this.state.errorMsg.email}
+                  />
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email"
+                    className="form-field"
+                    value={this.state.email}
+                    id="email"
+                    onChange={(e) => this.updateEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <ValidationMessage
+                    valid={this.state.passwordValid}
+                    message={this.state.errorMsg.password}
+                  />
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    className="form-field"
+                    id="password"
+                    value={this.state.password}
+                    onChange={(e) => this.updatePassword(e.target.value)}
+                  />
+                </div>
+                <div className="forgot-password-div">
+                  <p>
+                    <span>
+                      <Link to="/forgot-password" className="alt-auth">
+                        <b> Forgot your password ?</b>
+                      </Link>
+                    </span>
+                  </p>
+                </div>
+                <button type="submit" className="btn btn-full">
+                  Login
+                </button>
+                <div className="alt-auth-div">
+                  <p>
+                    Don't have an account ?
+                    <span>
+                      <Link to="/register" className="alt-auth">
+                        <b> Sign Up</b>
+                      </Link>
+                    </span>
+                  </p>
+                </div>
+              </form>
             </div>
-            <form onSubmit={this.loginHandler}>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.emailValid}
-                  message={this.state.errorMsg.email}
-                />
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  className="form-field"
-                  value={this.state.email}
-                  id="email"
-                  onChange={(e) => this.updateEmail(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.passwordValid}
-                  message={this.state.errorMsg.password}
-                />
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  className="form-field"
-                  id="password"
-                  value={this.state.password}
-                  onChange={(e) => this.updatePassword(e.target.value)}
-                />
-              </div>
-              <div className="forgot-password-div">
-                <p>
-                  <span>
-                    <Link to="/forgot-password" className="alt-auth">
-                      <b> Forgot your password ?</b>
-                    </Link>
-                  </span>
-                </p>
-              </div>
-              <button type="submit" className="btn btn-full">
-                Login
-              </button>
-              <div className="alt-auth-div">
-                <p>
-                  Don't have an account ?
-                  <span>
-                    <Link to="/register" className="alt-auth">
-                      <b> Sign Up</b>
-                    </Link>
-                  </span>
-                </p>
-              </div>
-            </form>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
