@@ -1,4 +1,4 @@
-.modal {
+/* .modal {
   z-index: 100;
   position: fixed;
   top: 22vh;
@@ -7,7 +7,7 @@
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 8px;
-}
+} */
 
 .modal__header {
   width: 100%;
@@ -26,6 +26,27 @@
 
 .modal__footer {
   padding: 1rem 0.5rem;
+}
+
+
+.modal {
+  position: fixed;
+  /* left: 0;
+  top: 0; */
+
+  top: 22vh;
+  left: 10%;
+
+  z-index: 50;
+  width: 70%;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  transition: all 0.2s ease;
+  transform: translateY(-300%);
+}
+.show-modal {
+  transition: all 0.4s ease;
+  transform: translateY(0);
 }
 
 @media (min-width: 768px) {

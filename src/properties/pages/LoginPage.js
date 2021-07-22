@@ -124,7 +124,7 @@ class LoginPage extends Component {
             console.log(err);
             this.setState({ loading: false });
             this.setState({
-              error: err.msg || "Could not login, please try again.",
+              error: err.message || "Could not login, please try again.",
             });
           });
       })
@@ -132,7 +132,7 @@ class LoginPage extends Component {
         console.log(err);
         this.setState({ loading: false });
         this.setState({
-          error: err.msg || "Could not login, please try again.",
+          error: err.message || "Could not login, please try again.",
         });
       });
   };

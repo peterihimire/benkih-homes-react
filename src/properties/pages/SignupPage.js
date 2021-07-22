@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import homeBg from "../../assets/full-modal.svg";
 // import { FaArrowLeft } from "react-icons/fa";
 import closeIcon from "../../assets/close-icon.svg";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 
 function ValidationMessage(props) {
   if (!props.valid) {
@@ -180,21 +181,23 @@ class SignupPage extends Component {
 
   render() {
     return (
-      <div className="auth-item">
-        <div className="login-bg-div hidden-xs visible-md visible-xl">
-          <img src={homeBg} alt="home" />
-        </div>
-        <div className="login-form">
-          <div className="close-form-btn-div">
-            <button
-              className="back-btn"
-              onClick={() => this.props.history.goBack()}
-            >
-              <img src={closeIcon} alt="close icon" />
-            </button>
+      <>
+        <ErrorModal error={this.state.error} onClear={this.errorModalHandler} />
+        <div className="auth-item">
+          <div className="login-bg-div hidden-xs visible-md visible-xl">
+            <img src={homeBg} alt="home" />
           </div>
-          <div className="login-form-content">
-            {/* <div className="back-arrow">
+          <div className="login-form">
+            <div className="close-form-btn-div">
+              <button
+                className="back-btn"
+                onClick={() => this.props.history.goBack()}
+              >
+                <img src={closeIcon} alt="close icon" />
+              </button>
+            </div>
+            <div className="login-form-content">
+              {/* <div className="back-arrow">
               <button
                 className="back-btn"
                 onClick={() => this.props.history.goBack()}
@@ -202,104 +205,105 @@ class SignupPage extends Component {
                 <FaArrowLeft className="arrow-back-icon" />
               </button>
             </div> */}
-            <div className="heading">
-              <h2>Create an account with us.</h2>
-              <p>To access all properties, searches, notes and more.</p>
+              <div className="heading">
+                <h2>Create an account with us.</h2>
+                <p>To access all properties, searches, notes and more.</p>
+              </div>
+              <form onSubmit={this.signUpHandler}>
+                <div className="form-group">
+                  <ValidationMessage
+                    valid={this.state.fullNameValid}
+                    message={this.state.errorMsg.fullName}
+                  />
+                  <input
+                    name="fullname"
+                    type="text"
+                    placeholder="Full Name"
+                    className="form-field"
+                    id="fullname"
+                    value={this.state.fullName}
+                    onChange={(e) => this.updateFullName(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <ValidationMessage
+                    valid={this.state.emailValid}
+                    message={this.state.errorMsg.email}
+                  />
+                  <input
+                    name="email"
+                    type="email"
+                    placeholder="Email Address"
+                    className="form-field"
+                    id="email"
+                    value={this.state.email}
+                    onChange={(e) => this.updateEmail(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <ValidationMessage
+                    valid={this.state.passwordValid}
+                    message={this.state.errorMsg.password}
+                  />
+                  <input
+                    name="password"
+                    type="password"
+                    placeholder="Password"
+                    className="form-field"
+                    id="password"
+                    value={this.state.password}
+                    onChange={(e) => this.updatePassword(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <ValidationMessage
+                    valid={this.state.passwordConfirmValid}
+                    message={this.state.errorMsg.passwordConfirm}
+                  />
+                  <input
+                    name="confirm-password"
+                    type="password"
+                    placeholder="Confirm password"
+                    className="form-field"
+                    id="confirm-password"
+                    value={this.state.passwordConfirm}
+                    onChange={(e) => this.updatePasswordConfirm(e.target.value)}
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="password"
+                    id="admincode"
+                    name="admincode"
+                    className="form-field"
+                    value={this.state.adminCode}
+                    placeholder="ignore input field"
+                    // onChange={(e) => e.target.value}
+                    onChange={(e) => this.updateAdminCode(e.target.value)}
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="btn btn-full"
+                  disabled={!this.state.formValid}
+                >
+                  SignUp
+                </button>
+                <div className="alt-auth-div">
+                  <p>
+                    Already have an account ?
+                    <span>
+                      <Link to="/login" className="alt-auth">
+                        <b> Sign In</b>
+                      </Link>
+                    </span>
+                  </p>
+                </div>
+              </form>
             </div>
-            <form onSubmit={this.signUpHandler}>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.fullNameValid}
-                  message={this.state.errorMsg.fullName}
-                />
-                <input
-                  name="fullname"
-                  type="text"
-                  placeholder="Full Name"
-                  className="form-field"
-                  id="fullname"
-                  value={this.state.fullName}
-                  onChange={(e) => this.updateFullName(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.emailValid}
-                  message={this.state.errorMsg.email}
-                />
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email Address"
-                  className="form-field"
-                  id="email"
-                  value={this.state.email}
-                  onChange={(e) => this.updateEmail(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.passwordValid}
-                  message={this.state.errorMsg.password}
-                />
-                <input
-                  name="password"
-                  type="password"
-                  placeholder="Password"
-                  className="form-field"
-                  id="password"
-                  value={this.state.password}
-                  onChange={(e) => this.updatePassword(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.passwordConfirmValid}
-                  message={this.state.errorMsg.passwordConfirm}
-                />
-                <input
-                  name="confirm-password"
-                  type="password"
-                  placeholder="Confirm password"
-                  className="form-field"
-                  id="confirm-password"
-                  value={this.state.passwordConfirm}
-                  onChange={(e) => this.updatePasswordConfirm(e.target.value)}
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="password"
-                  id="admincode"
-                  name="admincode"
-                  className="form-field"
-                  value={this.state.adminCode}
-                  placeholder="ignore input field"
-                  // onChange={(e) => e.target.value}
-                  onChange={(e) => this.updateAdminCode(e.target.value)}
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-full"
-                disabled={!this.state.formValid}
-              >
-                SignUp
-              </button>
-              <div className="alt-auth-div">
-                <p>
-                  Already have an account ?
-                  <span>
-                    <Link to="/login" className="alt-auth">
-                      <b> Sign In</b>
-                    </Link>
-                  </span>
-                </p>
-              </div>
-            </form>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

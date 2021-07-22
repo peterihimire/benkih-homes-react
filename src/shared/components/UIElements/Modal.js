@@ -7,7 +7,12 @@ import "./Modal.css";
 
 const ModalOverlay = (props) => {
   const content = (
-    <div className={`modal ${props.className}`} style={props.style}>
+    <div
+      // className={`${props.show} ? modal ${props.className} show-modal : modal `}
+      className={`modal ${props.className}`}
+      // className={props.show ? "modal  show-modal" : "modal"}
+      style={props.style}
+    >
       <header className={`modal__header ${props.headerClass}`}>
         <h2>{props.header}</h2>
       </header>
@@ -19,9 +24,9 @@ const ModalOverlay = (props) => {
         <div className={`modal__content ${props.contentClass}`}>
           {props.children}
         </div>
-        <footer className={`modal__footer ${props.footerClass}`}>
+        <div className={`modal__footer ${props.footerClass}`}>
           {props.footer}
-        </footer>
+        </div>
       </form>
     </div>
   );
@@ -39,7 +44,9 @@ const Modal = (props) => {
         timeout={200}
         classNames="modal"
       > */}
-        <ModalOverlay {...props} />
+
+      <ModalOverlay {...props} />
+
       {/* </CSSTransition> */}
     </React.Fragment>
   );
