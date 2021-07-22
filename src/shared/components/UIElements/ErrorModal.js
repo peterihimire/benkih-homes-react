@@ -4,6 +4,8 @@ import Modal from "./Modal";
 import "./Modal.css";
 import "./ErrorModal.css";
 
+import { FaTimes } from "react-icons/fa";
+
 // import Button from './Button';
 
 const ErrorModal = (props) => {
@@ -11,18 +13,28 @@ const ErrorModal = (props) => {
   return (
     <Modal
       onCancel={props.onClear}
-      header="Error"
+      // header="Error"
+      header={
+        <div className="times-icon-div">
+          <FaTimes className="times-icon" />
+        </div>
+      }
+      headerClass="header-color"
       show={!!props.error}
       footer={
-        <div className="modal-ok">
-          <button className="modal-ok-btn" onClick={props.onClear}>
-            Ok
+        <div className="modal-error">
+          <button className="modal-error-btn" onClick={props.onClear}>
+            Dismiss
           </button>
         </div>
       }
-      // className={`${props.show} ? modal  show-modal : modal `}
     >
-      <p>{props.error}</p>
+      <div className="modal-error-content">
+        <div className="main-error">
+          <h6>Oh, snap!</h6>
+          <p>{props.error}</p>
+        </div>
+      </div>
     </Modal>
   );
 };

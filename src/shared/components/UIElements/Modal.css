@@ -14,11 +14,17 @@
   padding: 1rem 0.5rem;
   background: #2a006e;
   color: white;
+  border-radius: .5rem .5rem 0 0;
 }
 
 .modal__header h2 {
   margin: 0.5rem;
 }
+
+.modal__header .headerColor {
+  background-color: red !important;
+}
+
 
 .modal__content {
   padding: 1rem 0.5rem;
@@ -43,6 +49,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   transition: all 0.2s ease;
   transform: translateY(-300%);
+  border-radius: .5rem;
 }
 .show-modal {
   transition: all 0.4s ease;
