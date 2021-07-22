@@ -8,8 +8,8 @@ import "./Modal.css";
 const ModalOverlay = (props) => {
   const content = (
     <div
-      // className={`${props.show} ? modal ${props.className} show-modal : modal `}
-      className={`modal ${props.className}`}
+      className={`${props.show ? "modal  show-modal" : "modal"}`}
+      // className={`modal ${props.className}`}
       // className={props.show ? "modal  show-modal" : "modal"}
       style={props.style}
     >

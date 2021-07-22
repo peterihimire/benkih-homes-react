@@ -2,6 +2,7 @@ import React from "react";
 
 import Modal from "./Modal";
 import "./Modal.css";
+import "./ErrorModal.css";
 
 // import Button from './Button';
 
@@ -12,8 +13,14 @@ const ErrorModal = (props) => {
       onCancel={props.onClear}
       header="Error"
       show={!!props.error}
-      footer={<button onClick={props.onClear}>Ok</button>}
-      className={`${props.show} ? modal  show-modal : modal `}
+      footer={
+        <div className="modal-ok">
+          <button className="modal-ok-btn" onClick={props.onClear}>
+            Ok
+          </button>
+        </div>
+      }
+      // className={`${props.show} ? modal  show-modal : modal `}
     >
       <p>{props.error}</p>
     </Modal>

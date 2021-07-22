@@ -1,0 +1,8 @@
+.modal-ok {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-ok-btn {
+  padding: 1rem 2rem;
+}

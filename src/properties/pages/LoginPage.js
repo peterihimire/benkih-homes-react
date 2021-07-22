@@ -152,7 +152,7 @@ class LoginPage extends Component {
   render() {
     return (
       <>
-        <ErrorModal error={this.state.error} onClear={this.errorModalHandler} />
+        <ErrorModal error={this.state.error} onClear={this.errorModalHandler}  />
         <div className="auth-item">
           <div className="login-bg-div hidden-xs visible-md visible-xl">
             <img src={homeBg} alt="home" />

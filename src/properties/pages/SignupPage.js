@@ -171,13 +171,24 @@ class SignupPage extends Component {
           .catch((err) => {
             console.log(err);
             this.setState({ loading: false });
+            this.setState({
+              error: err.message || "Could not login, please try again.",
+            });
           });
       })
       .catch((err) => {
         console.log(err);
         this.setState({ loading: false });
+        this.setState({
+          error: err.message || "Could not login, please try again.",
+        });
       });
   };
+
+    // TO REMOVE ERROR MODAL
+    errorModalHandler = () => {
+      this.setState({ error: null });
+    };
 
   render() {
     return (
