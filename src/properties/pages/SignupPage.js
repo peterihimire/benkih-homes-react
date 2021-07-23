@@ -5,7 +5,9 @@ import homeBg from "../../assets/full-modal.svg";
 // import { FaArrowLeft } from "react-icons/fa";
 import closeIcon from "../../assets/close-icon.svg";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
-
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
+import Modal from "../../shared/components/UIElements/Modal";
+import { FaTimes } from "react-icons/fa";
 function ValidationMessage(props) {
   if (!props.valid) {
     return <div className="error-msg">{props.message}</div>;
@@ -26,6 +28,7 @@ class SignupPage extends Component {
     adminCode: "12345",
     adminCodeValid: false,
     formValid: false,
+    showSuccessModal: false,
     errorMsg: {},
     loading: false,
     error: "",
@@ -185,15 +188,66 @@ class SignupPage extends Component {
       });
   };
 
-    // TO REMOVE ERROR MODAL
-    errorModalHandler = () => {
-      this.setState({ error: null });
-    };
+  //   <Modal
+  //   show={showConfirmModal}
+  //   onCancel={cancelDeleteHandler}
+  //   header="Are you sure?"
+  //   footerClass="place-item__modal-actions"
+  //   footer={
+  //     <>
+  //       <button
+  //         className="scape-delete delete-cancel"
+  //         onClick={cancelDeleteHandler}
+  //       >
+  //         Cancel
+  //       </button>
+  //       <button
+  //         className="scape-delete delete-confirm"
+  //         onClick={confirmDeleteHandler}
+  //       >
+  //         Delete
+  //       </button>
+  //     </>
+  //   }
+  // >
+  //   <p>Do you want to delete this scape? Action is not reversible.</p>
+  // </Modal>
+
+  // TO REMOVE ERROR MODAL
+  errorModalHandler = () => {
+    this.setState({ error: null });
+  };
 
   render() {
     return (
       <>
+        <Modal
+          onCancel={this.props.onClear}
+          // header="Error"
+          header={
+            <div className="times-icon-div">
+              <FaTimes className="times-icon" />
+            </div>
+          }
+          headerClass="header-color"
+          show={!!this.props.error}
+          footer={
+            <div className="modal-error">
+              <Link to="/login" className="modal-error-btn">
+                Proceed
+              </Link>
+            </div>
+          }
+        >
+          <div className="modal-error-content">
+            <div className="main-error">
+              <h6>Great!</h6>
+              <p>{this.props.error}</p>
+            </div>
+          </div>
+        </Modal>
         <ErrorModal error={this.state.error} onClear={this.errorModalHandler} />
+        {this.state.loading && <LoadingSpinner asOverlay />}
         <div className="auth-item">
           <div className="login-bg-div hidden-xs visible-md visible-xl">
             <img src={homeBg} alt="home" />

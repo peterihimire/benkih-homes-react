@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import closeIcon from "../../assets/close-icon.svg";
 import { AuthContext } from "../../shared/context/auth-context";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
 function ValidationMessage(props) {
   if (!props.valid) {
@@ -153,6 +154,7 @@ class LoginPage extends Component {
     return (
       <>
         <ErrorModal error={this.state.error} onClear={this.errorModalHandler}  />
+        {this.state.loading && <LoadingSpinner asOverlay />}
         <div className="auth-item">
           <div className="login-bg-div hidden-xs visible-md visible-xl">
             <img src={homeBg} alt="home" />
