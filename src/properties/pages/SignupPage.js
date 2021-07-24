@@ -7,7 +7,9 @@ import closeIcon from "../../assets/close-icon.svg";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import Modal from "../../shared/components/UIElements/Modal";
-import { FaTimes } from "react-icons/fa";
+import SuccessModal from "../../shared/components/UIElements/SuccessModal";
+
+import { FaCheck } from "react-icons/fa";
 function ValidationMessage(props) {
   if (!props.valid) {
     return <div className="error-msg">{props.message}</div>;
@@ -32,6 +34,7 @@ class SignupPage extends Component {
     errorMsg: {},
     loading: false,
     error: "",
+    success: "",
   };
 
   // FOR OVERALL FORM VALIDATION
@@ -169,7 +172,10 @@ class SignupPage extends Component {
               throw new Error(res.msg);
             }
             this.setState({ loading: false });
-            this.props.history.push("/login"); //Directs to login page , after successful signup
+            this.setState({
+              success: res.msg || "Account created, click button to continue!",
+            });
+            // this.props.history.push("/login"); //Directs to login page , after successful signup
           })
           .catch((err) => {
             console.log(err);
@@ -226,11 +232,11 @@ class SignupPage extends Component {
           // header="Error"
           header={
             <div className="times-icon-div">
-              <FaTimes className="times-icon" />
+              <FaCheck className="times-icon" />
             </div>
           }
           headerClass="header-color"
-          show={!!this.props.error}
+          show={!!this.props.success}
           footer={
             <div className="modal-error">
               <Link to="/login" className="modal-error-btn">
@@ -242,10 +248,11 @@ class SignupPage extends Component {
           <div className="modal-error-content">
             <div className="main-error">
               <h6>Great!</h6>
-              <p>{this.props.error}</p>
+              <p>{this.props.success}</p>
             </div>
           </div>
         </Modal>
+        <SuccessModal link="/login" success={this.state.success} />
         <ErrorModal error={this.state.error} onClear={this.errorModalHandler} />
         {this.state.loading && <LoadingSpinner asOverlay />}
         <div className="auth-item">
