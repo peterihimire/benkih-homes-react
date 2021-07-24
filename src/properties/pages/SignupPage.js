@@ -6,10 +6,8 @@ import homeBg from "../../assets/full-modal.svg";
 import closeIcon from "../../assets/close-icon.svg";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
-import Modal from "../../shared/components/UIElements/Modal";
 import SuccessModal from "../../shared/components/UIElements/SuccessModal";
 
-import { FaCheck } from "react-icons/fa";
 function ValidationMessage(props) {
   if (!props.valid) {
     return <div className="error-msg">{props.message}</div>;
@@ -227,31 +225,6 @@ class SignupPage extends Component {
   render() {
     return (
       <>
-        <Modal
-          onCancel={this.props.onClear}
-          // header="Error"
-          header={
-            <div className="times-icon-div">
-              <FaCheck className="times-icon" />
-            </div>
-          }
-          headerClass="header-color"
-          show={!!this.props.success}
-          footer={
-            <div className="modal-error">
-              <Link to="/login" className="modal-error-btn">
-                Proceed
-              </Link>
-            </div>
-          }
-        >
-          <div className="modal-error-content">
-            <div className="main-error">
-              <h6>Great!</h6>
-              <p>{this.props.success}</p>
-            </div>
-          </div>
-        </Modal>
         <SuccessModal link="/login" success={this.state.success} />
         <ErrorModal error={this.state.error} onClear={this.errorModalHandler} />
         {this.state.loading && <LoadingSpinner asOverlay />}
