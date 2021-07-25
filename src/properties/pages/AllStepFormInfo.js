@@ -5,6 +5,7 @@ import homeBg from "../../assets/full-modal.svg";
 import closeIcon from "../../assets/close-icon.svg";
 import { FaArrowLeft } from "react-icons/fa";
 import { AuthContext } from "../../shared/context/auth-context";
+import SuccessModal from "../../shared/components/UIElements/SuccessModal";
 
 class AllStepFormInfo extends Component {
   static contextType = AuthContext;
@@ -29,6 +30,7 @@ class AllStepFormInfo extends Component {
     errorMsg: {},
     loading: false,
     error: null,
+    success: "",
   };
 
   continue = (e) => {
@@ -98,9 +100,28 @@ class AllStepFormInfo extends Component {
               throw new Error(res.msg);
             }
             this.setState({ loading: false });
-            // this.context.login(res.userId, res.token, res.admin);
-            console.log(this.props)
-            this.props.history.push("/");
+            this.setState({
+              title: "",
+              slug: "",
+              address: "",
+              amount: "",
+              description: "",
+              latitude: "",
+              longitude: "",
+              bedroom: "",
+              bathroom: "",
+              propertyCity: "",
+              propertyState: "",
+              featured: "",
+              recent: "",
+              newProperty: "",
+              // userId: context.userId,
+            });
+            console.log(this.props.closeForm);
+            // this.props.closeForm.history.push("/profile");
+            this.setState({
+              success: res.msg || "Account created, click button to continue!",
+            });
           })
           .catch((err) => {
             console.log(err);
@@ -177,69 +198,71 @@ class AllStepFormInfo extends Component {
     );
 
     return (
-      <div className="auth-item">
-        <div className="login-bg-div hidden-xs visible-md visible-xl">
-          <img src={homeBg} alt="home" />
-        </div>
-        <div className="login-form">
-          <div className="close-form-btn-div">
-            <button
-              className="back-btn"
-              onClick={() => this.props.closeForm.history.goBack()}
-            >
-              <img src={closeIcon} alt="close icon" />
-            </button>
+      <>
+        <SuccessModal link="/profile" success={this.state.success} />
+        <div className="auth-item">
+          <div className="login-bg-div hidden-xs visible-md visible-xl">
+            <img src={homeBg} alt="home" />
           </div>
-          <div className="login-form-content">
-            <div className="back-arrow">
+          <div className="login-form">
+            <div className="close-form-btn-div">
               <button
                 className="back-btn"
-                // onClick={() => this.props.history.goBack()}
-                // onClick={() => this.props.closeForm.history.goBack()}
-                onClick={this.back}
+                onClick={() => this.props.closeForm.history.goBack()}
               >
-                <FaArrowLeft className="arrow-back-icon" />
+                <img src={closeIcon} alt="close icon" />
               </button>
             </div>
-            <div className="heading">
-              <h2>Add new property.</h2>
-              <p>All filled property information.</p>
-            </div>
-            <div>
-              Title: <b>{title}</b>
-              <br />
-              Slug: <b>{slug}</b>
-              <br />
-              Address: <b>{address}</b>
-              <br />
-              Amount: <b>{amount.toString()}</b>
-              <br />
-              Description: <b>{description}</b>
-              <br />
-              {/* Creator: <b>{creator}</b>
+            <div className="login-form-content">
+              <div className="back-arrow">
+                <button
+                  className="back-btn"
+                  // onClick={() => this.props.history.goBack()}
+                  // onClick={() => this.props.closeForm.history.goBack()}
+                  onClick={this.back}
+                >
+                  <FaArrowLeft className="arrow-back-icon" />
+                </button>
+              </div>
+              <div className="heading">
+                <h2>Add new property.</h2>
+                <p>All filled property information.</p>
+              </div>
+              <div>
+                Title: <b>{title}</b>
+                <br />
+                Slug: <b>{slug}</b>
+                <br />
+                Address: <b>{address}</b>
+                <br />
+                Amount: <b>{amount.toString()}</b>
+                <br />
+                Description: <b>{description}</b>
+                <br />
+                {/* Creator: <b>{creator}</b>
               <br /> */}
-              Latitude: <b>{latitude.toString()}</b>
-              <br />
-              Longitude: <b>{longitude.toString()}</b>
-              <br />
-              Bedroom: <b>{bedroom.toString()}</b>
-              <br />
-              Bathroom: <b>{bathroom.toString()}</b>
-              <br />
-              Property City: <b>{propertyCity}</b>
-              <br />
-              Property State: <b>{propertyState}</b>
-              <br />
-              Featured: <b>{featured.toString()}</b>
-              <br />
-              Recent: <b>{recent.toString()}</b>
-              <br />
-              {/* used the toString() method to convert boolean to string */}
-              New Property: <b>{newProperty.toString()}</b>
-            </div>
+                Latitude: <b>{latitude.toString()}</b>
+                <br />
+                Longitude: <b>{longitude.toString()}</b>
+                <br />
+                Bedroom: <b>{bedroom.toString()}</b>
+                <br />
+                Bathroom: <b>{bathroom.toString()}</b>
+                <br />
+                Property City: <b>{propertyCity}</b>
+                <br />
+                Property State: <b>{propertyState}</b>
+                <br />
+                Featured: <b>{featured.toString()}</b>
+                <br />
+                Recent: <b>{recent.toString()}</b>
+                <br />
+                {/* used the toString() method to convert boolean to string */}
+                New Property: <b>{newProperty.toString()}</b>
+              </div>
 
-            <form onSubmit={this.newPropertyHandler}>
-              {/* <div className="form-group">
+              <form onSubmit={this.newPropertyHandler}>
+                {/* <div className="form-group">
                 <ValidationMessage
                   valid={this.state.creatorValid}
                   message={this.state.errorMsg.creator}
@@ -255,18 +278,19 @@ class AllStepFormInfo extends Component {
                 />
               </div> */}
 
-              <button
-                type="submit"
-                className="btn btn-full"
-                // disabled={!this.state.formValid}
-                // onClick={this.continue}
-              >
-                add property
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="btn btn-full"
+                  // disabled={!this.state.formValid}
+                  // onClick={this.continue}
+                >
+                  add property
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }
