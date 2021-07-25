@@ -98,8 +98,9 @@ class AllStepFormInfo extends Component {
               throw new Error(res.msg);
             }
             this.setState({ loading: false });
-            this.context.login(res.userId, res.token, res.admin);
-            this.props.history.push("/profile");
+            // this.context.login(res.userId, res.token, res.admin);
+            console.log(this.props)
+            this.props.history.push("/");
           })
           .catch((err) => {
             console.log(err);
