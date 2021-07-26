@@ -1,23 +1,25 @@
-import React, { useCallback, useState, useEffect,  } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import "./PropertyBlock.css";
 // import profIcon from "../../assets/profile.png";
 import PropertyItem from "../components/PropertyItem";
-import properties from "../../property-items";
+// import properties from "../../property-items";
 // import { AuthContext } from "../../shared/context/auth-context";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
+
 const PropertyBlock = () => {
-  console.log(properties);
+  // console.log(properties);
   // const auth = useContext(AuthContext);
   // console.log(auth);
+  const [properties, setProperties] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
 
   // GETTING ALL PROPERTIES
   const getAllProperties = useCallback(() => {
     setIsLoading(true);
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/post`, {
+    fetch(`http://localhost:4000/api/properties`, {
       headers: {
         // Authorization: "Bearer " + auth.token,
       },
@@ -32,13 +34,9 @@ const PropertyBlock = () => {
             }
             setIsLoading(false);
             console.log(res);
-            console.log(res.data);
-            console.log(
-              res.data.map((coordina) =>
-                console.log(coordina.latitude, coordina.longitude),
-              ),
-            );
-            console.log(res.data.longitude);
+            console.log(res.properties);
+            setProperties(res.properties);
+
             // const loadedPosts = res.data;
             // setPosts(loadedPosts);
           })
@@ -64,26 +62,33 @@ const PropertyBlock = () => {
     getAllProperties();
   }, [getAllProperties]);
 
+  // REMOVES THE ERROR MODAL
+  const errorModalHandler = () => {
+    setError("");
+  };
+
   return (
     <>
-    <div className="property-block">
-      <div className="property-block-search">
-        <p>search</p>
-      </div>
+      <ErrorModal error={error} onClear={errorModalHandler} />
+      {isLoading && <LoadingSpinner asOverlay />}
+      <div className="property-block">
+        <div className="property-block-search">
+          <p>search</p>
+        </div>
 
-      <div className="">
-        <div className="property-block-grid">
-          {properties.map((property) => {
-            // return console.log(property);
-            return (
-              <div className="">
-                <PropertyItem properties={property} />
-              </div>
-            );
-          })}
+        <div className="">
+          <div className="property-block-grid">
+            {properties.map((property) => {
+              // return console.log(property);
+              return (
+                <div className="">
+                  <PropertyItem properties={property} />
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
-    </div>
     </>
   );
 };
