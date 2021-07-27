@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import "./App.css";
 import HomePage from "../src/properties/pages/HomePage";
 import ContactPage from "../src/properties/pages/ContactPage";
@@ -29,13 +29,43 @@ function App() {
     setUserId(uid);
     setToken(token);
     setIsAdmin(admin);
+
+    localStorage.setItem(
+      "userData",
+      JSON.stringify({
+        userId: uid,
+        token: token,
+        admin: admin,
+      }),
+    );
   }, []);
+
   const logout = useCallback(() => {
     setIsLoggedIn(false);
     setUserId(null);
     setToken(null);
     setIsAdmin(null);
+
+    localStorage.removeItem("userData");
   }, []);
+
+  // MAKES SURE WHEN PAGE RELOADS THE USER IS LOGGED IN
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem("userData"));
+    if (
+      storedData &&
+      storedData.token &&
+      storedData.admin
+      // new Date(storedData.expiration) > new Date()
+    ) {
+      login(
+        storedData.userId,
+        storedData.token,
+        storedData.admin,
+        // new Date(storedData.expiration),
+      );
+    }
+  }, [login]);
 
   let routes;
 
