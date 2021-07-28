@@ -1,7 +1,7 @@
-.about-banner {
+.profile-banner {
   position: relative !important;
-  height: 40vh;
-  min-height: 300px;
+  height: 20vh;
+  min-height: 200px;
   padding-top: 0;
   background-color: red;
   background: linear-gradient(
@@ -14,41 +14,41 @@
   color: var(--main-white);
 }
 /* FOR VERTICAL CENTERING OF CONTENT */
-.about-banner-content {
-  height: 40vh;
+.profile-banner-content {
+  height: 20vh;
   position: relative;
 }
-.about-banner-left {
+.profile-banner-left {
   width: 300px;
   position: absolute;
   top: 50%;
 }
-.about-banner-left h1 {
+.profile-banner-left h1 {
   font-size: 3.5rem;
 }
-.about-banner-left p {
+.profile-banner-left p {
   padding: 1rem 0 2rem 0;
 }
 /* TABLET */
 @media screen and (min-width: 768px) {
-  .about-banner-left {
+  .profile-banner-left {
     width: 500px;
     position: absolute;
-    top: 45%;
+    top: 35%;
   }
 }
 /* LAPTOP */
 @media (min-width: 993px) {
-  .about-banner-container {
+  .profile-banner-container {
     max-width: 117rem;
     margin: 0 auto;
   }
-  .about-banner-left {
+  .profile-banner-left {
     width: 700px;
     position: absolute;
-    top: 45%;
+    top: 35%;
   }
-  .about-banner-left h1 {
+  .profile-banner-left h1 {
     font-size: var(--large-font);
   }
 }

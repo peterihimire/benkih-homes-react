@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 // import LoginItem from "../../properties/components/LoginItem";
-import "./LoginPage.css";
+import "./LoginPageCopy.css";
 import homeBg from "../../assets/full-modal.svg";
 import { Link } from "react-router-dom";
 // import { FaArrowLeft } from "react-icons/fa";

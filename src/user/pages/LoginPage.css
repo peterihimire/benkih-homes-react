@@ -1,0 +1,123 @@
+.auth-item {
+  display: flex;
+}
+.login-bg-div {
+  height: 100vh !important;
+  flex-basis: 40%;
+  flex-grow: 0;
+  overflow: hidden;
+}
+.login-bg-div img {
+  height: 100% !important;
+}
+.heading h2 {
+  font-size: var(--medium-font);
+}
+/***** VEERTICAL CENTERING *****/
+.login-form {
+  flex-basis: 100%;
+  flex-grow: 0;
+  position: relative;
+  height: 100vh;
+  margin: 0 auto;
+}
+.login-form-content {
+  position: absolute;
+  padding: 0 2rem;
+  top: 20vh;
+  width: 100%;
+}
+/***** END OF VERTICAL *****/
+.btn-full {
+  width: 100%;
+}
+.back-btn {
+  border: none;
+  background-color: transparent;
+  outline: none !important;
+}
+.back-arrow {
+  margin: 0 0 3rem 0;
+}
+.arrow-back-icon {
+  font-size: 2rem;
+}
+.alt-auth-div {
+  margin: 3rem 0 0 0;
+}
+.alt-auth {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+.forgot-password-div {
+  margin: 0 0 2rem 0;
+  display: flex;
+  justify-content: flex-end;
+}
+/***** TABLET *****/
+@media screen and (min-width: 768px) {
+  .login-bg-div {
+    height: 100vh !important;
+    flex-basis: 40%;
+    flex-grow: 0;
+    overflow: hidden;
+  }
+  .login-bg-div img {
+    height: 100% !important;
+  }
+  .login-form {
+    flex-basis: 60%;
+    flex-grow: 0;
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+  }
+  .login-form-content {
+    position: absolute;
+    padding: 0 5rem;
+    top: 25vh;
+    width: 100%;
+  }
+  .heading h2 {
+    font-size: var(--medium-large);
+  }
+}
+/***** LAPTOP *****/
+@media (min-width: 993px) {
+  .login-bg-div {
+    height: 100vh !important;
+    /* width: 100%; */
+    /* width: 40vw !important; */
+    flex-basis: 40%;
+    flex-grow: 0;
+    overflow: hidden;
+  }
+  .login-bg-div img {
+    height: 100% !important;
+    /* width: 100% !important; */
+    /* width: 40vw !important; */
+  }
+  .login-form {
+    flex-basis: 60%;
+    flex-grow: 0;
+    position: relative;
+    height: 100vh;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  .login-form-content {
+    position: absolute;
+    padding: 0 10rem;
+    top: 25vh;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .heading h2 {
+    font-size: var(--large-font);
+  }
+}
+/* background-image: url("../../assets/full-property.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh; */

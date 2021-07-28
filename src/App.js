@@ -3,12 +3,12 @@ import "./App.css";
 import HomePage from "../src/properties/pages/HomePage";
 import ContactPage from "../src/properties/pages/ContactPage";
 import AboutPage from "../src/properties/pages/AboutPage";
-import LoginPage from "../src/properties/pages/LoginPage";
-import SignupPage from "../src/properties/pages/SignupPage";
+import LoginPage from "../src/user/pages/LoginPage";
+import SignupPage from "../src/user/pages/SignupPage";
 import ForgotPasswordPage from "../src/properties/pages/ForgotPasswordPage";
 import NewPropertyPageOne from "../src/properties/pages/PropertyStepForm";
 import PropertiesPage from "../src/properties/pages/PropertiesPage";
-import ProfilePage from "../src/properties/pages/ProfilePage";
+import ProfilePage from "../src/user/pages/ProfilePage";
 
 import {
   BrowserRouter as Router,
@@ -23,6 +23,7 @@ function App() {
   const [userId, setUserId] = React.useState();
   const [token, setToken] = React.useState();
   const [isAdmin, setIsAdmin] = React.useState(false);
+  console.log(isLoggedIn);
 
   const login = useCallback((uid, token, admin) => {
     setIsLoggedIn(true);
@@ -69,7 +70,7 @@ function App() {
 
   let routes;
 
-  if (isLoggedIn) {
+  if (token) {
     routes = (
       <Switch>
         <Route path="/" exact component={HomePage} />
@@ -81,7 +82,7 @@ function App() {
         <Route path="/property/new" exact component={NewPropertyPageOne} />
         <Route path="/profile" exact component={ProfilePage} />
 
-        <Redirect to="/profile" />
+        {/* <Redirect to="/profile" /> */}
       </Switch>
     );
   } else {
@@ -102,7 +103,8 @@ function App() {
   return (
     <AuthContext.Provider
       value={{
-        isLoggedIn: isLoggedIn,
+        // isLoggedIn: isLoggedIn,
+        isLoggedIn: !!token,
         userId: userId,
         token: token,
         isAdmin: isAdmin,
