@@ -84,7 +84,7 @@ const ProfilePage = () => {
             <div className="main-content-container">
               {/* <AboutBlock /> */}
               {/* <h3>This is the profile Page</h3> */}
-              <ProfileBlock />
+              <ProfileBlock profileProperties={userProperties} />
             </div>
           </div>
         </div>
