@@ -1,0 +1,49 @@
+.profile-left {
+  padding: 4rem 0 0 0;
+  background-color: salmon;
+}
+.profile-right {
+  padding: 1.5rem 0 4rem 0;
+  background-color: seagreen;
+}
+
+.strike-through {
+  text-decoration: line-through;
+}
+/***** end of checkbox design  *****/
+/* END OF FORM */
+
+/* TABLET */
+@media screen and (min-width: 768px) {
+  .profile-left {
+    padding: 4rem 0 0 0;
+    /* background-color: salmon; */
+  }
+  .profile-right {
+    padding: 1.5rem 0 4rem 0;
+    /* background-color: seagreen; */
+  }
+  .profile-container {
+    display: grid;
+    grid-template-columns: 35% 63.5%;
+    grid-row-gap: 2rem;
+    grid-column-gap: 1.5rem;
+  }
+}
+/* LAPTOP */
+@media (min-width: 993px) {
+  .profile-left {
+    padding: 4rem 0;
+    /* background-color: salmon; */
+  }
+  .profile-right {
+    padding: 4rem 0;
+    /* background-color: seagreen; */
+  }
+  .profile-container {
+    display: grid;
+    grid-template-columns: 25% 73.5%;
+    grid-row-gap: 2rem;
+    grid-column-gap: 1.5rem;
+  }
+}

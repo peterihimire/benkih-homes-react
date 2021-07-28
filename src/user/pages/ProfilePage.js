@@ -6,6 +6,7 @@ import ProfileBanner from "../../shared/components/ProfileBanner";
 import { AuthContext } from "../../shared/context/auth-context";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import ProfileBlock from "../../user/components/ProfileBlock";
 
 const ProfilePage = () => {
   const auth = useContext(AuthContext);
@@ -15,7 +16,7 @@ const ProfilePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   console.log(isLoading);
   console.log(user);
-  console.log(userProperties)
+  console.log(userProperties);
   const [error, setError] = useState();
 
   // GET THE PROFILE USER ACCOUNT
@@ -42,7 +43,7 @@ const ProfilePage = () => {
             console.log(res.user);
             const loadedUser = res.user;
             setUser(loadedUser);
-            setUserProperties(res.user.properties)
+            setUserProperties(res.user.properties);
           })
           .catch((err) => {
             console.log(err);
@@ -82,7 +83,8 @@ const ProfilePage = () => {
           <div className="main-content">
             <div className="main-content-container">
               {/* <AboutBlock /> */}
-              <h3>This is the profile Page</h3>
+              {/* <h3>This is the profile Page</h3> */}
+              <ProfileBlock />
             </div>
           </div>
         </div>
