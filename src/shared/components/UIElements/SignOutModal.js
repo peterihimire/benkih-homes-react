@@ -2,7 +2,7 @@ import React from "react";
 
 import Modal from "./Modal";
 import "./Modal.css";
-import "./ErrorModal.css";
+import "./SignOutModal.css";
 // import { Link } from "react-router-dom";
 import { FaPowerOff } from "react-icons/fa";
 
@@ -12,29 +12,37 @@ const SignOutModal = (props) => {
   console.log(props);
   return (
     <Modal
-      onCancel={props.onClear}
+      // Below onCancel makes it possible to click the backdrop to cancel the modal
+      // onCancel={props.onCancel}
       // header="Error"
       header={
-        <div className="times-icon-div">
-          <FaPowerOff className="times-icon" />
+        <div className="poweroff-icon-div">
+          <FaPowerOff className="poweroff-icon" />
         </div>
       }
-      headerClass="success-color"
-      show={!!props.success}
+      headerClass="signout-color"
+      show={props.onSignOut}
       footer={
         <div className="modal-error">
-          {/* <Link to={props.link} className="modal-success-btn">
-            Proceed
-          </Link> */}
-          <button onClick={props.cancel}>cancel</button>
-          <button onClick={props.confirm}>confirm</button>
+          <button onClick={props.onCancel} className="modal-logout-cancel-btn">
+            cancel
+          </button>
+          <button
+            onClick={props.onConfirm}
+            className="modal-logout-confirm-btn"
+          >
+            confirm
+          </button>
         </div>
       }
     >
       <div className="modal-error-content">
         <div className="main-error">
           <h6>Do you want to sign out?</h6>
-          <p>Press 'Cancel' to return to page and 'Confirm' to sign out.</p>
+          <p>
+            Press <b>'Cancel'</b> to return to page or <b>'Confirm'</b> to sign
+            out.
+          </p>
         </div>
       </div>
     </Modal>

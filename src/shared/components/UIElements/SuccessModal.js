@@ -2,7 +2,7 @@ import React from "react";
 
 import Modal from "./Modal";
 import "./Modal.css";
-import "./ErrorModal.css";
+import "./SuccessModal.css";
 import { Link } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
 
@@ -15,8 +15,8 @@ const SuccessModal = (props) => {
       onCancel={props.onClear}
       // header="Error"
       header={
-        <div className="times-icon-div">
-          <FaCheck className="times-icon" />
+        <div className="check-icon-div">
+          <FaCheck className="check-icon" />
         </div>
       }
       headerClass="success-color"

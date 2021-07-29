@@ -33,8 +33,8 @@
 .times-icon {
   font-size: 5rem;
   padding: 0.5rem;
-  border: solid 0.5rem white;
-  border-radius: 50%;
+  /* border: solid 0.5rem white; */
+  /* border-radius: 50%; */
   margin: 2rem 0;
 }
 .header-color {
@@ -42,6 +42,9 @@
 }
 .success-color {
   background: rgb(3, 163, 3);
+}
+.signout-color{
+  background: none;
 }
 .main-error {
   text-align: center;

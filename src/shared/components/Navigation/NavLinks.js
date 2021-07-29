@@ -1,19 +1,34 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./NavLinks.css";
 import { NavLink, Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth-context";
 import SignOutModal from "../UIElements/SignOutModal";
 
 const NavLinks = (props) => {
+  const [showSignOut, setShowSignOut] = useState(false);
   const { scrollColor } = props;
   console.log(props);
 
   const auth = useContext(AuthContext);
   console.log(auth);
 
+  const showSignOutHandler = () => {
+    setShowSignOut(true);
+    // auth.logout;
+    // setSignOut(auth.logout)
+  };
+  const cancelSignOutHandler = () => {
+    setShowSignOut(false);
+  };
+
   return (
     <>
-      <SignOutModal />
+      <SignOutModal
+        show={showSignOutHandler}
+        onConfirm={auth.logout}
+        onCancel={cancelSignOutHandler}
+        onSignOut={showSignOut}
+      />
       <div className="navbar-main-links">
         <ul className="navbar-links">
           <li className="navbar-item">
@@ -100,7 +115,7 @@ const NavLinks = (props) => {
                     ? "navbar-signout navbar-signout-color"
                     : "navbar-signout"
                 }
-                onClick={auth.logout}
+                onClick={showSignOutHandler}
               >
                 sign out
               </button>

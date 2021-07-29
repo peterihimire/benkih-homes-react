@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import "./Modal.css";
 import "./ErrorModal.css";
 
-import { FaTimes } from "react-icons/fa";
+import { FaTimes, FaExclamationTriangle } from "react-icons/fa";
 
 // import Button from './Button';
 
@@ -16,7 +16,7 @@ const ErrorModal = (props) => {
       // header="Error"
       header={
         <div className="times-icon-div">
-          <FaTimes className="times-icon" />
+          <FaExclamationTriangle className="times-icon" />
         </div>
       }
       headerClass="header-color"

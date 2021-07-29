@@ -1,0 +1,40 @@
+.modal-error {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-logout-cancel-btn {
+  padding: 1rem 2rem;
+  border: none;
+  color: var(--main-white);
+ 
+  background: rgb(3, 163, 3);
+  border-radius: 0.5rem;
+  text-transform: capitalize;
+  margin: 0 0.4rem;
+}
+
+.modal-logout-confirm-btn {
+  padding: 1rem 2rem;
+  border: none;
+  color: var(--main-white);
+  background: rgb(250, 87, 87);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  margin: 0 0.4rem;
+}
+
+.poweroff-icon-div {
+  display: flex;
+  justify-content: center;
+}
+
+.poweroff-icon {
+  font-size: 5rem;
+  padding: 0.5rem;
+  border: solid 0.5rem rgb(250, 87, 87);
+  border-radius: 50%;
+  margin: 2rem 0;
+  color: rgb(250, 87, 87);
+}
