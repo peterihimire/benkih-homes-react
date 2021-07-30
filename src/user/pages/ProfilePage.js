@@ -11,6 +11,7 @@ import ProfileBlock from "../../user/components/ProfileBlock";
 const ProfilePage = () => {
   const auth = useContext(AuthContext);
   console.log(auth);
+  console.log(auth.token);
   const [user, setUser] = useState({});
   const [userProperties, setUserProperties] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -27,7 +28,7 @@ const ProfilePage = () => {
     }
     fetch(`http://127.0.0.1:4000/api/users/${auth.userId}`, {
       headers: {
-        // Authorization: "Bearer " + auth.token,
+        Authorization: "Bearer " + auth.token,
       },
     })
       .then((response) => {
@@ -59,13 +60,16 @@ const ProfilePage = () => {
         setIsLoading(false);
         setError(err.msg || "Error occured , please try again!");
       });
-  }, [auth.userId]);
+  }, [auth.token, auth.userId]);
 
   useEffect(() => {
     //  THIS METHOD MAKES SURE THAT IF NO USER-ID THEN LOADING SPINNER ELSE THE METHOD WORKS, THE DEPENDENCY IS AUTH.USERID
 
+    if (!auth.token) {
+      setIsLoading(true);
+    }
     getCurrentUser();
-  }, [getCurrentUser]);
+  }, [auth.token, getCurrentUser]);
 
   // REMOVES THE ERROR MODAL
   const errorModalHandler = () => {
@@ -84,7 +88,10 @@ const ProfilePage = () => {
             <div className="main-content-container">
               {/* <AboutBlock /> */}
               {/* <h3>This is the profile Page</h3> */}
-              <ProfileBlock profileProperties={userProperties}  profileUser={user}/>
+              <ProfileBlock
+                profileProperties={userProperties}
+                profileUser={user}
+              />
             </div>
           </div>
         </div>

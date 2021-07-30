@@ -8,7 +8,7 @@ const ProfileBlock = (props) => {
   console.log(props);
   const { profileProperties, profileUser } = props;
   console.log(profileProperties);
-  console.log(profileUser)
+  console.log(profileUser);
   return (
     <div className="profile-container">
       <div className="profile-left">
@@ -22,7 +22,7 @@ const ProfileBlock = (props) => {
           <h4 className="profile-fullname">{profileUser.fullname}</h4>
           {/* <h6 className="profile-name">peterihimire</h6> */}
           <h6 className="profile-email">{profileUser.email}</h6>
-          <div>
+          <div className="profile-edit-btn-container">
             <button className="profile-edit-btn">Edit profile</button>
           </div>
         </div>
