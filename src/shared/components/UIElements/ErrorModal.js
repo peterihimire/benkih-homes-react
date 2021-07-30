@@ -4,7 +4,7 @@ import Modal from "./Modal";
 import "./Modal.css";
 import "./ErrorModal.css";
 
-import { FaTimes, FaExclamationTriangle } from "react-icons/fa";
+import { FaExclamationTriangle } from "react-icons/fa";
 
 // import Button from './Button';
 

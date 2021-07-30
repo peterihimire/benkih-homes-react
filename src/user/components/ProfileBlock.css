@@ -6,12 +6,7 @@
   padding: 1.5rem 0 4rem 0;
   /* background-color: seagreen; */
 }
-.profile-image-container{
-  width: 200px;
-  height: 200px;
-  border: .2rem solid var(--main-black);
-  border-radius: .5rem;
-}
+
 .strike-through {
   text-decoration: line-through;
 }
@@ -22,6 +17,38 @@
   grid-column-gap: 2rem;
   margin: 0rem 0;
 }
+/* .profile-image-container {
+  width: 210px;
+  height: 210px;
+  border: 0.2rem solid var(--main-black);
+  border-radius: 50%;
+  padding: 2.5px;
+} */
+.profile-image-container {
+  /* width: 210px;
+  height: 210px; */
+  /* border: 0.2rem solid var(--main-black); */
+  /* border-radius: 50%; */
+  padding: 2.5px;
+  display: flex;
+  justify-content: center;
+}
+.profile-image {
+  width: 250px;
+  border: 0.2rem solid rgb(192, 181, 181);
+  height: 250px;
+  border-radius: 50%;
+}
+.profile-image img {
+  border-radius: 50%;
+  width: 100%;
+}
+.profile-edit-btn {
+  width: 100%;
+  padding: 1rem 0;
+  border-radius: 0.5rem;
+}
+/* .profile-left-fullwidth{} */
 /***** end of checkbox design  *****/
 /* END OF FORM */
 
@@ -41,6 +68,11 @@
     grid-row-gap: 2rem;
     grid-column-gap: 1.5rem;
   }
+  .profile-image-container {
+    padding: 2.5px;
+    display: flex;
+    justify-content: center;
+  }
 }
 /* LAPTOP */
 @media (min-width: 993px) {
@@ -57,5 +89,10 @@
     grid-template-columns: 25% 73.5%;
     grid-row-gap: 2rem;
     grid-column-gap: 1.5rem;
+  }
+  .profile-image-container {
+    padding: 2.5px;
+    display: flex;
+    justify-content: center;
   }
 }
