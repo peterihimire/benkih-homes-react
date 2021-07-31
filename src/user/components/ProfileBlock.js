@@ -35,7 +35,7 @@ const ProfileBlock = (props) => {
               // return console.log(property);
               return (
                 <div className="">
-                  <PropertyItem properties={property} />
+                  <PropertyItem properties={property} key={property.id} />
                 </div>
               );
             })}
