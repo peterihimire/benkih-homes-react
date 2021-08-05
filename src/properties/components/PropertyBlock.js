@@ -19,7 +19,7 @@ const PropertyBlock = () => {
   // GETTING ALL PROPERTIES
   const getAllProperties = useCallback(() => {
     setIsLoading(true);
-    fetch(`http://localhost:4000/api/properties`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/properties`, {
       headers: {
         // Authorization: "Bearer " + auth.token,
       },
