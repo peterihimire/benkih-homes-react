@@ -6,6 +6,8 @@ import closeIcon from "../../assets/close-icon.svg";
 import { FaArrowLeft } from "react-icons/fa";
 import { AuthContext } from "../../shared/context/auth-context";
 import SuccessModal from "../../shared/components/UIElements/SuccessModal";
+import ErrorModal from "../../shared/components/UIElements/ErrorModal";
+import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
 class AllStepFormInfo extends Component {
   static contextType = AuthContext;
@@ -200,6 +202,8 @@ class AllStepFormInfo extends Component {
     return (
       <>
         <SuccessModal link="/profile" success={this.state.success} />
+        <ErrorModal error={this.state.error} onClear={this.errorModalHandler}  />
+        {this.state.loading && <LoadingSpinner asOverlay />}
         <div className="auth-item">
           <div className="login-bg-div hidden-xs visible-md visible-xl">
             <img src={homeBg} alt="home" />
