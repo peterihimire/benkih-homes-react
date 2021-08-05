@@ -64,7 +64,7 @@ class AllStepFormInfo extends Component {
       userId: this.state.userId,
     });
     this.setState({ loading: true });
-    fetch(`http://localhost:4000/api/properties/new-property`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/properties/new-property`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

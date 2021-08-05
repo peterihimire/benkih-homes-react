@@ -150,7 +150,7 @@ class SignupPage extends Component {
       adminCode: this.state.adminCode,
     });
     this.setState({ loading: true });
-    fetch(`http://localhost:4000/api/users/signup`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/users/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

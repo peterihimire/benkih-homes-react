@@ -26,7 +26,7 @@ const ProfilePage = () => {
     if (!auth.userId || auth.userId === "" || auth.userId === undefined) {
       return setIsLoading(true);
     }
-    fetch(`http://127.0.0.1:4000/api/users/${auth.userId}`, {
+    fetch(`${process.env.REACT_APP_BACKEND_URL}/users/${auth.userId}`, {
       headers: {
         Authorization: "Bearer " + auth.token,
       },
