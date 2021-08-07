@@ -202,7 +202,7 @@ class AllStepFormInfo extends Component {
     return (
       <>
         <SuccessModal link="/profile" success={this.state.success} />
-        <ErrorModal error={this.state.error} onClear={this.errorModalHandler}  />
+        <ErrorModal error={this.state.error} onClear={this.errorModalHandler} />
         {this.state.loading && <LoadingSpinner asOverlay />}
         <div className="auth-item">
           <div className="login-bg-div hidden-xs visible-md visible-xl">
@@ -266,22 +266,6 @@ class AllStepFormInfo extends Component {
               </div>
 
               <form onSubmit={this.newPropertyHandler}>
-                {/* <div className="form-group">
-                <ValidationMessage
-                  valid={this.state.creatorValid}
-                  message={this.state.errorMsg.creator}
-                />
-                <input
-                  name="creator"
-                  type="creator"
-                  placeholder="Creator"
-                  className="form-field"
-                  id="creator"
-                  value={this.state.creator}
-                  onChange={(e) => this.updateCreator(e.target.value)}
-                />
-              </div> */}
-
                 <button
                   type="submit"
                   className="btn btn-full"
@@ -299,3 +283,4 @@ class AllStepFormInfo extends Component {
   }
 }
 export default AllStepFormInfo;
+// central business district, marina
