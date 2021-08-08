@@ -94,7 +94,8 @@ function App() {
         <Route path="/properties" exact component={PropertiesPage} />
         <Route path="/login" exact component={LoginPage} />
         <Route path="/register" exact component={SignupPage} />
-
+        {/* FOR DEVELOPMENT */}
+        <Route path="/property/new" exact component={NewPropertyPageOne} />
         <Redirect to="/" />
       </Switch>
     );
