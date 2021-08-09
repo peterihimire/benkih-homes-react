@@ -13,6 +13,10 @@
 .heading h2 {
   font-size: var(--medium-font);
 }
+.error-msg{
+  color: red;
+  font-size: 1.2rem;
+}
 /***** VEERTICAL CENTERING *****/
 .login-form {
   flex-basis: 100%;
@@ -27,7 +31,7 @@
   top: 20vh;
   width: 100%;
 }
-/***** END OF VERTICAL *****/
+/***** END OF VERTICAL CENTERING *****/
 .btn-full {
   width: 100%;
 }

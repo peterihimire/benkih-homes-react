@@ -22,6 +22,10 @@ export class PropertyStepForm extends Component {
     titleValid: false,
     slug: "",
     slugValid: false,
+    bedroom: "",
+    bedroomValid: false,
+    bathroom: "",
+    bathroomValid: false,
     address: "",
     addressValid: false,
     amount: "",
@@ -41,10 +45,10 @@ export class PropertyStepForm extends Component {
     formTwoValid: false,
 
     // step 3
-    bedroom: "",
-    bedroomValid: false,
-    bathroom: "",
-    bathroomValid: false,
+    // bedroom: "",
+    // bedroomValid: false,
+    // bathroom: "",
+    // bathroomValid: false,
     propertyCity: "",
     propertyCityValid: false,
     propertyState: "",
@@ -87,9 +91,22 @@ export class PropertyStepForm extends Component {
   // FOR FORM-ONE VALIDATION
   validateFormOne = () => {
     console.log(this.props);
-    const { titleValid, slugValid, addressValid, amountValid } = this.state;
+    const {
+      titleValid,
+      slugValid,
+      bedroomValid,
+      bathroomValid,
+      addressValid,
+      amountValid,
+    } = this.state;
     this.setState({
-      formOneValid: titleValid && slugValid && addressValid && amountValid,
+      formOneValid:
+        titleValid &&
+        slugValid &&
+        bedroomValid &&
+        bathroomValid &&
+        addressValid &&
+        amountValid,
     });
   };
 
@@ -105,7 +122,7 @@ export class PropertyStepForm extends Component {
 
     if (title.length < 7) {
       titleValid = false;
-      errorMsg.title = "Must be at least 7 characters long";
+      errorMsg.title = "Title must be at least 7 characters long";
     }
 
     this.setState({ titleValid, errorMsg }, this.validateFormOne);
@@ -124,11 +141,47 @@ export class PropertyStepForm extends Component {
     // checks for format _@_._
     if (slug.length < 5) {
       slugValid = false;
-      errorMsg.slug = "Must be at least 5 characters long";
+      errorMsg.slug = "Slug must be at least 5 characters long";
     }
 
     this.setState({ slugValid, errorMsg }, this.validateFormOne);
   };
+
+    // FOR BEDROOM VALIDATION
+    updateBedroom = (bedroom) => {
+      this.setState({ bedroom }, this.validateBedroom);
+    };
+  
+    validateBedroom = () => {
+      const { bedroom } = this.state;
+      let bedroomValid = true;
+      let errorMsg = { ...this.state.errorMsg };
+  
+      if (!/\d/.test(bedroom)) {
+        bedroomValid = false;
+        errorMsg.bedroom = "Bedroom must contain only digits";
+      }
+  
+      this.setState({ bedroomValid, errorMsg }, this.validateFormThree);
+    };
+  
+    // FOR BATHROOM VALIDATION
+    updateBathroom = (bathroom) => {
+      this.setState({ bathroom }, this.validateBathroom);
+    };
+  
+    validateBathroom = () => {
+      const { bathroom } = this.state;
+      let bathroomValid = true;
+      let errorMsg = { ...this.state.errorMsg };
+  
+      if (!/\d/.test(bathroom)) {
+        bathroomValid = false;
+        errorMsg.bathroom = "Bathroom must contain only digits";
+      }
+  
+      this.setState({ bathroomValid, errorMsg }, this.validateFormThree);
+    };
 
   // FOR ADDRESS VALIDATION
   updateAddress = (address) => {
@@ -187,7 +240,7 @@ export class PropertyStepForm extends Component {
 
     if (description.length < 7) {
       descriptionValid = false;
-      errorMsg.description = "Must be at least 7 characters long";
+      errorMsg.description = "Description must be at least 7 characters long";
     }
 
     this.setState({ descriptionValid, errorMsg }, this.validateFormTwo);
@@ -264,41 +317,41 @@ export class PropertyStepForm extends Component {
     });
   };
 
-  // FOR BEDROOM VALIDATION
-  updateBedroom = (bedroom) => {
-    this.setState({ bedroom }, this.validateBedroom);
-  };
+  // // FOR BEDROOM VALIDATION
+  // updateBedroom = (bedroom) => {
+  //   this.setState({ bedroom }, this.validateBedroom);
+  // };
 
-  validateBedroom = () => {
-    const { bedroom } = this.state;
-    let bedroomValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateBedroom = () => {
+  //   const { bedroom } = this.state;
+  //   let bedroomValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (!/\d/.test(bedroom)) {
-      bedroomValid = false;
-      errorMsg.bedroom = "Bedroom must contain only digits";
-    }
+  //   if (!/\d/.test(bedroom)) {
+  //     bedroomValid = false;
+  //     errorMsg.bedroom = "Bedroom must contain only digits";
+  //   }
 
-    this.setState({ bedroomValid, errorMsg }, this.validateFormThree);
-  };
+  //   this.setState({ bedroomValid, errorMsg }, this.validateFormThree);
+  // };
 
-  // FOR BATHROOM VALIDATION
-  updateBathroom = (bathroom) => {
-    this.setState({ bathroom }, this.validateBathroom);
-  };
+  // // FOR BATHROOM VALIDATION
+  // updateBathroom = (bathroom) => {
+  //   this.setState({ bathroom }, this.validateBathroom);
+  // };
 
-  validateBathroom = () => {
-    const { bathroom } = this.state;
-    let bathroomValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateBathroom = () => {
+  //   const { bathroom } = this.state;
+  //   let bathroomValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (!/\d/.test(bathroom)) {
-      bathroomValid = false;
-      errorMsg.bathroom = "Bathroom must contain only digits";
-    }
+  //   if (!/\d/.test(bathroom)) {
+  //     bathroomValid = false;
+  //     errorMsg.bathroom = "Bathroom must contain only digits";
+  //   }
 
-    this.setState({ bathroomValid, errorMsg }, this.validateFormThree);
-  };
+  //   this.setState({ bathroomValid, errorMsg }, this.validateFormThree);
+  // };
 
   // FOR PROPERTY-CITY VALIDATION
   updatePropertyCity = (propertyCity) => {
@@ -426,6 +479,12 @@ export class PropertyStepForm extends Component {
           slug={slug}
           slugValid={slugValid}
           slugChange={this.updateSlug}
+          bedroom={bedroom}
+          bedroomValid={bedroomValid}
+          bedroomChange={this.updateBedroom}
+          bathroom={bathroom}
+          bathroomValid={bathroomValid}
+          bathroomChange={this.updateBathroom}
           address={address}
           addressValid={addressValid}
           addressChange={this.updateAddress}

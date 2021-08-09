@@ -49,7 +49,7 @@ class NewPropertyPageOne extends Component {
 
     if (title.length < 7) {
       titleValid = false;
-      errorMsg.title = "Must be at least 7 characters long";
+      errorMsg.title = "Title must be at least 7 characters long";
     }
 
     this.setState({ titleValid, errorMsg }, this.validateForm);
@@ -68,7 +68,7 @@ class NewPropertyPageOne extends Component {
     // checks for format _@_._
     if (slug.length < 5) {
       slugValid = false;
-      errorMsg.slug = "Must be at least 5 characters long";
+      errorMsg.slug = "Slug must be at least 5 characters long";
     }
 
     this.setState({ slugValid, errorMsg }, this.validateForm);
@@ -129,6 +129,15 @@ class NewPropertyPageOne extends Component {
       slugChange,
       slugValid,
 
+      bedroom,
+      bedroomChange,
+      bedroomValid,
+      
+
+      bathroom,
+      bathroomChange,
+      bathroomValid,
+
       address,
       addressChange,
       addressValid,
@@ -137,7 +146,7 @@ class NewPropertyPageOne extends Component {
       amountChange,
       amountValid,
 
-      formOneValid
+      formOneValid,
     } = this.props;
     return (
       <div className="auth-item">
@@ -169,10 +178,7 @@ class NewPropertyPageOne extends Component {
             </div>
             <form>
               <div className="form-group">
-                <ValidationMessage
-                  valid={titleValid}
-                  message={errorMsg.title}
-                />
+                <label htmlFor="title">Title</label>
                 <input
                   name="title"
                   type="text"
@@ -184,12 +190,13 @@ class NewPropertyPageOne extends Component {
                   // onChange={(e) => this.updateTitle(e.target.value)}
                   onChange={(e) => titleChange(e.target.value)}
                 />
+                <ValidationMessage
+                  valid={titleValid}
+                  message={errorMsg.title}
+                />
               </div>
               <div className="form-group">
-                <ValidationMessage
-                  valid={slugValid}
-                  message={errorMsg.slug}
-                />
+                <label htmlFor="slug">Slug</label>
                 <input
                   name="slug"
                   type="text"
@@ -200,12 +207,42 @@ class NewPropertyPageOne extends Component {
                   value={slug}
                   onChange={(e) => slugChange(e.target.value)}
                 />
+                <ValidationMessage valid={slugValid} message={errorMsg.slug} />
               </div>
               <div className="form-group">
-                <ValidationMessage
-                  valid={addressValid}
-                  message={errorMsg.address}
+                <label htmlFor="bedroom">Bedroom(s)</label>
+                <input
+                  name="bedroom"
+                  type="number"
+                  placeholder="no. of bedroom"
+                  className="form-field"
+                  id="bedroom"
+                  value={bedroom}
+                  onChange={(e) => bedroomChange(e.target.value)}
                 />
+                <ValidationMessage
+                  valid={bedroomValid}
+                  message={errorMsg.bedroom}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="bathroom">Bathroom(s)</label>
+                <input
+                  name="bathroom"
+                  type="number"
+                  placeholder="no. of bathroom"
+                  className="form-field"
+                  id="bathroom"
+                  value={bathroom}
+                  onChange={(e) => bathroomChange(e.target.value)}
+                />
+                <ValidationMessage
+                  valid={bathroomValid}
+                  message={errorMsg.bathroom}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="address">Address</label>
                 <input
                   name="address"
                   type="text"
@@ -216,12 +253,13 @@ class NewPropertyPageOne extends Component {
                   value={address}
                   onChange={(e) => addressChange(e.target.value)}
                 />
+                <ValidationMessage
+                  valid={addressValid}
+                  message={errorMsg.address}
+                />
               </div>
               <div className="form-group">
-                <ValidationMessage
-                  valid={amountValid}
-                  message={errorMsg.amount}
-                />
+                <label htmlFor="amount">Amount</label>
                 <input
                   name="amount"
                   type="number"
@@ -231,6 +269,10 @@ class NewPropertyPageOne extends Component {
                   // value={this.state.amount}
                   value={amount}
                   onChange={(e) => amountChange(e.target.value)}
+                />
+                <ValidationMessage
+                  valid={amountValid}
+                  message={errorMsg.amount}
                 />
               </div>
 
