@@ -17,6 +17,22 @@
   color: red;
   font-size: 1.2rem;
 }
+
+.property-upload-btn {
+  background-color: var(--main-white);
+  padding: 0.1rem 1rem;
+  border-radius: 6px;
+  /* border-color: var(--sec-blue); */
+  color: var(--primary-color);
+  font-size: 15px;
+  /* margin-right: 0.6rem; */
+  border: solid 2px var(--primary-color);
+  height: 34px;
+  width: 100%;
+}
+.form-file {
+  display: none;
+}
 /***** VEERTICAL CENTERING *****/
 .login-form {
   flex-basis: 100%;

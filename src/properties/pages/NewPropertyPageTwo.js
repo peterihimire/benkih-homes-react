@@ -13,20 +13,28 @@ function ValidationMessage(props) {
 }
 
 class NewPropertyPageTwo extends Component {
-  state = {
-    description: "",
-    descriptionValid: false,
-    // creator: "",
-    // creatorValid: false,
-    latitude: "",
-    latitudeValid: false,
-    longitude: "",
-    longitudeValid: false,
-    formValid: false,
-    errorMsg: {},
-    loading: false,
-    error: "",
-  };
+  constructor(props) {
+    super(props);
+    this.fileInputRef = React.createRef();
+
+    this.state = {
+      description: "",
+      descriptionValid: false,
+      // creator: "",
+      // creatorValid: false,
+      latitude: "",
+      latitudeValid: false,
+      longitude: "",
+      longitudeValid: false,
+      formValid: false,
+      // for images
+      images: [],
+      previews: [],
+      errorMsg: {},
+      loading: false,
+      error: "",
+    };
+  }
 
   // FOR OVERALL FORM VALIDATION
   validateForm = () => {
@@ -111,6 +119,76 @@ class NewPropertyPageTwo extends Component {
     }
 
     this.setState({ longitudeValid, errorMsg }, this.validateForm);
+  };
+
+  // FOR IMAGES PREVIEW AND UPLOADING OF MULTIPLE IMAGES
+  onChangePropertiesImages = (e) => {
+    // console.log(e.target.files);
+    const files = e.target.files;
+    let imagesUploadArray = Array.from(files);
+    console.log(imagesUploadArray);
+    if (imagesUploadArray) {
+      const fileArray = imagesUploadArray.map((file, index) => {
+        console.log(file, index);
+        // setImages(imagesUploadArray);
+        this.setState({ images: imagesUploadArray });
+        return URL.createObjectURL(file);
+      });
+      console.log(fileArray);
+      // setPreviews((prevImgs) => {
+      //   return prevImgs.concat(fileArray);
+      // });
+      this.setState({
+        previews: (prevImgs) => {
+          return prevImgs.concat(fileArray);
+        },
+      });
+      imagesUploadArray.map((files) => {
+        return URL.revokeObjectURL(files);
+      });
+    }
+  };
+  // console.log(this.images);
+  renderImages = (source) => {
+    console.log(source);
+    // return source.map((image, index) => {
+    //   console.log(image, index);
+    //   return (
+    //     this.state.images && (
+    //       <div className="image-with-cancel" key={image}>
+    //         <img
+    //           // src={cancelIcon}
+    //           alt="red x"
+    //           key={image}
+    //           className="cancel-icon"
+    //           onClick={() => {
+    //             console.log(`${index} Image clicked!`);
+    //             // let img = index;
+    //             // // Deletes the blob image
+    //             // source.splice(img, 1);
+    //             // // Deletes the file image
+    //             // setImages((prevImgs) => {
+    //             //   console.log(img);
+    //             //   console.log(prevImgs);
+    //             //   return prevImgs.filter((image, index) => {
+    //             //     console.log(index);
+    //             //     return index !== img;
+    //             //   });
+    //             // });
+    //           }}
+    //         />
+    //         <div className="render-images-div">
+    //           <img
+    //             src={image}
+    //             alt="previews"
+    //             key={image}
+    //             className="upload-browse"
+    //           />
+    //         </div>
+    //       </div>
+    //     )
+    //   );
+    // });
   };
 
   continue = (e) => {
@@ -239,9 +317,9 @@ class NewPropertyPageTwo extends Component {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor='images'>Images</label>
+                <label htmlFor="images">Images</label>
                 <div className="upload-browse-div">
-                  {/* {renderImages(previews)} */}
+                  {this.renderImages(this.state.previews)}
                 </div>
                 <div className="property-upload-div">
                   <input
@@ -251,14 +329,14 @@ class NewPropertyPageTwo extends Component {
                     name="images"
                     className="form-file"
                     accept="image/*"
-                    // onChange={onChangeNewImages}
-                    // ref={fileInputRef}
+                    onChange={this.onChangePropertiesImages}
+                    ref={this.fileInputRef}
                   />
                   <button
                     className="property-upload-btn"
                     onClick={(e) => {
                       e.preventDefault();
-                      // fileInputRef.current.click();
+                      this.fileInputRef.current.click();
                     }}
                   >
                     Browse
