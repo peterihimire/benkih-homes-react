@@ -37,8 +37,7 @@ class NewPropertyPageTwo extends Component {
       longitudeValid,
     } = this.state;
     this.setState({
-      formValid:
-        descriptionValid  && latitudeValid && longitudeValid,
+      formValid: descriptionValid && latitudeValid && longitudeValid,
     });
   };
 
@@ -191,10 +190,7 @@ class NewPropertyPageTwo extends Component {
                 />
               </div> */}
               <div className="form-group">
-                <ValidationMessage
-                  valid={latitudeValid}
-                  message={errorMsg.latitude}
-                />
+                <label htmlFor="latitude">Latitude</label>
                 <input
                   name="latitude"
                   type="number"
@@ -204,12 +200,13 @@ class NewPropertyPageTwo extends Component {
                   value={latitude}
                   onChange={(e) => latitudeChange(e.target.value)}
                 />
+                <ValidationMessage
+                  valid={latitudeValid}
+                  message={errorMsg.latitude}
+                />
               </div>
               <div className="form-group">
-                <ValidationMessage
-                  valid={longitudeValid}
-                  message={errorMsg.longitude}
-                />
+                <label htmlFor="longitude">Longitude</label>
                 <input
                   name="longitude"
                   type="number"
@@ -219,12 +216,13 @@ class NewPropertyPageTwo extends Component {
                   value={longitude}
                   onChange={(e) => longitudeChange(e.target.value)}
                 />
+                <ValidationMessage
+                  valid={longitudeValid}
+                  message={errorMsg.longitude}
+                />
               </div>
               <div className="form-group">
-                <ValidationMessage
-                  valid={descriptionValid}
-                  message={errorMsg.description}
-                />
+                <label htmlFor="description">Description</label>
                 <textarea
                   name="description"
                   type="text"
@@ -235,6 +233,37 @@ class NewPropertyPageTwo extends Component {
                   onChange={(e) => descriptionChange(e.target.value)}
                   rows="4"
                 ></textarea>
+                <ValidationMessage
+                  valid={descriptionValid}
+                  message={errorMsg.description}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor='images'>Images</label>
+                <div className="upload-browse-div">
+                  {/* {renderImages(previews)} */}
+                </div>
+                <div className="property-upload-div">
+                  <input
+                    type="file"
+                    multiple
+                    id="images"
+                    name="images"
+                    className="form-file"
+                    accept="image/*"
+                    // onChange={onChangeNewImages}
+                    // ref={fileInputRef}
+                  />
+                  <button
+                    className="property-upload-btn"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      // fileInputRef.current.click();
+                    }}
+                  >
+                    Browse
+                  </button>
+                </div>
               </div>
               <button
                 type="submit"
