@@ -13,7 +13,7 @@
 .heading h2 {
   font-size: var(--medium-font);
 }
-.error-msg{
+.error-msg {
   color: red;
   font-size: 1.2rem;
 }
@@ -29,6 +29,27 @@
   border: solid 2px var(--primary-color);
   height: 34px;
   width: 100%;
+}
+/* note this */
+.uploaded-img-bo {
+  width: 50px;
+  height: 50px;
+  border: 0.2px solid var(--medium-grey);
+  margin-right: 1rem;
+}
+.render-images-div {
+  width: 70px !important;
+  height: 70px !important;
+}
+.image-with-cancel {
+  position: relative;
+}
+.image-with-cancel .cancel-icon {
+  width: 30px !important;
+  height: 30px !important;
+  position: absolute;
+  top: -12px;
+  right: 0;
 }
 .form-file {
   display: none;

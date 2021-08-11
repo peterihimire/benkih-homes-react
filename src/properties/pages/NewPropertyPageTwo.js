@@ -140,6 +140,7 @@ class NewPropertyPageTwo extends Component {
       // });
       this.setState({
         previews: (prevImgs) => {
+          console.log(prevImgs);
           return prevImgs.concat(fileArray);
         },
       });
