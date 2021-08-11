@@ -3,7 +3,7 @@ import "./LoginPage.css";
 // import { Link } from "react-router-dom";
 import homeBg from "../../assets/full-modal.svg";
 import closeIcon from "../../assets/close-icon.svg";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaTimesCircle } from "react-icons/fa";
 
 function ValidationMessage(props) {
   if (!props.valid) {
@@ -138,11 +138,9 @@ class NewPropertyPageTwo extends Component {
       // setPreviews((prevImgs) => {
       //   return prevImgs.concat(fileArray);
       // });
-      this.setState({
-        previews: (prevImgs) => {
-          console.log(prevImgs);
-          return prevImgs.concat(fileArray);
-        },
+      this.setState((prevImgs) => {
+        console.log(prevImgs.images);
+        return { previews: fileArray };
       });
       imagesUploadArray.map((files) => {
         return URL.revokeObjectURL(files);
@@ -152,44 +150,66 @@ class NewPropertyPageTwo extends Component {
   // console.log(this.images);
   renderImages = (source) => {
     console.log(source);
-    // return source.map((image, index) => {
-    //   console.log(image, index);
-    //   return (
-    //     this.state.images && (
-    //       <div className="image-with-cancel" key={image}>
-    //         <img
-    //           // src={cancelIcon}
-    //           alt="red x"
-    //           key={image}
-    //           className="cancel-icon"
-    //           onClick={() => {
-    //             console.log(`${index} Image clicked!`);
-    //             // let img = index;
-    //             // // Deletes the blob image
-    //             // source.splice(img, 1);
-    //             // // Deletes the file image
-    //             // setImages((prevImgs) => {
-    //             //   console.log(img);
-    //             //   console.log(prevImgs);
-    //             //   return prevImgs.filter((image, index) => {
-    //             //     console.log(index);
-    //             //     return index !== img;
-    //             //   });
-    //             // });
-    //           }}
-    //         />
-    //         <div className="render-images-div">
-    //           <img
-    //             src={image}
-    //             alt="previews"
-    //             key={image}
-    //             className="upload-browse"
-    //           />
-    //         </div>
-    //       </div>
-    //     )
-    //   );
-    // });
+    return source.map((image, index) => {
+      console.log(image, index);
+      return (
+        this.state.images && (
+          <div className="image-with-cancel" key={image}>
+            {/* <img
+              // src={cancelIcon}
+              alt="red x"
+              key={image}
+              className="cancel-icon"
+              onClick={() => {
+                console.log(`${index} Image clicked!`);
+                // let img = index;
+                // // Deletes the blob image
+                // source.splice(img, 1);
+                // // Deletes the file image
+                // setImages((prevImgs) => {
+                //   console.log(img);
+                //   console.log(prevImgs);
+                //   return prevImgs.filter((image, index) => {
+                //     console.log(index);
+                //     return index !== img;
+                //   });
+                // });
+              }}
+            /> */}
+            <div
+              // className="cancelIcon"
+              key={image}
+              className="cancel-icon"
+              onClick={() => {
+                console.log(`${index} Image clicked!`);
+                // let img = index;
+                // // Deletes the blob image
+                // source.splice(img, 1);
+                // // Deletes the file image
+                // setImages((prevImgs) => {
+                //   console.log(img);
+                //   console.log(prevImgs);
+                //   return prevImgs.filter((image, index) => {
+                //     console.log(index);
+                //     return index !== img;
+                //   });
+                // });
+              }}
+            >
+              <FaTimesCircle className="arrow-back-icon" />
+            </div>
+            <div className="render-images-div">
+              <img
+                src={image}
+                alt="previews"
+                key={image}
+                className="upload-browse"
+              />
+            </div>
+          </div>
+        )
+      );
+    });
   };
 
   continue = (e) => {
