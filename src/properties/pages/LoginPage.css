@@ -49,13 +49,14 @@
   height: 30px !important;
   position: absolute;
   top: -12px;
-  right: 0;
+  right: -11px;
 }
 .form-group .upload-browse-div {
   margin-bottom: 1rem !important;
+  margin-top: 1.2rem !important;
   width: 100% !important;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(77px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   grid-row-gap: 10px;
   grid-column-gap: 10px;
 }
@@ -70,6 +71,7 @@
 .form-group .upload-browse {
   width: 70px;
   height: 70px;
+  border-radius: 5px;
 }
 .form-file {
   display: none;

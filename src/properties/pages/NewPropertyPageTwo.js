@@ -186,10 +186,10 @@ class NewPropertyPageTwo extends Component {
                 // // Deletes the blob image
                 // source.splice(img, 1);
                 // // Deletes the file image
-                // setImages((prevImgs) => {
+                // this.setState((prevImgs) => {
                 //   console.log(img);
                 //   console.log(prevImgs);
-                //   return prevImgs.filter((image, index) => {
+                // return prevImgs.filter((image, index) => {
                 //     console.log(index);
                 //     return index !== img;
                 //   });
