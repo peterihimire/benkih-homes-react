@@ -3,7 +3,7 @@ import "./LoginPage.css";
 // import { Link } from "react-router-dom";
 import homeBg from "../../assets/full-modal.svg";
 import closeIcon from "../../assets/close-icon.svg";
-import { FaArrowLeft, FaTimesCircle } from "react-icons/fa";
+import { FaArrowLeft, FaTimesCircle, FaImage } from "react-icons/fa";
 
 function ValidationMessage(props) {
   if (!props.valid) {
@@ -339,9 +339,26 @@ class NewPropertyPageTwo extends Component {
               </div>
               <div className="form-group">
                 <label htmlFor="images">Images</label>
-                <div className="upload-browse-div">
-                  {this.renderImages(this.state.previews)}
-                </div>
+                {/* {<div className="upload-browse-div">
+                  {this.state.previews.length > 0 ? (
+                    this.renderImages(this.state.previews)
+                  ) : (
+                    <div className="empty-image-banner">
+                      <p>No images selected.</p>
+                    </div>
+                  )}
+                </div>} */}
+                {this.state.previews.length > 0 ? (
+                  <div className="upload-browse-div">
+                    {this.renderImages(this.state.previews)}
+                  </div>
+                ) : (
+                  <div className="empty-image-banner">
+                    <FaImage className='image-icon' />
+                    <p>No property image selected.</p>
+                    
+                  </div>
+                )}
                 <div className="property-upload-div">
                   <input
                     type="file"
