@@ -162,7 +162,7 @@ class NewPropertyPageTwo extends Component {
               onClick={() => {
                 console.log(`${index} Image clicked!`);
                 let img = index;
-                // Deletes the blob image
+                // Deletes the blob image preview
                 source.splice(img, 1);
                 // Deletes the file image
                 this.setState(() => {

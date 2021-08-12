@@ -4,6 +4,7 @@ import NewPropertyPageOne from "./NewPropertyPageOne";
 import NewPropertyPageTwo from "./NewPropertyPageTwo";
 import NewPropertyPageThree from "./NewPropertyPageThree";
 import AllStepFormInfo from "./AllStepFormInfo";
+import { FaTimesCircle } from "react-icons/fa";
 
 // function ValidationMessage(props) {
 //   if (!props.valid) {
@@ -42,6 +43,9 @@ export class PropertyStepForm extends Component {
     latitudeValid: false,
     longitude: "",
     longitudeValid: false,
+    images: [],
+    previews: [],
+    imagesValid: false,
     formTwoValid: false,
 
     // step 3
@@ -147,41 +151,41 @@ export class PropertyStepForm extends Component {
     this.setState({ slugValid, errorMsg }, this.validateFormOne);
   };
 
-    // FOR BEDROOM VALIDATION
-    updateBedroom = (bedroom) => {
-      this.setState({ bedroom }, this.validateBedroom);
-    };
-  
-    validateBedroom = () => {
-      const { bedroom } = this.state;
-      let bedroomValid = true;
-      let errorMsg = { ...this.state.errorMsg };
-  
-      if (!/\d/.test(bedroom)) {
-        bedroomValid = false;
-        errorMsg.bedroom = "Bedroom must contain only digits";
-      }
-  
-      this.setState({ bedroomValid, errorMsg }, this.validateFormThree);
-    };
-  
-    // FOR BATHROOM VALIDATION
-    updateBathroom = (bathroom) => {
-      this.setState({ bathroom }, this.validateBathroom);
-    };
-  
-    validateBathroom = () => {
-      const { bathroom } = this.state;
-      let bathroomValid = true;
-      let errorMsg = { ...this.state.errorMsg };
-  
-      if (!/\d/.test(bathroom)) {
-        bathroomValid = false;
-        errorMsg.bathroom = "Bathroom must contain only digits";
-      }
-  
-      this.setState({ bathroomValid, errorMsg }, this.validateFormThree);
-    };
+  // FOR BEDROOM VALIDATION
+  updateBedroom = (bedroom) => {
+    this.setState({ bedroom }, this.validateBedroom);
+  };
+
+  validateBedroom = () => {
+    const { bedroom } = this.state;
+    let bedroomValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (!/\d/.test(bedroom)) {
+      bedroomValid = false;
+      errorMsg.bedroom = "Bedroom must contain only digits";
+    }
+
+    this.setState({ bedroomValid, errorMsg }, this.validateFormThree);
+  };
+
+  // FOR BATHROOM VALIDATION
+  updateBathroom = (bathroom) => {
+    this.setState({ bathroom }, this.validateBathroom);
+  };
+
+  validateBathroom = () => {
+    const { bathroom } = this.state;
+    let bathroomValid = true;
+    let errorMsg = { ...this.state.errorMsg };
+
+    if (!/\d/.test(bathroom)) {
+      bathroomValid = false;
+      errorMsg.bathroom = "Bathroom must contain only digits";
+    }
+
+    this.setState({ bathroomValid, errorMsg }, this.validateFormThree);
+  };
 
   // FOR ADDRESS VALIDATION
   updateAddress = (address) => {
@@ -298,6 +302,78 @@ export class PropertyStepForm extends Component {
     }
 
     this.setState({ longitudeValid, errorMsg }, this.validateFormTwo);
+  };
+
+  // FOR IMAGES PREVIEW AND UPLOADING OF MULTIPLE IMAGES
+
+  onChangePropertiesImages = (e) => {
+    // console.log(e.target.files);
+    const files = e.target.files;
+    let imagesUploadArray = Array.from(files);
+    console.log(imagesUploadArray);
+    if (imagesUploadArray) {
+      const fileArray = imagesUploadArray.map((file, index) => {
+        console.log(file, index);
+        this.setState({ images: imagesUploadArray });
+        return URL.createObjectURL(file);
+      });
+      console.log(fileArray);
+      this.setState(() => {
+        return { previews: fileArray };
+      });
+      imagesUploadArray.map((files) => {
+        return URL.revokeObjectURL(files);
+      });
+    }
+  };
+
+  renderImages = (source) => {
+    console.log(source);
+    console.log(this.state.images);
+
+    return source.map((image, index) => {
+      console.log(image, index);
+      return (
+        this.state.images && (
+          <div className="image-with-cancel" key={image}>
+            <div
+              key={image}
+              className="cancel-icon"
+              onClick={() => {
+                console.log(`${index} Image clicked!`);
+                let img = index;
+                // Deletes the blob image preview
+                source.splice(img, 1);
+                // Deletes the file image
+                this.setState(() => {
+                  console.log(img);
+                  return {
+                    images: this.state.images.filter((image, index) => {
+                      console.log(index);
+                      console.log(image);
+                      console.log(source);
+                      console.log(this.state.previews);
+                      console.log(this.state.images);
+                      return index !== img;
+                    }),
+                  };
+                });
+              }}
+            >
+              <FaTimesCircle className="arrow-back-icon" />
+            </div>
+            <div className="render-images-div">
+              <img
+                src={image}
+                alt="previews"
+                key={image}
+                className="upload-browse"
+              />
+            </div>
+          </div>
+        )
+      );
+    });
   };
 
   // FOR FORM-THREE VALIDATION
@@ -450,6 +526,8 @@ export class PropertyStepForm extends Component {
       longitudeValid,
       description,
       descriptionValid,
+      images,
+      previews,
       formTwoValid,
 
       bedroom,
@@ -514,6 +592,11 @@ export class PropertyStepForm extends Component {
           longitude={longitude}
           longitudeValid={longitudeValid}
           longitudeChange={this.updateLongitude}
+          // note this for the images
+          imagesFiles={images}
+          previewsBlob={previews}
+          renderImages={this.renderImages}
+          // end of note for the images
           formTwoValid={formTwoValid}
           errorMsg={errorMsg}
           closeForm={this.props}
