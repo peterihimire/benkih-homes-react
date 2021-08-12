@@ -138,8 +138,7 @@ class NewPropertyPageTwo extends Component {
       // setPreviews((prevImgs) => {
       //   return prevImgs.concat(fileArray);
       // });
-      this.setState((prevImgs) => {
-        console.log(prevImgs.images);
+      this.setState(() => {
         return { previews: fileArray };
       });
       imagesUploadArray.map((files) => {
@@ -147,53 +146,38 @@ class NewPropertyPageTwo extends Component {
       });
     }
   };
-  // console.log(this.images);
+  // console.log(this.state.images);
   renderImages = (source) => {
     console.log(source);
+    console.log(this.state.images);
+
     return source.map((image, index) => {
       console.log(image, index);
       return (
         this.state.images && (
           <div className="image-with-cancel" key={image}>
-            {/* <img
-              // src={cancelIcon}
-              alt="red x"
-              key={image}
-              className="cancel-icon"
-              onClick={() => {
-                console.log(`${index} Image clicked!`);
-                // let img = index;
-                // // Deletes the blob image
-                // source.splice(img, 1);
-                // // Deletes the file image
-                // setImages((prevImgs) => {
-                //   console.log(img);
-                //   console.log(prevImgs);
-                //   return prevImgs.filter((image, index) => {
-                //     console.log(index);
-                //     return index !== img;
-                //   });
-                // });
-              }}
-            /> */}
             <div
-              // className="cancelIcon"
               key={image}
               className="cancel-icon"
               onClick={() => {
                 console.log(`${index} Image clicked!`);
-                // let img = index;
-                // // Deletes the blob image
-                // source.splice(img, 1);
-                // // Deletes the file image
-                // this.setState((prevImgs) => {
-                //   console.log(img);
-                //   console.log(prevImgs);
-                // return prevImgs.filter((image, index) => {
-                //     console.log(index);
-                //     return index !== img;
-                //   });
-                // });
+                let img = index;
+                // Deletes the blob image
+                source.splice(img, 1);
+                // Deletes the file image
+                this.setState(() => {
+                  console.log(img);
+                  return {
+                    images: this.state.images.filter((image, index) => {
+                      console.log(index);
+                      console.log(image);
+                      console.log(source);
+                      console.log(this.state.previews);
+                      console.log(this.state.images);
+                      return index !== img;
+                    }),
+                  };
+                });
               }}
             >
               <FaTimesCircle className="arrow-back-icon" />
@@ -354,9 +338,8 @@ class NewPropertyPageTwo extends Component {
                   </div>
                 ) : (
                   <div className="empty-image-banner">
-                    <FaImage className='image-icon' />
+                    <FaImage className="image-icon" />
                     <p>No property image selected.</p>
-                    
                   </div>
                 )}
                 <div className="property-upload-div">
