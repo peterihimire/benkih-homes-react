@@ -14,68 +14,73 @@ import { FaTimesCircle } from "react-icons/fa";
 // }
 
 export class PropertyStepForm extends Component {
-  state = {
-    step: 1,
+  constructor(props) {
+    super(props);
+    this.fileInputRef = React.createRef();
 
-    // step 1
+    this.state = {
+      step: 1,
 
-    title: "",
-    titleValid: false,
-    slug: "",
-    slugValid: false,
-    bedroom: "",
-    bedroomValid: false,
-    bathroom: "",
-    bathroomValid: false,
-    address: "",
-    addressValid: false,
-    amount: "",
-    amountValid: false,
-    formOneValid: false,
+      // step 1
 
-    // step 2
+      title: "",
+      titleValid: false,
+      slug: "",
+      slugValid: false,
+      bedroom: "",
+      bedroomValid: false,
+      bathroom: "",
+      bathroomValid: false,
+      address: "",
+      addressValid: false,
+      amount: "",
+      amountValid: false,
+      formOneValid: false,
 
-    description: "",
-    descriptionValid: false,
-    creator: "",
-    creatorValid: false,
-    latitude: "",
-    latitudeValid: false,
-    longitude: "",
-    longitudeValid: false,
-    images: [],
-    previews: [],
-    imagesValid: false,
-    formTwoValid: false,
+      // step 2
 
-    // step 3
-    // bedroom: "",
-    // bedroomValid: false,
-    // bathroom: "",
-    // bathroomValid: false,
-    propertyCity: "",
-    propertyCityValid: false,
-    propertyState: "",
-    propertyStateValid: false,
+      description: "",
+      descriptionValid: false,
+      creator: "",
+      creatorValid: false,
+      latitude: "",
+      latitudeValid: false,
+      longitude: "",
+      longitudeValid: false,
+      images: [],
+      previews: [],
+      imagesValid: false,
+      formTwoValid: false,
 
-    // FOR OLD FEATURED STATE
-    // featured: "no",
-    // featuredValid: false,
+      // step 3
+      // bedroom: "",
+      // bedroomValid: false,
+      // bathroom: "",
+      // bathroomValid: false,
+      propertyCity: "",
+      propertyCityValid: false,
+      propertyState: "",
+      propertyStateValid: false,
 
-    featured: false,
+      // FOR OLD FEATURED STATE
+      // featured: "no",
+      // featuredValid: false,
 
-    recent: false,
+      featured: false,
 
-    newProperty: false,
+      recent: false,
 
-    formThreeValid: false,
+      newProperty: false,
 
-    // FORM VALIDATION STATE
-    formValid: false,
-    errorMsg: {},
-    loading: false,
-    error: "",
-  };
+      formThreeValid: false,
+
+      // FORM VALIDATION STATE
+      formValid: false,
+      errorMsg: {},
+      loading: false,
+      error: "",
+    };
+  }
 
   nextStep = () => {
     const { step } = this.state;
@@ -595,6 +600,7 @@ export class PropertyStepForm extends Component {
           // note this for the images
           imagesFiles={images}
           previewsBlob={previews}
+          imageChange={this.onChangePropertiesImages}
           renderImages={this.renderImages}
           // end of note for the images
           formTwoValid={formTwoValid}

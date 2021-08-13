@@ -122,14 +122,14 @@ class NewPropertyPageThree extends Component {
 
   render() {
     const {
-      bedroom,
-      bedroomChange,
-      bedroomValid,
+      // bedroom,
+      // bedroomChange,
+      // bedroomValid,
       errorMsg,
 
-      bathroom,
-      bathroomChange,
-      bathroomValid,
+      // bathroom,
+      // bathroomChange,
+      // bathroomValid,
 
       propertyCity,
       propertyCityChange,
@@ -183,7 +183,7 @@ class NewPropertyPageThree extends Component {
               <p>Add or create new property for sale.</p>
             </div>
             <form>
-              <div className="form-group">
+              {/* <div className="form-group">
                 <ValidationMessage
                   valid={bedroomValid}
                   message={errorMsg.bedroom}
@@ -212,45 +212,15 @@ class NewPropertyPageThree extends Component {
                   value={bathroom}
                   onChange={(e) => bathroomChange(e.target.value)}
                 />
-              </div>
-
+              </div> */}
               <div className="form-group">
-                {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
+                <label htmlFor="propertyState">Property State</label>
 
-                <ValidationMessage
-                  valid={propertyCityValid}
-                  message={errorMsg.propertyCity}
-                />
                 <select
                   type="text"
-                  name="viewerLoc"
+                  name="propertyState"
                   className="form-control my-select form-field"
-                  id="viewerLoc"
-                  placeholder=""
-                  required
-                  // value={viewerLoc}
-                  value={propertyCity}
-                  onChange={(e) => propertyCityChange(e.target.value)}
-                >
-                  <option value="none">Choose City ...</option>
-                  <option value="Ikeja">Ikeja</option>
-                  <option value="Lekki">Lekki</option>
-                  <option value="Abuja">Abuja</option>
-                  <option value="Ikoyi">Ikoyi</option>
-                </select>
-              </div>
-
-              <div className="form-group">
-                {/* <label htmlFor="viewerLoc">Prioritized viewers Location</label> */}
-                <ValidationMessage
-                  valid={propertyStateValid}
-                  message={errorMsg.propertyState}
-                />
-                <select
-                  type="text"
-                  name="viewerLoc"
-                  className="form-control my-select form-field"
-                  id="viewerLoc"
+                  id="propertyState"
                   placeholder=""
                   required
                   // value={viewerLoc}
@@ -261,8 +231,42 @@ class NewPropertyPageThree extends Component {
                   <option value="Lagos">Lagos</option>
                   <option value="Edo">Edo</option>
                   <option value="Imo">Imo</option>
+                  <option value="Abuja">Abuja</option>
                   <option value="Rivers">Rivers</option>
                 </select>
+                <ValidationMessage
+                  valid={propertyStateValid}
+                  message={errorMsg.propertyState}
+                />
+              </div>
+              <div className="form-group">
+                <label htmlFor="propertyCity">Property City</label>
+                <select
+                  type="text"
+                  name="propertyCity"
+                  className="form-control my-select form-field"
+                  id="propertyCity"
+                  placeholder=""
+                  required
+                  value={propertyCity}
+                  onChange={(e) => propertyCityChange(e.target.value)}
+                >
+                  <option value="none">Choose City ...</option>
+                  <option value="Ikeja">Ikeja</option>
+                  <option value="Lekki">Lekki</option>
+                  <option value="Ikoyi">Ikoyi</option>
+                  <option value="Sapele-road">Sapele Road</option>
+                  <option value="Benin">Benin</option>
+                  <option value="Orji">Orji</option>
+                  <option value="Akwakuma">Akwakuma</option>
+                  <option value="Ogbogoro">Ogbogoro</option>
+                  <option value="NTA Road">NTA Road</option>
+                  <option value="Gwagwalada">Gwagwalada</option>
+                </select>
+                <ValidationMessage
+                  valid={propertyCityValid}
+                  message={errorMsg.propertyCity}
+                />
               </div>
 
               {/* <div className="form-group form-group-radio">
@@ -306,7 +310,68 @@ class NewPropertyPageThree extends Component {
                   </div>
                 </div>
               </div> */}
-
+              {/* BEGINNING OF NOTE */}
+              <div className="form-group ">
+                <div className="form-group-checkbox ">
+                  <div className="form-label-div">
+                    <label htmlFor="checkbus">Furnished</label>
+                  </div>
+                  <div className="new-checkbox-div">
+                    <input
+                      type="checkbox"
+                      name="checkbus"
+                      defaultChecked={featured}
+                      onChange={featuredChange}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="form-group ">
+                <div className="form-group-checkbox ">
+                  <div className="form-label-div">
+                    <label htmlFor="checkbus">Out-Door Pool</label>
+                  </div>
+                  <div className="new-checkbox-div">
+                    <input
+                      type="checkbox"
+                      name="checkbus"
+                      defaultChecked={featured}
+                      onChange={featuredChange}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="form-group ">
+                <div className="form-group-checkbox ">
+                  <div className="form-label-div">
+                    <label htmlFor="checkbus">In-Door Pool</label>
+                  </div>
+                  <div className="new-checkbox-div">
+                    <input
+                      type="checkbox"
+                      name="checkbus"
+                      defaultChecked={featured}
+                      onChange={featuredChange}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="form-group ">
+                <div className="form-group-checkbox ">
+                  <div className="form-label-div">
+                    <label htmlFor="checkbus">Mini Theater</label>
+                  </div>
+                  <div className="new-checkbox-div">
+                    <input
+                      type="checkbox"
+                      name="checkbus"
+                      defaultChecked={featured}
+                      onChange={featuredChange}
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* END OF NOTE */}
               <div className="form-group ">
                 <div className="form-group-checkbox ">
                   <div className="form-label-div">
@@ -322,7 +387,6 @@ class NewPropertyPageThree extends Component {
                   </div>
                 </div>
               </div>
-
               <div className="form-group ">
                 <div className="form-group-checkbox ">
                   <div className="form-label-div">
@@ -338,7 +402,6 @@ class NewPropertyPageThree extends Component {
                   </div>
                 </div>
               </div>
-
               <div className="form-group ">
                 <div className="form-group-checkbox ">
                   <div className="form-label-div">
@@ -356,7 +419,6 @@ class NewPropertyPageThree extends Component {
                   </div>
                 </div>
               </div>
-
               <button
                 type="submit"
                 className="btn btn-full"

@@ -4,7 +4,7 @@ import "./LoginPage.css";
 import homeBg from "../../assets/full-modal.svg";
 import closeIcon from "../../assets/close-icon.svg";
 import { FaArrowLeft, FaTimesCircle, FaImage } from "react-icons/fa";
-
+console.log(FaTimesCircle)
 function ValidationMessage(props) {
   if (!props.valid) {
     return <div className="error-msg">{props.message}</div>;
@@ -17,55 +17,55 @@ class NewPropertyPageTwo extends Component {
     super(props);
     this.fileInputRef = React.createRef();
 
-    this.state = {
-      description: "",
-      descriptionValid: false,
-      // creator: "",
-      // creatorValid: false,
-      latitude: "",
-      latitudeValid: false,
-      longitude: "",
-      longitudeValid: false,
-      formValid: false,
-      // for images
-      images: [],
-      previews: [],
-      errorMsg: {},
-      loading: false,
-      error: "",
-    };
+    // this.state = {
+    //   description: "",
+    //   descriptionValid: false,
+    //   // creator: "",
+    //   // creatorValid: false,
+    //   latitude: "",
+    //   latitudeValid: false,
+    //   longitude: "",
+    //   longitudeValid: false,
+    //   formValid: false,
+    //   // for images
+    //   images: [],
+    //   previews: [],
+    //   errorMsg: {},
+    //   loading: false,
+    //   error: "",
+    // };
   }
 
-  // FOR OVERALL FORM VALIDATION
-  validateForm = () => {
-    const {
-      descriptionValid,
-      // creatorValid,
-      latitudeValid,
-      longitudeValid,
-    } = this.state;
-    this.setState({
-      formValid: descriptionValid && latitudeValid && longitudeValid,
-    });
-  };
+  // // FOR OVERALL FORM VALIDATION
+  // validateForm = () => {
+  //   const {
+  //     descriptionValid,
+  //     // creatorValid,
+  //     latitudeValid,
+  //     longitudeValid,
+  //   } = this.state;
+  //   this.setState({
+  //     formValid: descriptionValid && latitudeValid && longitudeValid,
+  //   });
+  // };
 
-  // FOR DESCRIPTION VALIDATION
-  updateDescription = (description) => {
-    this.setState({ description }, this.validateDescription);
-  };
+  // // FOR DESCRIPTION VALIDATION
+  // updateDescription = (description) => {
+  //   this.setState({ description }, this.validateDescription);
+  // };
 
-  validateDescription = () => {
-    const { description } = this.state;
-    let descriptionValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateDescription = () => {
+  //   const { description } = this.state;
+  //   let descriptionValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (description.length < 7) {
-      descriptionValid = false;
-      errorMsg.description = "Must be at least 7 characters long";
-    }
+  //   if (description.length < 7) {
+  //     descriptionValid = false;
+  //     errorMsg.description = "Must be at least 7 characters long";
+  //   }
 
-    this.setState({ descriptionValid, errorMsg }, this.validateForm);
-  };
+  //   this.setState({ descriptionValid, errorMsg }, this.validateForm);
+  // };
 
   // // FOR CREATOR VALIDATION
   // updateCreator = (creator) => {
@@ -85,116 +85,116 @@ class NewPropertyPageTwo extends Component {
   //   this.setState({ creatorValid, errorMsg }, this.validateForm);
   // };
 
-  // FOR LATITUDE VALIDATION
-  updateLatitude = (latitude) => {
-    this.setState({ latitude }, this.validateLatitude);
-  };
+  // // FOR LATITUDE VALIDATION
+  // updateLatitude = (latitude) => {
+  //   this.setState({ latitude }, this.validateLatitude);
+  // };
 
-  validateLatitude = () => {
-    const { latitude } = this.state;
-    let latitudeValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateLatitude = () => {
+  //   const { latitude } = this.state;
+  //   let latitudeValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (!/\d/.test(latitude)) {
-      latitudeValid = false;
-      errorMsg.latitude = "Latitude must contain only digits";
-    }
+  //   if (!/\d/.test(latitude)) {
+  //     latitudeValid = false;
+  //     errorMsg.latitude = "Latitude must contain only digits";
+  //   }
 
-    this.setState({ latitudeValid, errorMsg }, this.validateForm);
-  };
+  //   this.setState({ latitudeValid, errorMsg }, this.validateForm);
+  // };
 
-  // FOR LONGITUDE VALIDATION
-  updateLongitude = (longitude) => {
-    this.setState({ longitude }, this.validateLongitude);
-  };
+  // // FOR LONGITUDE VALIDATION
+  // updateLongitude = (longitude) => {
+  //   this.setState({ longitude }, this.validateLongitude);
+  // };
 
-  validateLongitude = () => {
-    const { longitude } = this.state;
-    let longitudeValid = true;
-    let errorMsg = { ...this.state.errorMsg };
+  // validateLongitude = () => {
+  //   const { longitude } = this.state;
+  //   let longitudeValid = true;
+  //   let errorMsg = { ...this.state.errorMsg };
 
-    if (!/\d/.test(longitude)) {
-      longitudeValid = false;
-      errorMsg.longitude = "Latitude must contain only digits";
-    }
+  //   if (!/\d/.test(longitude)) {
+  //     longitudeValid = false;
+  //     errorMsg.longitude = "Latitude must contain only digits";
+  //   }
 
-    this.setState({ longitudeValid, errorMsg }, this.validateForm);
-  };
+  //   this.setState({ longitudeValid, errorMsg }, this.validateForm);
+  // };
 
-  // FOR IMAGES PREVIEW AND UPLOADING OF MULTIPLE IMAGES
-  onChangePropertiesImages = (e) => {
-    // console.log(e.target.files);
-    const files = e.target.files;
-    let imagesUploadArray = Array.from(files);
-    console.log(imagesUploadArray);
-    if (imagesUploadArray) {
-      const fileArray = imagesUploadArray.map((file, index) => {
-        console.log(file, index);
-        // setImages(imagesUploadArray);
-        this.setState({ images: imagesUploadArray });
-        return URL.createObjectURL(file);
-      });
-      console.log(fileArray);
-      // setPreviews((prevImgs) => {
-      //   return prevImgs.concat(fileArray);
-      // });
-      this.setState(() => {
-        return { previews: fileArray };
-      });
-      imagesUploadArray.map((files) => {
-        return URL.revokeObjectURL(files);
-      });
-    }
-  };
-  // console.log(this.state.images);
-  renderImages = (source) => {
-    console.log(source);
-    console.log(this.state.images);
+  // // FOR IMAGES PREVIEW AND UPLOADING OF MULTIPLE IMAGES
+  // onChangePropertiesImages = (e) => {
+  //   // console.log(e.target.files);
+  //   const files = e.target.files;
+  //   let imagesUploadArray = Array.from(files);
+  //   console.log(imagesUploadArray);
+  //   if (imagesUploadArray) {
+  //     const fileArray = imagesUploadArray.map((file, index) => {
+  //       console.log(file, index);
+  //       // setImages(imagesUploadArray);
+  //       this.setState({ images: imagesUploadArray });
+  //       return URL.createObjectURL(file);
+  //     });
+  //     console.log(fileArray);
+  //     // setPreviews((prevImgs) => {
+  //     //   return prevImgs.concat(fileArray);
+  //     // });
+  //     this.setState(() => {
+  //       return { previews: fileArray };
+  //     });
+  //     imagesUploadArray.map((files) => {
+  //       return URL.revokeObjectURL(files);
+  //     });
+  //   }
+  // };
+  // // console.log(this.state.images);
+  // renderImages = (source) => {
+  //   console.log(source);
+  //   console.log(this.state.images);
 
-    return source.map((image, index) => {
-      console.log(image, index);
-      return (
-        this.state.images && (
-          <div className="image-with-cancel" key={image}>
-            <div
-              key={image}
-              className="cancel-icon"
-              onClick={() => {
-                console.log(`${index} Image clicked!`);
-                let img = index;
-                // Deletes the blob image preview
-                source.splice(img, 1);
-                // Deletes the file image
-                this.setState(() => {
-                  console.log(img);
-                  return {
-                    images: this.state.images.filter((image, index) => {
-                      console.log(index);
-                      console.log(image);
-                      console.log(source);
-                      console.log(this.state.previews);
-                      console.log(this.state.images);
-                      return index !== img;
-                    }),
-                  };
-                });
-              }}
-            >
-              <FaTimesCircle className="arrow-back-icon" />
-            </div>
-            <div className="render-images-div">
-              <img
-                src={image}
-                alt="previews"
-                key={image}
-                className="upload-browse"
-              />
-            </div>
-          </div>
-        )
-      );
-    });
-  };
+  //   return source.map((image, index) => {
+  //     console.log(image, index);
+  //     return (
+  //       this.state.images && (
+  //         <div className="image-with-cancel" key={image}>
+  //           <div
+  //             key={image}
+  //             className="cancel-icon"
+  //             onClick={() => {
+  //               console.log(`${index} Image clicked!`);
+  //               let img = index;
+  //               // Deletes the blob image preview
+  //               source.splice(img, 1);
+  //               // Deletes the file image
+  //               this.setState(() => {
+  //                 console.log(img);
+  //                 return {
+  //                   images: this.state.images.filter((image, index) => {
+  //                     console.log(index);
+  //                     console.log(image);
+  //                     console.log(source);
+  //                     console.log(this.state.previews);
+  //                     console.log(this.state.images);
+  //                     return index !== img;
+  //                   }),
+  //                 };
+  //               });
+  //             }}
+  //           >
+  //             <FaTimesCircle className="arrow-back-icon" />
+  //           </div>
+  //           <div className="render-images-div">
+  //             <img
+  //               src={image}
+  //               alt="previews"
+  //               key={image}
+  //               className="upload-browse"
+  //             />
+  //           </div>
+  //         </div>
+  //       )
+  //     );
+  //   });
+  // };
 
   continue = (e) => {
     e.preventDefault();
@@ -225,8 +225,14 @@ class NewPropertyPageTwo extends Component {
       longitudeChange,
       longitudeValid,
 
+      // imagesFiles,
+      previewsBlob,
+      imageChange,
+      renderImages,
+
       formTwoValid,
     } = this.props;
+    console.log(this.props);
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
@@ -321,17 +327,10 @@ class NewPropertyPageTwo extends Component {
                   message={errorMsg.description}
                 />
               </div>
-              <div className="form-group">
+
+              {/* FOR THE SAME PAGE FILES, METHODS AND STATES*/}
+              {/* <div className="form-group">
                 <label htmlFor="images">Images</label>
-                {/* {<div className="upload-browse-div">
-                  {this.state.previews.length > 0 ? (
-                    this.renderImages(this.state.previews)
-                  ) : (
-                    <div className="empty-image-banner">
-                      <p>No images selected.</p>
-                    </div>
-                  )}
-                </div>} */}
                 {this.state.previews.length > 0 ? (
                   <div className="upload-browse-div">
                     {this.renderImages(this.state.previews)}
@@ -351,6 +350,42 @@ class NewPropertyPageTwo extends Component {
                     className="form-file"
                     accept="image/*"
                     onChange={this.onChangePropertiesImages}
+                    ref={this.fileInputRef}
+                  />
+                  <button
+                    className="property-upload-btn"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      this.fileInputRef.current.click();
+                    }}
+                  >
+                    Browse
+                  </button>
+                </div>
+              </div> */}
+
+              {/* FOR EXTERNAL IMAGES METHOD AND FILES */}
+              <div className="form-group">
+                <label htmlFor="images">Images</label>
+                {previewsBlob.length > 0 ? (
+                  <div className="upload-browse-div">
+                    {renderImages(previewsBlob)}
+                  </div>
+                ) : (
+                  <div className="empty-image-banner">
+                    <FaImage className="image-icon" />
+                    <p>No property image selected.</p>
+                  </div>
+                )}
+                <div className="property-upload-div">
+                  <input
+                    type="file"
+                    multiple
+                    id="images"
+                    name="images"
+                    className="form-file"
+                    accept="image/*"
+                    onChange={imageChange}
                     ref={this.fileInputRef}
                   />
                   <button
