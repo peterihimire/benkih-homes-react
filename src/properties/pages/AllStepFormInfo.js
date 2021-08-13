@@ -155,9 +155,14 @@ class AllStepFormInfo extends Component {
       bathroom: this.props.bathroom,
       propertyCity: this.props.propertyCity,
       propertyState: this.props.propertyState,
+      furnished: this.props.furnished,
+      inDoorPool: this.props.inDoorPool,
+      outDoorPool: this.props.outDoorPool,
+      miniTheater: this.props.miniTheater,
       featured: this.props.featured,
       recent: this.props.recent,
       newProperty: this.props.newProperty,
+      imagesFiles: this.props.imagesFiles,
       userId: context.userId,
     });
   }
@@ -176,11 +181,18 @@ class AllStepFormInfo extends Component {
       bathroom,
       propertyCity,
       propertyState,
+      furnished,
+      inDoorPool,
+      outDoorPool,
+      miniTheater,
       featured,
       recent,
       newProperty,
+      renderImages,
+      previewsBlob,
+      imagesFiles,
     } = this.props;
-
+    console.log(this.props);
     console.log(
       title,
       slug,
@@ -197,6 +209,11 @@ class AllStepFormInfo extends Component {
       featured,
       recent,
       newProperty,
+      furnished,
+      inDoorPool,
+      outDoorPool,
+      miniTheater,
+      imagesFiles,
     );
 
     return (
@@ -257,12 +274,25 @@ class AllStepFormInfo extends Component {
                 <br />
                 Property State: <b>{propertyState}</b>
                 <br />
+                Furnished: <b>{furnished.toString()}</b>
+                <br />
+                Out Door Pool: <b>{outDoorPool.toString()}</b>
+                <br />
+                In Door Pool: <b>{inDoorPool.toString()}</b>
+                <br />
+                Mini Theater: <b>{miniTheater.toString()}</b>
+                <br />
                 Featured: <b>{featured.toString()}</b>
                 <br />
                 Recent: <b>{recent.toString()}</b>
                 <br />
                 {/* used the toString() method to convert boolean to string */}
                 New Property: <b>{newProperty.toString()}</b>
+                <form className="form-group">
+                  <div className="upload-browse-div">
+                    {renderImages(previewsBlob)}
+                  </div>
+                </form>
               </div>
 
               <form onSubmit={this.newPropertyHandler}>

@@ -66,6 +66,11 @@ export class PropertyStepForm extends Component {
       // featured: "no",
       // featuredValid: false,
 
+      furnished: false,
+      outDoorPool: false,
+      inDoorPool: false,
+      miniTheater: false,
+
       featured: false,
 
       recent: false,
@@ -489,6 +494,30 @@ export class PropertyStepForm extends Component {
   //   this.setState({ featuredValid, errorMsg }, this.validateFormThree);
   // };
 
+  // FOR FURNISHED VALIDATION
+  toggleCheckFurnished = () => {
+    console.log(this.state.furnished);
+    this.setState({ furnished: !this.state.furnished });
+  };
+
+  // FOR OUT-DOOR-POOL VALIDATION
+  toggleCheckOutDoorPool = () => {
+    console.log(this.state.outDoorPool);
+    this.setState({ outDoorPool: !this.state.outDoorPool });
+  };
+
+  // FOR IN-DOOR-POOL VALIDATION
+  toggleCheckInDoorPool = () => {
+    console.log(this.state.inDoorPool);
+    this.setState({ inDoorPool: !this.state.inDoorPool });
+  };
+
+  // FOR MINI-THEATER VALIDATION
+  toggleCheckMiniTheater = () => {
+    console.log(this.state.miniTheater);
+    this.setState({ miniTheater: !this.state.miniTheater });
+  };
+
   // FOR FEATURED VALIDATION
   toggleCheckFeatured = () => {
     console.log(this.state.featured);
@@ -543,6 +572,10 @@ export class PropertyStepForm extends Component {
       propertyCityValid,
       propertyState,
       propertyStateValid,
+      furnished,
+      outDoorPool,
+      inDoorPool,
+      miniTheater,
       featured,
       // featuredValid,
       recent,
@@ -615,12 +648,12 @@ export class PropertyStepForm extends Component {
           nextStep={this.nextStep}
           prevStep={this.prevStep}
           // handleChange={this.handleChange}
-          bedroom={bedroom}
-          bedroomValid={bedroomValid}
-          bedroomChange={this.updateBedroom}
-          bathroom={bathroom}
-          bathroomValid={bathroomValid}
-          bathroomChange={this.updateBathroom}
+          // bedroom={bedroom}
+          // bedroomValid={bedroomValid}
+          // bedroomChange={this.updateBedroom}
+          // bathroom={bathroom}
+          // bathroomValid={bathroomValid}
+          // bathroomChange={this.updateBathroom}
           propertyCity={propertyCity}
           propertyCityValid={propertyCityValid}
           propertyCityChange={this.updatePropertyCity}
@@ -633,6 +666,14 @@ export class PropertyStepForm extends Component {
           // featuredChange={this.updateFeatured}
 
           // CURRENT FEATURED LOGIC BASED ON CHECKBOX
+          furnished={furnished}
+          furnishedChange={this.toggleCheckFurnished}
+          outDoorPool={outDoorPool}
+          outDoorPoolChange={this.toggleCheckOutDoorPool}
+          inDoorPool={inDoorPool}
+          inDoorPoolChange={this.toggleCheckInDoorPool}
+          miniTheater={miniTheater}
+          miniTheaterChange={this.toggleCheckMiniTheater}
           featured={featured}
           featuredChange={this.toggleCheckFeatured}
           recent={recent}
@@ -662,9 +703,17 @@ export class PropertyStepForm extends Component {
           bathroom={bathroom}
           propertyCity={propertyCity}
           propertyState={propertyState}
+          furnished={furnished}
+          outDoorPool={outDoorPool}
+          inDoorPool={inDoorPool}
+          miniTheater={miniTheater}
           featured={featured}
           recent={recent}
           newProperty={newProperty}
+          imagesFiles={images}
+          previewsBlob={previews}
+          imageChange={this.onChangePropertiesImages}
+          renderImages={this.renderImages}
           closeForm={this.props}
         />
       );

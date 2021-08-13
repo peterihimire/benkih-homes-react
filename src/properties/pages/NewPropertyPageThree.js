@@ -139,6 +139,18 @@ class NewPropertyPageThree extends Component {
       propertyStateChange,
       propertyStateValid,
 
+      furnished,
+      furnishedChange,
+
+      outDoorPool,
+      outDoorPoolChange,
+
+      inDoorPool,
+      inDoorPoolChange,
+
+      miniTheater,
+      miniTheaterChange,
+
       featured,
       featuredChange,
       // featuredValid,
@@ -153,6 +165,7 @@ class NewPropertyPageThree extends Component {
 
       formThreeValid,
     } = this.props;
+    console.log(this.props);
     return (
       <div className="auth-item">
         <div className="login-bg-div hidden-xs visible-md visible-xl">
@@ -320,8 +333,8 @@ class NewPropertyPageThree extends Component {
                     <input
                       type="checkbox"
                       name="checkbus"
-                      defaultChecked={featured}
-                      onChange={featuredChange}
+                      defaultChecked={furnished}
+                      onChange={furnishedChange}
                     />
                   </div>
                 </div>
@@ -335,8 +348,8 @@ class NewPropertyPageThree extends Component {
                     <input
                       type="checkbox"
                       name="checkbus"
-                      defaultChecked={featured}
-                      onChange={featuredChange}
+                      defaultChecked={outDoorPool}
+                      onChange={outDoorPoolChange}
                     />
                   </div>
                 </div>
@@ -350,8 +363,8 @@ class NewPropertyPageThree extends Component {
                     <input
                       type="checkbox"
                       name="checkbus"
-                      defaultChecked={featured}
-                      onChange={featuredChange}
+                      defaultChecked={inDoorPool}
+                      onChange={inDoorPoolChange}
                     />
                   </div>
                 </div>
@@ -365,8 +378,8 @@ class NewPropertyPageThree extends Component {
                     <input
                       type="checkbox"
                       name="checkbus"
-                      defaultChecked={featured}
-                      onChange={featuredChange}
+                      defaultChecked={miniTheater}
+                      onChange={miniTheaterChange}
                     />
                   </div>
                 </div>
