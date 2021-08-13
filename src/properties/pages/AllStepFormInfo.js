@@ -24,9 +24,14 @@ class AllStepFormInfo extends Component {
     bathroom: "",
     propertyCity: "",
     propertyState: "",
+    furnished: false,
+    inDoorPool: false,
+    outDoorPool: false,
+    miniTheater: false,
     featured: false,
     recent: false,
     newProperty: false,
+    images: [],
     userId: "",
 
     errorMsg: {},
@@ -60,32 +65,72 @@ class AllStepFormInfo extends Component {
       bathroom: this.state.bathroom,
       propertyCity: this.state.propertyCity,
       propertyState: this.state.propertyState,
+      furnished: this.state.furnished,
+      inDoorPool: this.state.inDoorPool,
+      outDoorPool: this.state.outDoorPool,
+      miniTheater: this.state.miniTheater,
       featured: this.state.featured,
       recent: this.state.recent,
       newProperty: this.state.newProperty,
+      images: this.state.images,
       userId: this.state.userId,
     });
     this.setState({ loading: true });
+
+    const formData = new FormData();
+
+    formData.append("title", this.state.title);
+    formData.append("slug", this.state.slug);
+    formData.append("address", this.state.address);
+    formData.append("amount", this.state.amount);
+    formData.append("description", this.state.description);
+    formData.append("latitude", this.state.latitude);
+    formData.append("longitude", this.state.longitude);
+    formData.append("bedroom", this.state.bedroom);
+    formData.append("bathroom", this.state.bathroom);
+    formData.append("propertyCity", this.state.propertyCity);
+    formData.append("propertyState", this.state.propertyState);
+    formData.append("furnished", this.state.furnished);
+    formData.append("inDoorPool", this.state.inDoorPool);
+    formData.append("outDoorPool", this.state.outDoorPool);
+    formData.append("miniTheater", this.state.miniTheater);
+    formData.append("featured", this.state.featured);
+    formData.append("recent", this.state.recent);
+    formData.append("newProperty", this.state.newProperty);
+    // FOR MULTIPLE FILE UPLOAD
+    for (const key of Object.keys(this.state.images)) {
+      formData.append("images", this.state.images[key]);
+    }
+    formData.append("userId", this.state.userId);
+
+    console.log(formData);
+
     fetch(`${process.env.REACT_APP_BACKEND_URL}/properties/new-property`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        title: this.state.title,
-        slug: this.state.slug,
-        address: this.state.address,
-        amount: this.state.amount,
-        description: this.state.description,
-        latitude: this.state.latitude,
-        longitude: this.state.longitude,
-        bedroom: this.state.bedroom,
-        bathroom: this.state.bathroom,
-        propertyCity: this.state.propertyCity,
-        propertyState: this.state.propertyState,
-        featured: this.state.featured,
-        recent: this.state.recent,
-        newProperty: this.state.newProperty,
-        userId: this.state.userId,
-      }),
+      body: formData,
+      // body: JSON.stringify({
+      //   title: this.state.title,
+      //   slug: this.state.slug,
+      //   address: this.state.address,
+      //   amount: this.state.amount,
+      //   description: this.state.description,
+      //   latitude: this.state.latitude,
+      //   longitude: this.state.longitude,
+      //   bedroom: this.state.bedroom,
+      //   bathroom: this.state.bathroom,
+      //   propertyCity: this.state.propertyCity,
+      //   propertyState: this.state.propertyState,
+      //   furnished: this.state.furnished,
+      //   inDoorPool: this.state.inDoorPool,
+      //   outDoorPool: this.state.outDoorPool,
+      //   miniTheater: this.state.miniTheater,
+      //   featured: this.state.featured,
+      //   recent: this.state.recent,
+      //   newProperty: this.state.newProperty,
+      //   images: this.state.images,
+      //   userId: this.state.userId,
+      // }),
     })
       .then((response) => {
         console.log(response);
@@ -162,7 +207,7 @@ class AllStepFormInfo extends Component {
       featured: this.props.featured,
       recent: this.props.recent,
       newProperty: this.props.newProperty,
-      imagesFiles: this.props.imagesFiles,
+      images: this.props.imagesFiles,
       userId: context.userId,
     });
   }
