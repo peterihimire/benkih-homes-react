@@ -24,7 +24,7 @@ const SuccessModal = (props) => {
       footer={
         <div className="modal-error">
           <Link to={props.link} className="modal-success-btn">
-            Login
+            Proceed
           </Link>
         </div>
       }
