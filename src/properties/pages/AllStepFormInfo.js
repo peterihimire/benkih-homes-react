@@ -99,7 +99,7 @@ class AllStepFormInfo extends Component {
     formData.append("newProperty", this.state.newProperty);
     // FOR MULTIPLE FILE UPLOAD
     for (const key of Object.keys(this.state.images)) {
-      formData.append("images", this.state.images[key]);
+      formData.append("imagez", this.state.images[key]);
     }
     formData.append("userId", this.state.userId);
 
@@ -107,7 +107,7 @@ class AllStepFormInfo extends Component {
 
     fetch(`${process.env.REACT_APP_BACKEND_URL}/properties/new-property`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      // headers: { "Content-Type": "application/json" },
       body: formData,
       // body: JSON.stringify({
       //   title: this.state.title,
