@@ -34,7 +34,7 @@ const ProfileBlock = (props) => {
             {profileProperties.map((property) => {
               // return console.log(property);
               return (
-                <div className="">
+                <div className="" key={property.id}>
                   <PropertyItem properties={property} key={property.id} />
                 </div>
               );
