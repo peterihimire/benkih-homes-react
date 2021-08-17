@@ -1,12 +1,13 @@
 import React, { useContext, useState } from "react";
 import "./NavLinks.css";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink, Link, useHistory } from "react-router-dom";
 import { AuthContext } from "../../context/auth-context";
 import SignOutModal from "../UIElements/SignOutModal";
 
 const NavLinks = (props) => {
   const [showSignOut, setShowSignOut] = useState(false);
   const { scrollColor } = props;
+  let history = useHistory();
   console.log(props);
 
   const auth = useContext(AuthContext);
@@ -21,11 +22,24 @@ const NavLinks = (props) => {
     setShowSignOut(false);
   };
 
+  const mainLogout = () => {
+    // clears out the user data to log user out
+    auth.logout();
+    // redirects to homepage when logged out
+    history.push("/");
+    // removes the stuck logout modal , when you logout from the homepage.
+    const timer = setTimeout(() => {
+      console.log("Clears the stuck modal in homepage, when signout.");
+      cancelSignOutHandler();
+    }, 500);
+    return () => clearTimeout(timer);
+  };
+
   return (
     <>
       <SignOutModal
         show={showSignOutHandler}
-        onConfirm={auth.logout}
+        onConfirm={mainLogout}
         onCancel={cancelSignOutHandler}
         onSignOut={showSignOut}
       />

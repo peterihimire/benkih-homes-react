@@ -50,6 +50,11 @@ class AllStepFormInfo extends Component {
     this.props.prevStep();
   };
 
+  // TO REMOVE ERROR MODAL
+  errorModalHandler = () => {
+    this.setState({ error: null });
+  };
+
   // NEW PROPERTY HANDLER
   newPropertyHandler = (e) => {
     e.preventDefault();
@@ -107,8 +112,9 @@ class AllStepFormInfo extends Component {
 
     fetch(`${process.env.REACT_APP_BACKEND_URL}/properties/new-property`, {
       method: "POST",
-      // headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data" },
       body: formData,
+      // headers: { "Content-Type": "application/json" },
       // body: JSON.stringify({
       //   title: this.state.title,
       //   slug: this.state.slug,
@@ -173,11 +179,18 @@ class AllStepFormInfo extends Component {
           .catch((err) => {
             console.log(err);
             this.setState({ loading: false });
+            this.setState({
+              error:
+                err.message || "Something went wrong , please try again...",
+            });
           });
       })
       .catch((err) => {
         console.log(err);
         this.setState({ loading: false });
+        this.setState({
+          error: err.message || "Something went wrong , please try again...",
+        });
       });
   };
 
