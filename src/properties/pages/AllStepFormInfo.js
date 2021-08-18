@@ -112,8 +112,31 @@ class AllStepFormInfo extends Component {
 
     fetch(`${process.env.REACT_APP_BACKEND_URL}/properties/new-property`, {
       method: "POST",
-      headers: { "Content-Type": "multipart/form-data" },
-      body: formData,
+      // headers: { "Content-Type": "multipart/form-data" },
+      // body: formData,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: this.state.title,
+        slug: this.state.slug,
+        address: this.state.address,
+        amount: this.state.amount,
+        description: this.state.description,
+        latitude: this.state.latitude,
+        longitude: this.state.longitude,
+        bedroom: this.state.bedroom,
+        bathroom: this.state.bathroom,
+        propertyCity: this.state.propertyCity,
+        propertyState: this.state.propertyState,
+        furnished: this.state.furnished,
+        inDoorPool: this.state.inDoorPool,
+        outDoorPool: this.state.outDoorPool,
+        miniTheater: this.state.miniTheater,
+        featured: this.state.featured,
+        recent: this.state.recent,
+        newProperty: this.state.newProperty,
+        // images: this.state.images,
+        userId: this.state.userId,
+      }),
     })
       .then((response) => {
         console.log(response);
@@ -349,26 +372,3 @@ class AllStepFormInfo extends Component {
 }
 export default AllStepFormInfo;
 // central business district, marina
-// headers: { "Content-Type": "application/json" },
-// body: JSON.stringify({
-//   title: this.state.title,
-//   slug: this.state.slug,
-//   address: this.state.address,
-//   amount: this.state.amount,
-//   description: this.state.description,
-//   latitude: this.state.latitude,
-//   longitude: this.state.longitude,
-//   bedroom: this.state.bedroom,
-//   bathroom: this.state.bathroom,
-//   propertyCity: this.state.propertyCity,
-//   propertyState: this.state.propertyState,
-//   furnished: this.state.furnished,
-//   inDoorPool: this.state.inDoorPool,
-//   outDoorPool: this.state.outDoorPool,
-//   miniTheater: this.state.miniTheater,
-//   featured: this.state.featured,
-//   recent: this.state.recent,
-//   newProperty: this.state.newProperty,
-//   images: this.state.images,
-//   userId: this.state.userId,
-// }),
