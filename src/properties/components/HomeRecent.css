@@ -22,9 +22,14 @@
   justify-content: flex-end;
   color: var(--primary-color);
 }
+.more-flex-end a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
 .more-arrow {
   display: flex;
   align-items: center;
+  color: var(--primary-color);
 }
 .more-arrow span {
   padding: 0 0 0 1rem;

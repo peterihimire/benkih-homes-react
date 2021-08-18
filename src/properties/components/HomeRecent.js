@@ -1,5 +1,6 @@
 import React from "react";
 import "./HomeRecent.css";
+import { Link } from "react-router-dom";
 import PropertySlide from "../components/PropertySlide";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
@@ -13,9 +14,12 @@ const HomeRecent = () => {
 
       <div className="">
         <div className="more-flex-end">
-          <div className="more-arrow">
-            <h4>Find more properties</h4> <span>{<FaLongArrowAltRight />}</span>
-          </div>
+          <Link to="/properties">
+            <div className="more-arrow">
+              <h4>Find more properties</h4>{" "}
+              <span>{<FaLongArrowAltRight />}</span>
+            </div>
+          </Link>
         </div>
 
         <PropertySlide />
