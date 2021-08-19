@@ -7,7 +7,6 @@ import PropertyItem from "../components/PropertyItem";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
 
-
 const PropertyBlock = () => {
   // console.log(properties);
   // const auth = useContext(AuthContext);
@@ -81,7 +80,7 @@ const PropertyBlock = () => {
             {properties.map((property) => {
               // return console.log(property);
               return (
-                <div className="">
+                <div className="" key={property.id}>
                   <PropertyItem properties={property} />
                 </div>
               );

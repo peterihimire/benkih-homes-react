@@ -9,6 +9,7 @@ import ForgotPasswordPage from "../src/properties/pages/ForgotPasswordPage";
 import NewPropertyPageOne from "../src/properties/pages/PropertyStepForm";
 import PropertiesPage from "../src/properties/pages/PropertiesPage";
 import ProfilePage from "../src/user/pages/ProfilePage";
+import PropertyInfoPage from "../src/properties/pages/PropertyInfoPage";
 
 import {
   BrowserRouter as Router,
@@ -94,6 +95,7 @@ function App() {
         <Route path="/properties" exact component={PropertiesPage} />
         <Route path="/login" exact component={LoginPage} />
         <Route path="/register" exact component={SignupPage} />
+        <Route path="/property/:propertId" exact component={PropertyInfoPage} />
         {/* FOR DEVELOPMENT */}
         <Route path="/property/new" exact component={NewPropertyPageOne} />
         <Redirect to="/" />
