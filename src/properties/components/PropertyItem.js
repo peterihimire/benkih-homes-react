@@ -3,7 +3,7 @@ import "./PropertyItem.css";
 import Card from "../../shared/components/UIElements/Card";
 import "./PropertyItem.css";
 import { Link } from "react-router-dom";
-import { FaBed, FaBath, FaInfo, FaTrash, FaMapMarker } from "react-icons/fa";
+import { FaBed, FaBath, FaInfo, FaTrash } from "react-icons/fa";
 // import imgProperty from "../../assets/property-1.jpg";
 
 const PropertyItem = (props) => {
