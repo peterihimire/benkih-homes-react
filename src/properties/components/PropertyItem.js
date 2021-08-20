@@ -4,7 +4,7 @@ import Card from "../../shared/components/UIElements/Card";
 import "./PropertyItem.css";
 import { Link } from "react-router-dom";
 import { FaBed, FaBath, FaInfo, FaTrash, FaMapMarker } from "react-icons/fa";
-import imgProperty from "../../assets/property-1.jpg";
+// import imgProperty from "../../assets/property-1.jpg";
 
 const PropertyItem = (props) => {
   const { properties } = props;
@@ -13,7 +13,7 @@ const PropertyItem = (props) => {
     <Card className="property-card">
       <article className="property">
         <div className="property-item-img">
-          <img src={imgProperty} alt="home" />
+        <img src={properties.image} alt="home" />
         </div>
         <div>
           <h5>{properties.title}</h5>
@@ -47,12 +47,12 @@ const PropertyItem = (props) => {
           >
             <FaInfo className="option-icon" />
           </Link>
-          <Link
+          {/* <Link
             to={`/property/${properties.id}`}
             className="property-options-icon-btn"
           >
             <FaMapMarker className="option-icon" />
-          </Link>
+          </Link> */}
           <button className="property-options-icon-btn">
             <FaTrash className="option-icon" />
           </button>
