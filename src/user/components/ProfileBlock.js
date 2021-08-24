@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProfileBlock.css";
-import PropertyItem from "../../properties/components/PropertyItem";
+import ProfilePropertyItem from "./ProfilePropertyItem";
 import Pix from "../../assets/profile.png";
 // import { FaHome, FaDesktop } from "react-icons/fa";
 
@@ -35,7 +35,10 @@ const ProfileBlock = (props) => {
               // return console.log(property);
               return (
                 <div className="" key={property.id}>
-                  <PropertyItem properties={property} key={property.id} />
+                  <ProfilePropertyItem
+                    properties={property}
+                    key={property.id}
+                  />
                 </div>
               );
             })}
