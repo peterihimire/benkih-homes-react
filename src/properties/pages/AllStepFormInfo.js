@@ -114,7 +114,7 @@ class AllStepFormInfo extends Component {
 
     fetch(`${process.env.REACT_APP_BACKEND_URL}/properties/new-property`, {
       method: "POST",
-      // headers: { "Content-Type": "multipart/form-data" },
+      headers: { "Content-Type": "multipart/form-data" },
       body: formData,
     })
       .then((response) => {
