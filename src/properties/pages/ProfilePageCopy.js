@@ -15,7 +15,7 @@ const ProfilePage = () => {
   const [isLoading, setIsLoading] = useState(false);
   console.log(isLoading);
   console.log(user);
-  console.log(userProperties)
+  console.log(userProperties);
   const [error, setError] = useState();
 
   // GET THE PROFILE USER ACCOUNT
@@ -24,11 +24,14 @@ const ProfilePage = () => {
     if (!auth.userId || auth.userId === "" || auth.userId === undefined) {
       return setIsLoading(true);
     }
-    fetch(`http://127.0.0.1:4000/api/users/${auth.userId}`, {
-      headers: {
-        // Authorization: "Bearer " + auth.token,
+    fetch(
+      `${process.env.REACT_APP_BACKEND_URL}/users/${auth.userId}`,
+      {
+        headers: {
+          // Authorization: "Bearer " + auth.token,
+        },
       },
-    })
+    )
       .then((response) => {
         response
           .json()
@@ -42,7 +45,7 @@ const ProfilePage = () => {
             console.log(res.user);
             const loadedUser = res.user;
             setUser(loadedUser);
-            setUserProperties(res.user.properties)
+            setUserProperties(res.user.properties);
           })
           .catch((err) => {
             console.log(err);
