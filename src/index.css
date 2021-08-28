@@ -64,6 +64,7 @@
   --xsmall-font: 1.5rem;
 
   --main-shadow: 1px 4px 4px rgba(0, 0, 0, 0.04);
+  --main-transition: all 0.5s linear;
 
   --font: "lato", sans-serif;
   --font-bold: "lato-bold", sans-serif;

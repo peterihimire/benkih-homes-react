@@ -17,7 +17,11 @@ const PropertyItem = (props) => {
             <img src={properties.propertyImages[0]} alt="home" />
           </div>
           <div>
-            <h5>{properties.title}</h5>
+            <h5>
+              {properties.title.length > 40
+                ? properties.title.slice(0, 40) + "..."
+                : properties.title}
+            </h5>
             <div className="price-bed">
               <div>
                 <h6>
@@ -32,7 +36,11 @@ const PropertyItem = (props) => {
             </div>
             <div className="location-shower">
               <div>
-                <h6>{properties.address}</h6>
+                <h6>
+                  {properties.address.length > 40
+                    ? properties.address.slice(0, 40) + "..."
+                    : properties.address}
+                </h6>
               </div>
               <div className="flex-align">
                 <p>{properties.bathroom}</p>

@@ -11,12 +11,14 @@ const ProfilePropertyItem = (props) => {
   return (
     <Card className="property-card">
       {properties.propertyImages && (
-        <article className="property">
+        <article className="property profile-property" >
           <div className="profile-property-item-img">
             <img src={properties.propertyImages[0]} alt="home" />
           </div>
           <div>
-            <h5>{properties.title}</h5>
+            <h5>  {properties.title.length > 18
+              ? properties.title.slice(0, 18) + "..."
+              : properties.title}</h5>
             <div className="price-bed">
               <div>
                 <h6>
@@ -31,7 +33,9 @@ const ProfilePropertyItem = (props) => {
             </div>
             <div className="location-shower">
               <div>
-                <h6>{properties.address}</h6>
+                <h6>{properties.address.length > 18
+                  ? properties.address.slice(0, 18) + "..."
+                  : properties.address}</h6>
               </div>
               <div className="flex-align">
                 <p>{properties.bathroom}</p>
@@ -43,7 +47,7 @@ const ProfilePropertyItem = (props) => {
           <div className="property-hover-options">
             <Link
               to={`/property/${properties.id}`}
-              className="property-options-icon-btn"
+              className="profile-property-options-icon-btn"
             >
               <FaInfo className="option-icon" />
             </Link>
@@ -53,7 +57,7 @@ const ProfilePropertyItem = (props) => {
           >
             <FaMapMarker className="option-icon" />
           </Link> */}
-            <button className="property-options-icon-btn">
+            <button className="profile-property-options-icon-btn">
               <FaTrash className="option-icon" />
             </button>
           </div>
