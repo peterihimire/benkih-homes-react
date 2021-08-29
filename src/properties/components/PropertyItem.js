@@ -25,7 +25,7 @@ const PropertyItem = (props) => {
             <div className="price-bed">
               <div>
                 <h6>
-                  {properties.amount}
+                  ₦{properties.amount}
                   <span> million</span>
                 </h6>
               </div>

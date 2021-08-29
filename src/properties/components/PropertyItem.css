@@ -31,10 +31,12 @@
 .property-card:hover {
   transform: scale(1.05);
   transition: var(--main-transition);
+  cursor: pointer;
 }
 .property:hover .property-hover-options {
   transform: translate(-50%, -50%) scale(1);
   transition: var(--main-transition);
+
 }
 .property-hover-options button {
   border: none !important;
@@ -67,8 +69,11 @@
   text-align: center;
   justify-content: center;
   align-items: center;
+  transition: var(--main-transition);
 }
 .property-options-icon-btn:hover {
   background-color: var(--main-white);
   color: var(--primary-color);
+  transition: var(--main-transition);
+  cursor: pointer;
 }
