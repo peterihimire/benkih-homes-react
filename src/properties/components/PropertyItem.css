@@ -19,7 +19,6 @@
 .flex-align {
   display: flex;
   align-items: center;
-  
 }
 /***** PROPERTY HOVER *****/
 .property {
@@ -36,7 +35,6 @@
 .property:hover .property-hover-options {
   transform: translate(-50%, -50%) scale(1);
   transition: var(--main-transition);
-
 }
 .property-hover-options button {
   border: none !important;
