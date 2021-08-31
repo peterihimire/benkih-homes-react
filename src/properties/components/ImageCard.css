@@ -1,6 +1,6 @@
 .image-card {
   width: 157px;
-  height: 100px;
+  height: 110px;
 }
 .image-card img {
   width: 100%;
@@ -12,7 +12,7 @@
 @media screen and (min-width: 768px) {
   .image-card {
     width: 257px;
-    height: 200px;
+    height: 180px;
   }
   .image-card img {
     width: 100%;

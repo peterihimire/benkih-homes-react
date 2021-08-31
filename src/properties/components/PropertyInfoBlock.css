@@ -1,10 +1,17 @@
-
 .gallery-img img {
   width: 100%;
 }
+/* .carousel{
+  margin: 2rem 0;
+} */
+.carousel-div {
+  padding: 1rem 0 0 0;
+}
 /* TABLET */
 @media screen and (min-width: 768px) {
-
+  .carousel-div {
+    padding: 2rem 0 0 0;
+  }
 }
 /* LAPTOP */
 @media (min-width: 993px) {

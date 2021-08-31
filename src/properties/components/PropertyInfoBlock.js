@@ -40,13 +40,14 @@ const PropertyInfoBlock = (props) => {
                 galleryImgs={imageArr}
                 imgsArrLen={pixArr.length}
                 imgsArr={pixArr}
+              
               />
             ))}
           </ItemsCarousel>
         </div>
       </div>}
       {/* FOR TABLET */}
-      { pixArr &&  <div className="hidden-xs visible-md profile-scapes">
+      { pixArr &&  <div className="hidden-xs visible-md carousel-div">
         <div className="carousel">
           <ItemsCarousel
             requestToChangeActive={setActiveItemIndex}
@@ -65,6 +66,7 @@ const PropertyInfoBlock = (props) => {
                 galleryImgs={imageArr}
                 imgsArrLen={pixArr.length}
                 imgsArr={pixArr}
+              
               />
             ))}
           </ItemsCarousel>

@@ -1,8 +1,9 @@
 import React, { useEffect, useState, useCallback, useContext } from "react";
 import Footer from "../../shared/components/Footer";
 import Navbar from "../../shared/components/Navigation/Navbar";
-import PropertiesBanner from "../../shared/components/PropertiesBanner";
+import PropertyBanner from "../../shared/components/PropertyBanner";
 import PropertyInfoBlock from "../../properties/components/PropertyInfoBlock";
+import PropertyInfoTextBlock from "../../properties/components/PropertyInfoTextBlock";
 import { AuthContext } from "../../shared/context/auth-context";
 import ErrorModal from "../../shared/components/UIElements/ErrorModal";
 import LoadingSpinner from "../../shared/components/UIElements/LoadingSpinner";
@@ -79,14 +80,17 @@ const PropertyInfoPage = (props) => {
         <div id="page-container" className="App">
           <div id="content-wrapper">
             <Navbar />
-            <PropertiesBanner propertyName={property.title} />
+            <PropertyBanner
+              // The property banner recieves a prop named propertyTitle
+              propertyTitle={property.title}
+            />
+
+            {<PropertyInfoBlock propertyImgs={property.propertyImages} />}
             <div className="main-content">
               <div className="main-content-container">
-                {/* <PropertyBlock /> */}
-                {/* {<PropertyInfoBlock />} */}
+                {<PropertyInfoTextBlock property={property} />}
               </div>
             </div>
-            {<PropertyInfoBlock propertyImgs={property.propertyImages} />}
           </div>
           <Footer />
         </div>
